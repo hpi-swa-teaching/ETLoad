@@ -1,0 +1,4 @@
+accessing
+isCurrentProject
+
+	^self == CurrentProject

@@ -1,0 +1,3 @@
+theme
+insertionPointColor
+	^ Color red

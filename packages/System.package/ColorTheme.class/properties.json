@@ -1,0 +1,14 @@
+{
+	"category" : "System-Support",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"Current" ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "ColorTheme",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

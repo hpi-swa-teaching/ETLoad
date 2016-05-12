@@ -1,0 +1,27 @@
+{
+	"class" : {
+		"fileName:localeID:" : "KR 10/16/2007 19:05",
+		"initialize" : "KR 12/12/2007 13:13" },
+	"instance" : {
+		"atRandom" : "yo 8/27/2008 13:09",
+		"fileName" : "KR 10/4/2007 01:46",
+		"fileName:" : "KR 10/16/2007 19:03",
+		"hashPjw:" : "KR 10/4/2007 00:18",
+		"load1:localeID:" : "KR 10/16/2007 17:40",
+		"load4:localeID:" : "KR 10/16/2007 17:33",
+		"load:localeID:" : "KR 10/16/2007 17:16",
+		"loadHashTable:" : "KR 10/4/2007 00:27",
+		"loadHeader:" : "KR 12/22/2007 09:18",
+		"loadString:pointer:length:" : "KR 12/12/2007 13:14",
+		"loadStringPointers:offset:" : "KR 10/16/2007 13:31",
+		"loadStrings:pointers:" : "KR 10/16/2007 17:08",
+		"loadStrings:pointers:encoding:languageEnvironment:" : "KR 10/16/2007 16:56",
+		"nextInt32From:" : "KR 10/4/2007 00:27",
+		"originalString:" : "KR 10/16/2007 13:41",
+		"searchByDictionary:" : "KR 10/5/2007 01:41",
+		"searchByHash:" : "KR 10/5/2007 01:43",
+		"testSearchByDictionary" : "tak 10/18/2007 21:15",
+		"testSearchByHash" : "tak 10/18/2007 21:15",
+		"translateByHash:" : "KR 10/5/2007 02:02",
+		"translatedString:" : "KR 10/17/2007 13:16",
+		"translationFor:" : "Richo 5/26/2010 11:17" } }

@@ -1,0 +1,3 @@
+theme
+okColor
+	^ Color lightGreen
