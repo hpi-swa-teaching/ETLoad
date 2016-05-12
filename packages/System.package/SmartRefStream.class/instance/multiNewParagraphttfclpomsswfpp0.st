@@ -1,0 +1,4 @@
+conversion
+multiNewParagraphttfclpomsswfpp0
+
+	^ NewParagraph

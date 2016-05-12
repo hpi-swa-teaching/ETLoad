@@ -40,7 +40,7 @@ addNewFontSize: pointSize
 		f := fontArray first class new initialize: fontArray first.
 		f pointSize: pointSize.
 		fontArray first derivativeFonts do: [:proto |
-			proto ifNotNil: [
+			(proto notNil and: [(proto isKindOf: TTCFont)]) ifTrue: [
 				d := proto class new initialize: proto.
 				d pointSize: f pointSize.
 				f derivativeFont: d mainFont: proto.
