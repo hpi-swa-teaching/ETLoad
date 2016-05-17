@@ -1,0 +1,1 @@
+Utility methods to easily load projects from withing squeak.

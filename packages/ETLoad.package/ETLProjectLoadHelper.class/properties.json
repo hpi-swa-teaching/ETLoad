@@ -1,0 +1,14 @@
+{
+	"category" : "ETLoad-Helpers",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "TN 5/17/2016 11:08",
+	"instvars" : [
+		 ],
+	"name" : "ETLProjectLoadHelper",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
