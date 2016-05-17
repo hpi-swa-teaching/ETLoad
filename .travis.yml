@@ -22,5 +22,6 @@ before_script:
 
 env:
   global:
+    - CNAME="etoys-notes.xyz"
     - GOPATH="$HOME/go"
     - PATH="$GOPATH/bin:$PATH"
