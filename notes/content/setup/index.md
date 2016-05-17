@@ -12,8 +12,8 @@ weight = 0
 
 ## Local Development Setup
 
-1. Clone this repository.
-2. Execute the following code:
+1. Clone the repository at [github.com/HPI-SWA-Teaching/SWT16-Project-14](https://github.com/HPI-SWA-Teaching/SWT16-Project-14).
+2. Execute this code:
 
 ```smalltalk
 Metacello new
