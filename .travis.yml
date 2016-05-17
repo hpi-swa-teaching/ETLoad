@@ -6,3 +6,17 @@ os:
 
 smalltalk:
   - Squeak-trunk
+
+before_install:
+  # travis provides go 1.4 by default which causes problems, use 1.6
+  - eval "$(gimme 1.6)"
+  - go get -v github.com/spf13/hugo
+  - pip install --user pygments
+
+before_script:
+  - notes/deploy.sh
+
+env:
+  global:
+    - GOPATH="$HOME/go"
+    - PATH="$GOPATH/bin:$PATH"
