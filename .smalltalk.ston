@@ -1,0 +1,9 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'ETLoad',
+      #directory : 'packages',
+      #platforms : [ #squeak ]
+    }
+  ]
+}

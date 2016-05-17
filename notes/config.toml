@@ -1,0 +1,9 @@
+# baseurl should be provided on the command line
+baseurl = "http://example.com/"
+languageCode = "en-us"
+title = "SWT EToys Notes"
+
+theme = "learn"
+
+PygmentsCodeFences = true
+pygmentsstyle = "native"
