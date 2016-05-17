@@ -22,8 +22,8 @@
 &lt;h2 id=&#34;local-development-setup&#34;&gt;Local Development Setup&lt;/h2&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Clone this repository.&lt;/li&gt;
-&lt;li&gt;Execute the following code:&lt;/li&gt;
+&lt;li&gt;Clone the repository at &lt;a href=&#34;https://github.com/HPI-SWA-Teaching/SWT16-Project-14&#34;&gt;github.com/HPI-SWA-Teaching/SWT16-Project-14&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Execute this code:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #447fcf; text-decoration: underline&#34;&gt;Metacello&lt;/span&gt; &lt;span style=&#34;color: #24909d&#34;&gt;new&lt;/span&gt;
     &lt;span style=&#34;color: #447fcf&#34;&gt;baseline:&lt;/span&gt; &lt;span style=&#34;color: #ed9d13&#34;&gt;&amp;#39;ETLoad&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;;&lt;/span&gt;
