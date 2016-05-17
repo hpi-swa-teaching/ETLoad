@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfETLoad",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BaselineOfETLoad",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }
