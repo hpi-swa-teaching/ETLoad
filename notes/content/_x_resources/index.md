@@ -2,7 +2,7 @@
 chapter = true
 date = "2016-05-18T08:47:54+02:00"
 icon = "<b>X. </b>"
-prev = "/01_upgrades/"
+prev = "/01_upgrades/project-bug/"
 next = ""
 title = "Resources"
 weight = 0
