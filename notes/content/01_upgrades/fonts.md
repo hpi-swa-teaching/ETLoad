@@ -1,7 +1,7 @@
 +++
 date = "2016-05-18T14:16:58+02:00"
 prev = "/01_upgrades/class-replacements/"
-next = "/_x_resources/"
+next = "/02_imgseg/"
 title = "Fonts"
 weight = 30
 +++
