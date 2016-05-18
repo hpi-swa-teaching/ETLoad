@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>_x_resources on SWT EToys Notes</title>
+    <link>http://etoys-notes.xyz/_x_resources/</link>
+    <description>Recent content in _x_resources on SWT EToys Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 May 2016 08:47:54 +0200</lastBuildDate>
+    <atom:link href="http://etoys-notes.xyz/_x_resources/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Resources</title>
+      <link>http://etoys-notes.xyz/_x_resources/</link>
+      <pubDate>Wed, 18 May 2016 08:47:54 +0200</pubDate>
+      
+      <guid>http://etoys-notes.xyz/_x_resources/</guid>
+      <description>
+
+&lt;h1 id=&#34;resources&#34;&gt;Resources&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;EToys / SqueakLand: &lt;a href=&#34;http://squeakland.org/download/&#34;&gt;http://squeakland.org/download/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Blue Book / VM documentation: &lt;a href=&#34;http://sdmeta.gforge.inria.fr/FreeBooks/CollectiveNBlueBook/oe-tour-sept19.pdf&#34;&gt;http://sdmeta.gforge.inria.fr/FreeBooks/CollectiveNBlueBook/oe-tour-sept19.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Potato (Java) VM minimal Image format documentation: &lt;a href=&#34;http://potatovm.blogspot.de/&#34;&gt;http://potatovm.blogspot.de/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Minimal Squeak Object Memory Representation: &lt;a href=&#34;http://ftp.squeak.org/docs/OOPSLA.Squeak.html&#34;&gt;http://ftp.squeak.org/docs/OOPSLA.Squeak.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

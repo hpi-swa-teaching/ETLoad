@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Setups on SWT EToys Notes</title>
-    <link>http://etoys-notes.xyz/setup/</link>
-    <description>Recent content in Setups on SWT EToys Notes</description>
+    <title>00_setups on SWT EToys Notes</title>
+    <link>http://etoys-notes.xyz/00_setup/</link>
+    <description>Recent content in 00_setups on SWT EToys Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 May 2016 11:47:09 +0200</lastBuildDate>
-    <atom:link href="http://etoys-notes.xyz/setup/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://etoys-notes.xyz/00_setup/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Setup</title>
-      <link>http://etoys-notes.xyz/setup/</link>
+      <link>http://etoys-notes.xyz/00_setup/</link>
       <pubDate>Tue, 17 May 2016 11:47:09 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/setup/</guid>
+      <guid>http://etoys-notes.xyz/00_setup/</guid>
       <description>
 
 &lt;h1 id=&#34;setup&#34;&gt;Setup&lt;/h1&gt;
