@@ -5,7 +5,7 @@ icon = "<b>X. </b>"
 prev = "/01_upgrades/"
 next = ""
 title = "Resources"
-weight = 1000
+weight = 0
 +++
 
 # Resources
