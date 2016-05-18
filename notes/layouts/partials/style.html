@@ -17,4 +17,25 @@ code {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+dl {
+    margin: 3em;
+}
+dt, dd {
+    display: inline;
+}
+dt {
+    font-weight: bold;
+    margin-left: -3em;
+}
+dt:after {
+    content: ":";
+    margin-right: 0.5em;
+}
+dd {
+    -webkit-margin-start: 0;
+    -moz-margin-start: 0;
+}
+dd:after {
+    display: block; content: "";
+}
 </style>
