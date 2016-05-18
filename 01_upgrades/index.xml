@@ -29,7 +29,7 @@
       <pubDate>Wed, 18 May 2016 13:21:43 +0200</pubDate>
       
       <guid>http://etoys-notes.xyz/01_upgrades/project-bug/</guid>
-      <description>&lt;p&gt;The provided Squeak 5.1 Image contains causes problems when loading projects due to the following circumstances:&lt;/p&gt;
+      <description>&lt;p&gt;The provided Squeak 5.1 Image causes problems when loading projects due to the following circumstances:&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Squeak 3 has a &lt;code&gt;#Project&lt;/code&gt; class.&lt;/li&gt;
