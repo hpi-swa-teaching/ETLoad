@@ -3,7 +3,7 @@ chapter = true
 date = "2016-05-17T11:47:09+02:00"
 icon = "<b>0. </b>"
 prev = ""
-next = ""
+next = "/resources"
 title = "Setup"
 weight = 0
 +++
