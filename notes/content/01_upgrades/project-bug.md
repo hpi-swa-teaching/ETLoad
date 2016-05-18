@@ -6,7 +6,7 @@ title = "#Project Bug"
 weight = 10
 +++
 
-The provided Squeak 5.1 Image contains causes problems when loading projects due to the following circumstances:
+The provided Squeak 5.1 Image causes problems when loading projects due to the following circumstances:
 
 1. Squeak 3 has a `#Project` class.
 2. Squeak 5 has a `#Project` class, which has become a super class of different kinds of Projects (such as `#MVCProject` and `#MorphicProject`).
