@@ -6,8 +6,61 @@
     <description>Recent content on SWT EToys Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 May 2016 11:47:09 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 18 May 2016 14:23:20 +0200</lastBuildDate>
     <atom:link href="http://etoys-notes.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Image Segment</title>
+      <link>http://etoys-notes.xyz/02_imgseg/</link>
+      <pubDate>Wed, 18 May 2016 14:23:20 +0200</pubDate>
+      
+      <guid>http://etoys-notes.xyz/02_imgseg/</guid>
+      <description>
+
+&lt;h1 id=&#34;image-segment&#34;&gt;Image Segment&lt;/h1&gt;
+
+&lt;p&gt;If no other errors occure during the loading process, attempting to load a Squeak 3 Project in Squeak 5 will result in an error (&amp;rdquo;&lt;code&gt;Error: Segment has not been becommed into the loaded objects&lt;/code&gt;&amp;rdquo;) from &lt;code&gt;ImageSegment&amp;gt;&amp;gt;checkAndReportLoadError&lt;/code&gt;, which is called immediatly after the primitive at &lt;code&gt;ImageSegment&amp;gt;&amp;gt;loadSegmentFrom:outPointers:&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&#34;notices warning&#34; &gt;&lt;p&gt;The documentation of &lt;code&gt;ImageSegment&amp;gt;&amp;gt;loadSegmentFrom:outPointers:&lt;/code&gt; states that &amp;ldquo;[this primitive] will have destroyed the contents of the segment wordArray&amp;rdquo; if it fails.&lt;/p&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;As such it will probably be required to save a copy of the segment wordArray prior to executing this primitive. Then, should the primitive fail, an attempt can be made to load the ImageSegement &amp;ldquo;manually&amp;rdquo;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Upgrades</title>
+      <link>http://etoys-notes.xyz/01_upgrades/</link>
+      <pubDate>Wed, 18 May 2016 13:17:12 +0200</pubDate>
+      
+      <guid>http://etoys-notes.xyz/01_upgrades/</guid>
+      <description>
+
+&lt;h1 id=&#34;upgrades&#34;&gt;Upgrades&lt;/h1&gt;
+
+&lt;p&gt;This section records &amp;amp; documents upgrades / conversions which have been registered with the &lt;code&gt;SmartRefStream&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>http://etoys-notes.xyz/_x_resources/</link>
+      <pubDate>Wed, 18 May 2016 08:47:54 +0200</pubDate>
+      
+      <guid>http://etoys-notes.xyz/_x_resources/</guid>
+      <description>
+
+&lt;h1 id=&#34;resources&#34;&gt;Resources&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;EToys / SqueakLand: &lt;a href=&#34;http://squeakland.org/download/&#34;&gt;http://squeakland.org/download/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Blue Book / VM documentation: &lt;a href=&#34;http://sdmeta.gforge.inria.fr/FreeBooks/CollectiveNBlueBook/oe-tour-sept19.pdf&#34;&gt;http://sdmeta.gforge.inria.fr/FreeBooks/CollectiveNBlueBook/oe-tour-sept19.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Potato (Java) VM minimal Image format documentation: &lt;a href=&#34;http://potatovm.blogspot.de/&#34;&gt;http://potatovm.blogspot.de/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Minimal Squeak Object Memory Representation: &lt;a href=&#34;http://ftp.squeak.org/docs/OOPSLA.Squeak.html&#34;&gt;http://ftp.squeak.org/docs/OOPSLA.Squeak.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Setup</title>
@@ -34,21 +87,48 @@
     </item>
     
     <item>
-      <title>Resources</title>
-      <link>http://etoys-notes.xyz/_x_resources/</link>
-      <pubDate>Wed, 18 May 2016 08:47:54 +0200</pubDate>
+      <title>#Project Bug</title>
+      <link>http://etoys-notes.xyz/01_upgrades/project-bug/</link>
+      <pubDate>Wed, 18 May 2016 13:21:43 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/_x_resources/</guid>
-      <description>
+      <guid>http://etoys-notes.xyz/01_upgrades/project-bug/</guid>
+      <description>&lt;p&gt;The provided Squeak 5.1 Image contains causes problems when loading projects due to the following circumstances:&lt;/p&gt;
 
-&lt;h1 id=&#34;resources&#34;&gt;Resources&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Squeak 3 has a &lt;code&gt;#Project&lt;/code&gt; class.&lt;/li&gt;
+&lt;li&gt;Squeak 5 has a &lt;code&gt;#Project&lt;/code&gt; class, which has become a super class of different kinds of Projects (such as &lt;code&gt;#MVCProject&lt;/code&gt; and &lt;code&gt;#MorphicProject&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;The Squeak 3 &lt;code&gt;#Project&lt;/code&gt; has been superseded by &lt;code&gt;#MorphicProject&lt;/code&gt; in Squeak 5.&lt;/li&gt;
+&lt;li&gt;As such a rename has been introduced in &lt;code&gt;SmartRefStream&amp;gt;&amp;gt;initKnownRenames&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;This rename however was not applied consistently, causing different code paths to work with different names, inevitably leading to an error condition (&amp;rdquo;&lt;code&gt;Error: class not in structures list&lt;/code&gt;&amp;rdquo;).&lt;/li&gt;
+&lt;li&gt;The current workaround is to (temporarily) remove the rename, as this rename will only become relevant at a later point in the loading process (which cannot yet be reached due to the incompatible &lt;code&gt;ImageSegment&lt;/code&gt; format).&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Class Replacements</title>
+      <link>http://etoys-notes.xyz/01_upgrades/class-replacements/</link>
+      <pubDate>Wed, 18 May 2016 13:42:44 +0200</pubDate>
+      
+      <guid>http://etoys-notes.xyz/01_upgrades/class-replacements/</guid>
+      <description>&lt;p&gt;The following is a list of classes which no longer exist and have for now been replaced by other classes, usually a super class, if available:&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;EToys / SqueakLand: &lt;a href=&#34;http://squeakland.org/download/&#34;&gt;http://squeakland.org/download/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Blue Book / VM documentation: &lt;a href=&#34;http://sdmeta.gforge.inria.fr/FreeBooks/CollectiveNBlueBook/oe-tour-sept19.pdf&#34;&gt;http://sdmeta.gforge.inria.fr/FreeBooks/CollectiveNBlueBook/oe-tour-sept19.pdf&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Potato (Java) VM minimal Image format documentation: &lt;a href=&#34;http://potatovm.blogspot.de/&#34;&gt;http://potatovm.blogspot.de/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Minimal Squeak Object Memory Representation: &lt;a href=&#34;http://ftp.squeak.org/docs/OOPSLA.Squeak.html&#34;&gt;http://ftp.squeak.org/docs/OOPSLA.Squeak.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;code&gt;MultiNewParagraph&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;⇒ &lt;code&gt;NewParagraph&lt;/code&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;UserText&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;⇒ &lt;code&gt;TextMorph&lt;/code&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fonts</title>
+      <link>http://etoys-notes.xyz/01_upgrades/fonts/</link>
+      <pubDate>Wed, 18 May 2016 14:16:58 +0200</pubDate>
+      
+      <guid>http://etoys-notes.xyz/01_upgrades/fonts/</guid>
+      <description>&lt;p&gt;While loading a project, an error occured in &lt;code&gt;TextStyle&amp;gt;&amp;gt;addNewFontSize:&lt;/code&gt; because a &lt;code&gt;fontArray&lt;/code&gt; contained a &lt;code&gt;TTCFontSet&lt;/code&gt; along with &lt;code&gt;TTCFont&lt;/code&gt;s. As such an extra check was introduced to ignore objects which are not instances of TTCFont.&lt;/p&gt;
 </description>
     </item>
     

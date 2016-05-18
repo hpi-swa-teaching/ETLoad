@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Setup</title>
+    <title>#Project Bug</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -99,7 +99,7 @@ dd:after {
       
       
 
-      <li class="dd-item active parent" data-nav-id="/00_setup/">
+      <li class="dd-item  " data-nav-id="/00_setup/">
         <a href="/00_setup/">
           <span>
             
@@ -115,7 +115,7 @@ dd:after {
       
       
 
-      <li class="dd-item  " data-nav-id="/01_upgrades/">
+      <li class="dd-item  parent" data-nav-id="/01_upgrades/">
         <a href="/01_upgrades/">
           <span>
             
@@ -130,7 +130,7 @@ dd:after {
           
           
           
-            <li class="dd-item " data-nav-id="/01_upgrades/project-bug/">
+            <li class="dd-item active" data-nav-id="/01_upgrades/project-bug/">
               <a href="/01_upgrades/project-bug/">
                 <span>#Project Bug</span>
               </a>
@@ -216,53 +216,48 @@ dd:after {
                 
                 
                   
+                
+                  
                     
                     
+                <a href="/01_upgrades/" itemprop="url"><span itemprop="title">Upgrades</span></a> <i class="fa fa-angle-right"></i>
+                    
                   
                 
                   
                 
                   
                 
-                  
-                
-                <span itemprop="title"> Setup</span>
+                <span itemprop="title"> #Project Bug</span>
               </div>
               
 
             </div>
             
-              <div id="chapter">
-            
     	        <div id="body-inner">
                 
+                <h1>#Project Bug</h1>
+                
 
-
-
-<h1 id="setup">Setup</h1>
-
-<h2 id="local-development-setup">Local Development Setup</h2>
+<p>The provided Squeak 5.1 Image contains causes problems when loading projects due to the following circumstances:</p>
 
 <ol>
-<li>Clone the repository at <a href="https://github.com/HPI-SWA-Teaching/SWT16-Project-14">github.com/HPI-SWA-Teaching/SWT16-Project-14</a>.</li>
-<li>Execute this code:</li>
+<li>Squeak 3 has a <code>#Project</code> class.</li>
+<li>Squeak 5 has a <code>#Project</code> class, which has become a super class of different kinds of Projects (such as <code>#MVCProject</code> and <code>#MorphicProject</code>).</li>
+<li>The Squeak 3 <code>#Project</code> has been superseded by <code>#MorphicProject</code> in Squeak 5.</li>
+<li>As such a rename has been introduced in <code>SmartRefStream&gt;&gt;initKnownRenames</code>.</li>
+<li>This rename however was not applied consistently, causing different code paths to work with different names, inevitably leading to an error condition (&rdquo;<code>Error: class not in structures list</code>&rdquo;).</li>
+<li>The current workaround is to (temporarily) remove the rename, as this rename will only become relevant at a later point in the loading process (which cannot yet be reached due to the incompatible <code>ImageSegment</code> format).</li>
 </ol>
-<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #447fcf; text-decoration: underline">Metacello</span> <span style="color: #24909d">new</span>
-    <span style="color: #447fcf">baseline:</span> <span style="color: #ed9d13">&#39;ETLoad&#39;</span><span style="color: #d0d0d0">;</span>
-    <span style="color: #447fcf">repository:</span> <span style="color: #ed9d13">&#39;filetree:///$PATH/WHERE/YOU/CLONED/THE/REPO/packages&#39;</span><span style="color: #d0d0d0">;</span>
-    <span style="color: #447fcf">load</span><span style="color: #d0d0d0">.</span>
-</pre></div>
 
 
-      
-        </div> 
       
       </div>
     </div>
 
     <div id="navigation">
-        
-        <a class="nav nav-next" href="/01_upgrades/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/01_upgrades/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/01_upgrades/class-replacements/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

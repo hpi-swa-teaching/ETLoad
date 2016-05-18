@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Setup</title>
+    <title>Image Segment</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -99,7 +99,7 @@ dd:after {
       
       
 
-      <li class="dd-item active parent" data-nav-id="/00_setup/">
+      <li class="dd-item  " data-nav-id="/00_setup/">
         <a href="/00_setup/">
           <span>
             
@@ -161,7 +161,7 @@ dd:after {
       
       
 
-      <li class="dd-item  " data-nav-id="/02_imgseg/">
+      <li class="dd-item active parent" data-nav-id="/02_imgseg/">
         <a href="/02_imgseg/">
           <span>
             
@@ -216,17 +216,17 @@ dd:after {
                 
                 
                   
+                
+                  
+                
+                  
                     
                     
                   
                 
                   
                 
-                  
-                
-                  
-                
-                <span itemprop="title"> Setup</span>
+                <span itemprop="title"> Image Segment</span>
               </div>
               
 
@@ -239,19 +239,15 @@ dd:after {
 
 
 
-<h1 id="setup">Setup</h1>
+<h1 id="image-segment">Image Segment</h1>
 
-<h2 id="local-development-setup">Local Development Setup</h2>
+<p>If no other errors occure during the loading process, attempting to load a Squeak 3 Project in Squeak 5 will result in an error (&rdquo;<code>Error: Segment has not been becommed into the loaded objects</code>&rdquo;) from <code>ImageSegment&gt;&gt;checkAndReportLoadError</code>, which is called immediatly after the primitive at <code>ImageSegment&gt;&gt;loadSegmentFrom:outPointers:</code>.</p>
 
-<ol>
-<li>Clone the repository at <a href="https://github.com/HPI-SWA-Teaching/SWT16-Project-14">github.com/HPI-SWA-Teaching/SWT16-Project-14</a>.</li>
-<li>Execute this code:</li>
-</ol>
-<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #447fcf; text-decoration: underline">Metacello</span> <span style="color: #24909d">new</span>
-    <span style="color: #447fcf">baseline:</span> <span style="color: #ed9d13">&#39;ETLoad&#39;</span><span style="color: #d0d0d0">;</span>
-    <span style="color: #447fcf">repository:</span> <span style="color: #ed9d13">&#39;filetree:///$PATH/WHERE/YOU/CLONED/THE/REPO/packages&#39;</span><span style="color: #d0d0d0">;</span>
-    <span style="color: #447fcf">load</span><span style="color: #d0d0d0">.</span>
-</pre></div>
+<div class="notices warning" ><p>The documentation of <code>ImageSegment&gt;&gt;loadSegmentFrom:outPointers:</code> states that &ldquo;[this primitive] will have destroyed the contents of the segment wordArray&rdquo; if it fails.</p>
+</div>
+
+
+<p>As such it will probably be required to save a copy of the segment wordArray prior to executing this primitive. Then, should the primitive fail, an attempt can be made to load the ImageSegement &ldquo;manually&rdquo;.</p>
 
 
       
@@ -261,8 +257,8 @@ dd:after {
     </div>
 
     <div id="navigation">
-        
-        <a class="nav nav-next" href="/01_upgrades/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/01_upgrades/fonts/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/_x_resources/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

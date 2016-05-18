@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>02_imgsegs on SWT EToys Notes</title>
+    <link>http://etoys-notes.xyz/02_imgseg/</link>
+    <description>Recent content in 02_imgsegs on SWT EToys Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 May 2016 14:23:20 +0200</lastBuildDate>
+    <atom:link href="http://etoys-notes.xyz/02_imgseg/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Image Segment</title>
+      <link>http://etoys-notes.xyz/02_imgseg/</link>
+      <pubDate>Wed, 18 May 2016 14:23:20 +0200</pubDate>
+      
+      <guid>http://etoys-notes.xyz/02_imgseg/</guid>
+      <description>
+
+&lt;h1 id=&#34;image-segment&#34;&gt;Image Segment&lt;/h1&gt;
+
+&lt;p&gt;If no other errors occure during the loading process, attempting to load a Squeak 3 Project in Squeak 5 will result in an error (&amp;rdquo;&lt;code&gt;Error: Segment has not been becommed into the loaded objects&lt;/code&gt;&amp;rdquo;) from &lt;code&gt;ImageSegment&amp;gt;&amp;gt;checkAndReportLoadError&lt;/code&gt;, which is called immediatly after the primitive at &lt;code&gt;ImageSegment&amp;gt;&amp;gt;loadSegmentFrom:outPointers:&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&#34;notices warning&#34; &gt;&lt;p&gt;The documentation of &lt;code&gt;ImageSegment&amp;gt;&amp;gt;loadSegmentFrom:outPointers:&lt;/code&gt; states that &amp;ldquo;[this primitive] will have destroyed the contents of the segment wordArray&amp;rdquo; if it fails.&lt;/p&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;As such it will probably be required to save a copy of the segment wordArray prior to executing this primitive. Then, should the primitive fail, an attempt can be made to load the ImageSegement &amp;ldquo;manually&amp;rdquo;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
