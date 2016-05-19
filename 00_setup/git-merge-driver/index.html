@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Upgrades</title>
+    <title>Git MergeDriver</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -99,7 +99,7 @@ dd:after {
       
       
 
-      <li class="dd-item  " data-nav-id="/00_setup/">
+      <li class="dd-item  parent" data-nav-id="/00_setup/">
         <a href="/00_setup/">
           <span>
             
@@ -114,7 +114,7 @@ dd:after {
           
           
           
-            <li class="dd-item " data-nav-id="/00_setup/git-merge-driver/">
+            <li class="dd-item active" data-nav-id="/00_setup/git-merge-driver/">
               <a href="/00_setup/git-merge-driver/">
                 <span>Git MergeDriver</span>
               </a>
@@ -129,7 +129,7 @@ dd:after {
       
       
 
-      <li class="dd-item active parent" data-nav-id="/01_upgrades/">
+      <li class="dd-item  " data-nav-id="/01_upgrades/">
         <a href="/01_upgrades/">
           <span>
             
@@ -230,43 +230,54 @@ dd:after {
                 
                 
                   
-                
-                  
                     
                     
+                <a href="/00_setup/" itemprop="url"><span itemprop="title">Setup</span></a> <i class="fa fa-angle-right"></i>
+                    
                   
                 
                   
                 
                   
                 
-                <span itemprop="title"> Upgrades</span>
+                  
+                
+                <span itemprop="title"> Git MergeDriver</span>
               </div>
               
 
             </div>
             
-              <div id="chapter">
-            
     	        <div id="body-inner">
                 
+                <h1>Git MergeDriver</h1>
+                
+
+<p>Due to the dual use of monticello and git, there are some problems with merging.
+Git doesn&rsquo;t know how to merge monticello metadata files, causing a lot of merge conflicts.
+The solution for this problem that was presented in class is manually merging in Smalltalk first, and then committing the merged changes in git.</p>
+
+<p>This process can be automated by using the <a href="https://github.com/ThierryGoubier/GitFileTree-MergeDriver">filetree merge driver</a>.
+Unfortunately, it probably requires Linux or OSX (the merge script itself is a bash script).
+The setup is quite simple:</p>
+
+<ul>
+<li>Clone the git repository of the merge driver somewhere where it can stay</li>
+<li>Run <code>make</code> in the repositories root directory</li>
+</ul>
+
+<p>This will have appended some lines to your git config (<code>~/.gitconfig</code>) to register the merge driver.
+Because our repository already contains a <code>.gitattributes</code> file which enables the merge driver for the appropriate files, this is all that needs to be done.
+From now on <code>git merge</code> should work as expected.</p>
 
 
-
-<h1 id="upgrades">Upgrades</h1>
-
-<p>This section records &amp; documents upgrades / conversions which have been registered with the <code>SmartRefStream</code>.</p>
-
-
-      
-        </div> 
       
       </div>
     </div>
 
     <div id="navigation">
-        <a class="nav nav-prev" href="/00_setup/git-merge-driver/"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/01_upgrades/project-bug/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/00_setup/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/01_upgrades/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>
