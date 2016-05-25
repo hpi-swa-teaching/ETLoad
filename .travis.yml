@@ -1,9 +1,9 @@
-language: smalltalk
 sudo: false
 
 matrix:
   include:
-    - os: linux
+    - language: bash
+      os: linux
       script: notes/deploy.sh
       before_install:
         # travis provides go 1.4 by default which causes problems, use 1.6
@@ -14,7 +14,8 @@ matrix:
         - chmod 600 "$TRAVIS_BUILD_DIR/.keys/deploy"
         - eval `ssh-agent -s`
         - ssh-add "$TRAVIS_BUILD_DIR/.keys/deploy"
-    - smalltalk: Squeak-trunk
+    - language: smalltalk
+      smalltalk: Squeak-trunk
       os: linux
 
 env:
