@@ -1,0 +1,14 @@
+{
+	"category" : "ETLoad-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "ETLInvalidObjectHeaderSize",
+	"pools" : [
+		 ],
+	"super" : "Error",
+	"type" : "normal" }
