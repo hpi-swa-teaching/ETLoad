@@ -10,12 +10,25 @@ RESET=`tput sgr0`
 
 DD=${DD:-dd}
 
+usage() {
+    echo "Usage: $0 PROJECT_FILE [OUTPUT_FILE] "
+    echo ""
+    echo "This script will extract the actual project data from a zipped and"
+    echo "gzipped project and write it to OUTPUT_FILE. If not given, OUTPUT_FILE"
+    echo "defaults to PROJECT_FILE.txt."
+    echo ""
+    echo "This script requires GNU dd. Since OS X ships with BSD dd and GNU dd"
+    echo "is prefixed with g by default, this script allows specifying the dd"
+    echo "executable to use using the DD environment variable."
+}
+
 msg () {
     >&2 echo "$BOLD$@$RESET"
 }
 
 exitmsg() {
     msg "$@"
+    usage
     exit 1
 }
 
