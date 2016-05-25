@@ -11,10 +11,12 @@
 		"parseFromBaseHeader:andClassHeader:" : "DS 5/25/2016 18:07",
 		"parseFromBaseHeader:andClassHeader:andSizeHeader:" : "DS 5/25/2016 18:11" },
 	"instance" : {
+		"=" : "DS 5/25/2016 19:19",
 		"classOop" : "DS 5/25/2016 18:17",
 		"classOop:" : "DS 5/25/2016 14:42",
 		"compactClassIndex" : "DS 5/25/2016 18:17",
 		"compactClassIndex:" : "DS 5/25/2016 14:42",
+		"hash" : "DS 5/25/2016 22:09",
 		"objectFormat" : "DS 5/25/2016 18:18",
 		"objectFormat:" : "DS 5/25/2016 14:43",
 		"objectHash" : "DS 5/25/2016 18:18",
