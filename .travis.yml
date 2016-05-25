@@ -2,6 +2,9 @@ sudo: false
 
 matrix:
   include:
+    - language: smalltalk
+      smalltalk: Squeak-trunk
+      os: linux
     - language: bash
       os: linux
       script: notes/deploy.sh
@@ -14,9 +17,6 @@ matrix:
         - chmod 600 "$TRAVIS_BUILD_DIR/.keys/deploy"
         - eval `ssh-agent -s`
         - ssh-add "$TRAVIS_BUILD_DIR/.keys/deploy"
-    - language: smalltalk
-      smalltalk: Squeak-trunk
-      os: linux
 
 env:
   global:
