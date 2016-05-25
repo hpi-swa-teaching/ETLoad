@@ -1,24 +1,21 @@
 language: smalltalk
 sudo: false
 
-os:
-  - linux
-
-smalltalk:
-  - Squeak-trunk
-
-before_install:
-  # travis provides go 1.4 by default which causes problems, use 1.6
-  - eval "$(gimme 1.6)"
-  - go get -v github.com/spf13/hugo
-  - pip install --user pygments
-  - openssl aes-256-cbc -K "$encrypted_1c6d3e92162e_key" -iv "$encrypted_1c6d3e92162e_iv" -in "$TRAVIS_BUILD_DIR/.keys/deploy.enc" -out "$TRAVIS_BUILD_DIR/.keys/deploy" -d
-  - chmod 600 "$TRAVIS_BUILD_DIR/.keys/deploy"
-  - eval `ssh-agent -s`
-  - ssh-add "$TRAVIS_BUILD_DIR/.keys/deploy"
-
-before_script:
-  - notes/deploy.sh
+matrix:
+  include:
+    - os: linux
+      script: notes/deploy.sh
+      before_install:
+        # travis provides go 1.4 by default which causes problems, use 1.6
+        - eval "$(gimme 1.6)"
+        - go get -v github.com/spf13/hugo
+        - pip install --user pygments
+        - openssl aes-256-cbc -K "$encrypted_1c6d3e92162e_key" -iv "$encrypted_1c6d3e92162e_iv" -in "$TRAVIS_BUILD_DIR/.keys/deploy.enc" -out "$TRAVIS_BUILD_DIR/.keys/deploy" -d
+        - chmod 600 "$TRAVIS_BUILD_DIR/.keys/deploy"
+        - eval `ssh-agent -s`
+        - ssh-add "$TRAVIS_BUILD_DIR/.keys/deploy"
+    - smalltalk: Squeak-trunk
+      os: linux
 
 env:
   global:
