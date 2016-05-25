@@ -52,6 +52,17 @@ cd $TRAVIS_BUILD_DIR
 # quiet do suppress diff
 AUTHOR_EMAIL="`git --no-pager show --quiet --format="%aE" HEAD`"
 
+# skip deploy if we are not on our master branch
+if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+    msg "building a pull request, skipping documentation deployment"
+    exit 0
+fi
+
+if [ "$TRAVIS_BRANCH" != "master" ]; then
+    msg "not on master, skipping documentation deployment"
+    exit 0
+fi
+
 cd $TRAVIS_BUILD_DIR/notes/public
 
 git init
@@ -63,16 +74,4 @@ git config user.name "Travis CI"
 git config user.email "$AUTHOR_EMAIL"
 git diff-index --quiet HEAD || git commit -m 'Updating Documentation'
 git checkout -b "$DEPLOY_BRANCH"
-
-# skip deploy if we are not on our master branch
-if [ "$TRAVIS_BRANCH" != "master" ]; then
-    msg "not on master, skipping documentation build"
-    exit 0
-fi
-
-if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-    msg "building a pull request, skipping documentation build"
-    exit 0
-fi
-
 git push deploy "$DEPLOY_BRANCH"
