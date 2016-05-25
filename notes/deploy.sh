@@ -15,16 +15,6 @@ msg () {
     log "$BOLD$@$RESET"
 }
 
-if [ "$TRAVIS_BRANCH" != "master" ]; then
-    msg "not on master, skipping documentation build"
-    exit 0
-fi
-
-if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-    msg "building a pull request, skipping documentation build"
-    exit 0
-fi
-
 msg "Now building documentation"
 
 if [ -z "$BASEURL" ]; then
@@ -73,4 +63,16 @@ git config user.name "Travis CI"
 git config user.email "$AUTHOR_EMAIL"
 git diff-index --quiet HEAD || git commit -m 'Updating Documentation'
 git checkout -b "$DEPLOY_BRANCH"
+
+# skip deploy if we are not on our master branch
+if [ "$TRAVIS_BRANCH" != "master" ]; then
+    msg "not on master, skipping documentation build"
+    exit 0
+fi
+
+if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+    msg "building a pull request, skipping documentation build"
+    exit 0
+fi
+
 git push deploy "$DEPLOY_BRANCH"
