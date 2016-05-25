@@ -45,13 +45,6 @@ else
     echo -e "machine github.com\n  login $GITHUB_TOKEN" >> "$HOME/.netrc"
 fi
 
-log "going to deploy to $BOLD$REPO_URL$RESET"
-
-cd $TRAVIS_BUILD_DIR
-
-# quiet do suppress diff
-AUTHOR_EMAIL="`git --no-pager show --quiet --format="%aE" HEAD`"
-
 # skip deploy if we are not on our master branch
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
     msg "building a pull request, skipping documentation deployment"
@@ -62,6 +55,13 @@ if [ "$TRAVIS_BRANCH" != "master" ]; then
     msg "not on master, skipping documentation deployment"
     exit 0
 fi
+
+log "going to deploy to $BOLD$REPO_URL$RESET"
+
+cd $TRAVIS_BUILD_DIR
+
+# quiet do suppress diff
+AUTHOR_EMAIL="`git --no-pager show --quiet --format="%aE" HEAD`"
 
 cd $TRAVIS_BUILD_DIR/notes/public
 
