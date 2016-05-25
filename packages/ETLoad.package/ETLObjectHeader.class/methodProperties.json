@@ -5,7 +5,11 @@
 		"headerTypeClass" : "DS 5/25/2016 16:42",
 		"headerTypeShort" : "DS 5/25/2016 16:43",
 		"headerTypeSizeAndClass" : "DS 5/25/2016 16:42",
-		"headerTypesToHeaderSizes" : "DS 5/25/2016 16:51" },
+		"headerTypesToHeaderSizes" : "DS 5/25/2016 16:51",
+		"parseFrom:" : "DS 5/25/2016 17:33",
+		"parseFromBaseHeader:" : "DS 5/25/2016 17:53",
+		"parseFromBaseHeader:andClassHeader:" : "DS 5/25/2016 18:07",
+		"parseFromBaseHeader:andClassHeader:andSizeHeader:" : "DS 5/25/2016 18:11" },
 	"instance" : {
 		"classOop" : "DS 5/25/2016 14:42",
 		"classOop:" : "DS 5/25/2016 14:42",

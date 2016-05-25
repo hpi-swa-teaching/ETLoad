@@ -2,4 +2,7 @@
 	"class" : {
 		 },
 	"instance" : {
+		"testCreationFromOneWord" : "DS 5/25/2016 17:25",
+		"testCreationFromThreeWords" : "DS 5/25/2016 18:10",
+		"testCreationFromTwoWords" : "DS 5/25/2016 18:04",
 		"testDeterminationOfHeaderSize" : "DS 5/25/2016 17:59" } }
