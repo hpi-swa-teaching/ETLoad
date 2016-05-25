@@ -4,5 +4,5 @@ determineHeaderSizeFrom: firstWord
 	
 	^ self headerTypesToHeaderSizes
 		at: (firstWord bitAnd: self headerTypeBitMask)
-		ifAbsent: [ ETLInvalidObjectHeaderSize signal. ].
+		ifAbsent: [ ETLInvalidObjectHeaderType signal. ].
 		

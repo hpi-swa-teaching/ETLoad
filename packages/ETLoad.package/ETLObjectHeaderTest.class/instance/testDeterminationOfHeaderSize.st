@@ -10,5 +10,5 @@ testDeterminationOfHeaderSize
 	self assert: 1 equals: (ETLObjectHeader determineHeaderSizeFrom: 3).
 	self assert: 1 equals: (ETLObjectHeader determineHeaderSizeFrom: 16rFFFFFFFF).
 	"invalid header"
-	self should: [ ETLObjectHeader determineHeaderSizeFrom: 2 ]  raise: ETLInvalidObjectHeaderSize.
-	self should: [ ETLObjectHeader determineHeaderSizeFrom: 16rFFFFFFFF - 1 ]  raise: ETLInvalidObjectHeaderSize.
+	self should: [ ETLObjectHeader determineHeaderSizeFrom: 2 ]  raise: ETLInvalidObjectHeaderType.
+	self should: [ ETLObjectHeader determineHeaderSizeFrom: 16rFFFFFFFF - 1 ]  raise: ETLInvalidObjectHeaderType.
