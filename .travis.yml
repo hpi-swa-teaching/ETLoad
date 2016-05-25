@@ -5,6 +5,7 @@ matrix:
     - os: linux
       language: smalltalk
       smalltalk: Squeak-trunk
+
     - os: linux
       script: notes/deploy.sh
       before_install:
