@@ -1,0 +1,6 @@
+constants
+twoWordHeader
+	"Two word example object header."
+
+	^ { 2r01010101010101010101010101010101 .
+	     2r00010101010101011011001010101001 }.
