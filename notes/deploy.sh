@@ -15,16 +15,6 @@ msg () {
     log "$BOLD$@$RESET"
 }
 
-if [ "$TRAVIS_BRANCH" != "master" ]; then
-    msg "not on master, skipping documentation build"
-    exit 0
-fi
-
-if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-    msg "building a pull request, skipping documentation build"
-    exit 0
-fi
-
 msg "Now building documentation"
 
 if [ -z "$BASEURL" ]; then
@@ -53,6 +43,17 @@ if [ -z "$GITHUB_TOKEN" ]; then
 else
     REPO_URL="https://github.com/$TRAVIS_REPO_SLUG.git"
     echo -e "machine github.com\n  login $GITHUB_TOKEN" >> "$HOME/.netrc"
+fi
+
+# skip deploy if we are not on our master branch
+if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+    msg "building a pull request, skipping documentation deployment"
+    exit 0
+fi
+
+if [ "$TRAVIS_BRANCH" != "master" ]; then
+    msg "not on master, skipping documentation deployment"
+    exit 0
 fi
 
 log "going to deploy to $BOLD$REPO_URL$RESET"
