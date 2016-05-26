@@ -1,0 +1,18 @@
+{
+	"category" : "ETLoad-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "DS 5/25/2016 14:41",
+	"instvars" : [
+		"sizeInWords",
+		"compactClassIndex",
+		"classOop",
+		"objectHash",
+		"objectFormat" ],
+	"name" : "ETLObjectHeader",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

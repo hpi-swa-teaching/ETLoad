@@ -1,0 +1,23 @@
+{
+	"class" : {
+		"determineHeaderSizeFrom:" : "DS 5/25/2016 17:33",
+		"headerTypeBitMask" : "DS 5/26/2016 10:43",
+		"headerTypeClass" : "DS 5/25/2016 16:42",
+		"headerTypeShort" : "DS 5/25/2016 16:43",
+		"headerTypeSizeAndClass" : "DS 5/25/2016 16:42",
+		"headerTypesToHeaderSizes" : "DS 5/25/2016 16:51",
+		"parseFrom:" : "DS 5/25/2016 17:33",
+		"parseFromBaseHeader:" : "DS 5/26/2016 10:44",
+		"parseFromBaseHeader:andClassHeader:" : "DS 5/26/2016 10:45",
+		"parseFromBaseHeader:andClassHeader:andSizeHeader:" : "DS 5/26/2016 10:45" },
+	"instance" : {
+		"classOop" : "DS 5/26/2016 10:35",
+		"classOop:" : "DS 5/26/2016 10:35",
+		"compactClassIndex" : "DS 5/26/2016 10:35",
+		"compactClassIndex:" : "DS 5/26/2016 10:35",
+		"objectFormat" : "DS 5/26/2016 10:36",
+		"objectFormat:" : "DS 5/26/2016 10:36",
+		"objectHash" : "DS 5/26/2016 10:36",
+		"objectHash:" : "DS 5/26/2016 10:36",
+		"sizeInWords" : "DS 5/26/2016 10:36",
+		"sizeInWords:" : "DS 5/26/2016 10:36" } }

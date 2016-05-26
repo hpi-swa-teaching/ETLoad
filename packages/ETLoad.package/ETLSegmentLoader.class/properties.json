@@ -1,0 +1,14 @@
+{
+	"category" : "ETLoad-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"data" ],
+	"name" : "ETLSegmentLoader",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
