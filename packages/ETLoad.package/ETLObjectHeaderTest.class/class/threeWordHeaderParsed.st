@@ -7,5 +7,5 @@ threeWordHeaderParsed
 		compactClassIndex: nil;
 		classOop: 2r01010101010101010101010101010100;
 		objectFormat: 2r0010;
-		sizeInWords: 2r110011001100110011001100110011;
+		sizeInWords: 2r11001100;
 		yourself.
