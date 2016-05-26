@@ -4,7 +4,7 @@ parseFromBaseHeader: baseWord andClassHeader: classWord andSizeHeader: sizeWord
 
 	^ self new
 		sizeInWords: (sizeWord >> 2);
-		objectFormat: ((baseWord >> 8) bitAnd: 2r1111);
+		objectFormat: ((baseWord >> 8) bitAnd: 16r0F);
 		classOop: (classWord bitAnd: 16rFFFFFFFC);
-		objectHash: ((baseWord >> 17) bitAnd: 2r111111111111);
+		objectHash: ((baseWord >> 17) bitAnd: 16r0FFF);
 		yourself.
