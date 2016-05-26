@@ -1,0 +1,7 @@
+constants
+threeWordHeaderData
+	"Serialized form of the three word example header."
+
+	^ { 2r00000000000000000000001100110000 .
+	     2r01010101010101010101010101010100 .
+	     2r00010101010101011011001010101000 }.

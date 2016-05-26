@@ -2,5 +2,5 @@ testing
 testCreationFromTwoWords
 	| parsed |
 
-	parsed := ETLObjectHeader parseFrom: self class twoWordHeader.
-	self assert: self class twoWordHeaderParsed equals: parsed.
+	parsed := ETLObjectHeader parseFrom: self class twoWordHeaderData.
+	self assert: self class twoWordHeader equals: parsed.

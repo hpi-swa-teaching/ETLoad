@@ -1,6 +1,11 @@
 constants
 twoWordHeader
-	"Two word example object header."
+	"Example two word header."
 
-	^ { 2r01010101010101010101010101010101 .
-	     2r00010101010101011011001010101001 }.
+	^ ETLObjectHeader new
+		objectHash: 2r101010101010;
+		compactClassIndex: nil;
+		classOop: 2r01010101010101010101010101010100;
+		objectFormat: 2r0010;
+		sizeInWords: 2r101010;
+		yourself.
