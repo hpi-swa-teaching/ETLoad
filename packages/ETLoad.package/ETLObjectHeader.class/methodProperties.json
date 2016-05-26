@@ -11,13 +11,13 @@
 		"parseFromBaseHeader:andClassHeader:" : "DS 5/25/2016 18:07",
 		"parseFromBaseHeader:andClassHeader:andSizeHeader:" : "DS 5/25/2016 18:11" },
 	"instance" : {
-		"classOop" : "DS 5/25/2016 18:17",
-		"classOop:" : "DS 5/25/2016 14:42",
-		"compactClassIndex" : "DS 5/25/2016 18:17",
-		"compactClassIndex:" : "DS 5/25/2016 14:42",
-		"objectFormat" : "DS 5/25/2016 18:18",
-		"objectFormat:" : "DS 5/25/2016 14:43",
-		"objectHash" : "DS 5/25/2016 18:18",
-		"objectHash:" : "DS 5/25/2016 14:43",
-		"sizeInWords" : "DS 5/25/2016 18:18",
-		"sizeInWords:" : "DS 5/25/2016 14:42" } }
+		"classOop" : "DS 5/26/2016 10:35",
+		"classOop:" : "DS 5/26/2016 10:35",
+		"compactClassIndex" : "DS 5/26/2016 10:35",
+		"compactClassIndex:" : "DS 5/26/2016 10:35",
+		"objectFormat" : "DS 5/26/2016 10:36",
+		"objectFormat:" : "DS 5/26/2016 10:36",
+		"objectHash" : "DS 5/26/2016 10:36",
+		"objectHash:" : "DS 5/26/2016 10:36",
+		"sizeInWords" : "DS 5/26/2016 10:36",
+		"sizeInWords:" : "DS 5/26/2016 10:36" } }

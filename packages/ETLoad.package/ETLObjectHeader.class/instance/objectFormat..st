@@ -1,3 +1,3 @@
 accessing
 objectFormat: anObject
-	objectFormat := anObject
+	objectFormat := anObject.

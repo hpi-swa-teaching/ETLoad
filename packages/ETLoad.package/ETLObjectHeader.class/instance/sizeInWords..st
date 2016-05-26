@@ -1,3 +1,3 @@
 accessing
 sizeInWords: anObject
-	sizeInWords := anObject
+	sizeInWords := anObject.

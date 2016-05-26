@@ -1,3 +1,3 @@
 accessing
 compactClassIndex: anObject
-	compactClassIndex := anObject
+	compactClassIndex := anObject.

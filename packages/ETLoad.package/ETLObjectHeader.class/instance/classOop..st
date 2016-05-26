@@ -1,3 +1,3 @@
 accessing
 classOop: anObject
-	classOop := anObject
+	classOop := anObject.

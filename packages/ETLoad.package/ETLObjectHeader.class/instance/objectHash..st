@@ -1,3 +1,3 @@
 accessing
 objectHash: anObject
-	objectHash := anObject
+	objectHash := anObject.
