@@ -1,4 +1,4 @@
-private
+parsing
 parseAllHeaders
 	"Parses all object headers from the current position until no more data is available."
 	

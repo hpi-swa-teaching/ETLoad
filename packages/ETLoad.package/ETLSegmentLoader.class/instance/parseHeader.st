@@ -1,4 +1,4 @@
-private
+parsing
 parseHeader
 	"Parses a single object header from the current position in the stream."
 	| headerSize |
