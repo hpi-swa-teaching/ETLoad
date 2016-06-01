@@ -5,8 +5,8 @@ objectsWithDummyContentData
 	
 	^ WordArrayForSegment
 		newFrom: (self oneWordHeaderData,
-				    (0 to: self oneWordHeader sizeInWords - 2),
+				    (0 to: self oneWordHeader objectSizeInWords - 2),
 				    self twoWordHeaderData,
-				    (0 to: self twoWordHeader sizeInWords - 2),
+				    (0 to: self twoWordHeader objectSizeInWords - 2),
 				    self threeWordHeaderData,
-				    (0 to: self threeWordHeader sizeInWords - 2)).
+				    (0 to: self threeWordHeader objectSizeInWords - 2)).

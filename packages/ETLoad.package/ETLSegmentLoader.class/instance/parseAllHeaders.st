@@ -5,5 +5,5 @@ parseAllHeaders
 	^ Array streamContents: [ :collectionStream |
 		[ self stream atEnd ] whileFalse: [ | header |
 			header := self parseHeader.
-			self stream skip: header sizeInWords - 1.
+			self stream skip: header objectSizeInWords - 1.
 			collectionStream nextPut: header. ]. ].

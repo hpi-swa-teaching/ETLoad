@@ -7,9 +7,9 @@ parseToPlaceholder
 	stream := ReadStream 
 		on: self data 
 		from: self stream position + 1
-		to: self stream position + header sizeInWords.
+		to: self stream position + header objectSizeInWords.
 		
-	self stream skip: header sizeInWords - 1.
+	self stream skip: header objectSizeInWords - 1.
 	
 	^ ETLPlaceholderObject newFrom: header and: stream.
 	

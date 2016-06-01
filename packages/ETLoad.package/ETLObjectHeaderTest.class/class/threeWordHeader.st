@@ -7,5 +7,5 @@ threeWordHeader
 		compactClassIndex: nil;
 		classOop: 2r01010101010101010101010101010100;
 		objectFormat: 2r0010;
-		sizeInWords: 2r11001100;
+		objectSizeInWords: 2r11001100;
 		yourself.
