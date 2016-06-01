@@ -1,0 +1,15 @@
+{
+	"category" : "ETLoad-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"header",
+		"bodyStream" ],
+	"name" : "ETLPlaceholderObject",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
