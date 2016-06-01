@@ -11,13 +11,16 @@
 		"parseFromBaseHeader:andClassHeader:" : "DS 5/26/2016 10:45",
 		"parseFromBaseHeader:andClassHeader:andSizeHeader:" : "DS 5/26/2016 10:45" },
 	"instance" : {
+		"=" : "DS 5/25/2016 19:19",
 		"classOop" : "DS 5/26/2016 10:35",
 		"classOop:" : "DS 5/26/2016 10:35",
 		"compactClassIndex" : "DS 5/26/2016 10:35",
 		"compactClassIndex:" : "DS 5/26/2016 10:35",
+		"hash" : "DS 5/25/2016 22:09",
 		"objectFormat" : "DS 5/26/2016 10:36",
 		"objectFormat:" : "DS 5/26/2016 10:36",
 		"objectHash" : "DS 5/26/2016 10:36",
 		"objectHash:" : "DS 5/26/2016 10:36",
+		"printString" : "DS 5/26/2016 10:07",
 		"sizeInWords" : "DS 5/26/2016 10:36",
 		"sizeInWords:" : "DS 5/26/2016 10:36" } }

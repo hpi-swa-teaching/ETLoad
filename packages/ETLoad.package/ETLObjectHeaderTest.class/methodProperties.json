@@ -1,8 +1,17 @@
 {
 	"class" : {
-		 },
+		"headersOfObjectsWithDummyContent" : "DS 5/26/2016 09:46",
+		"objectsWithDummyContentData" : "DS 5/26/2016 09:48",
+		"oneWordHeader" : "DS 5/26/2016 09:39",
+		"oneWordHeaderData" : "DS 5/26/2016 09:39",
+		"threeWordHeader" : "DS 5/26/2016 09:39",
+		"threeWordHeaderData" : "DS 5/26/2016 09:40",
+		"twoWordHeader" : "DS 5/26/2016 09:40",
+		"twoWordHeaderData" : "DS 5/26/2016 09:40" },
 	"instance" : {
-		"testCreationFromOneWord" : "DS 5/25/2016 17:25",
-		"testCreationFromThreeWords" : "DS 5/25/2016 18:10",
-		"testCreationFromTwoWords" : "DS 5/25/2016 18:04",
-		"testDeterminationOfHeaderSize" : "DS 5/25/2016 17:59" } }
+		"testCreationFromOneWord" : "DS 5/26/2016 09:27",
+		"testCreationFromThreeWords" : "DS 5/26/2016 09:28",
+		"testCreationFromTwoWords" : "DS 5/26/2016 09:28",
+		"testDeterminationOfHeaderSize" : "DS 5/25/2016 17:59",
+		"testEquality" : "DS 5/25/2016 19:30",
+		"testHashing" : "DS 5/25/2016 22:09" } }
