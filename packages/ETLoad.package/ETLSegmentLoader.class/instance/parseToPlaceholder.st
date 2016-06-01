@@ -7,7 +7,7 @@ parseToPlaceholder
 	stream := ReadStream 
 		on: self data 
 		from: self stream position + 1
-		to: self stream position + header objectSizeInWords.
+		to: self stream position + header objectSizeInWords - 1.
 		
 	self stream skip: header objectSizeInWords - 1.
 	
