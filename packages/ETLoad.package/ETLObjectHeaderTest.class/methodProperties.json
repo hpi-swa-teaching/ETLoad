@@ -1,15 +1,10 @@
 {
 	"class" : {
-		"oneWordHeader" : "tcf 6/1/2016 14:50",
-		"oneWordHeaderData" : "DS 5/26/2016 09:39",
-		"threeWordHeader" : "tcf 6/1/2016 14:50",
-		"threeWordHeaderData" : "DS 5/26/2016 09:40",
-		"twoWordHeader" : "tcf 6/1/2016 14:50",
-		"twoWordHeaderData" : "DS 5/26/2016 09:40" },
+		 },
 	"instance" : {
-		"testCreationFromOneWord" : "DS 5/26/2016 09:27",
-		"testCreationFromThreeWords" : "DS 5/26/2016 09:28",
-		"testCreationFromTwoWords" : "DS 5/26/2016 09:28",
+		"testCreationFromOneWord" : "tcf 6/1/2016 15:13",
+		"testCreationFromThreeWords" : "tcf 6/1/2016 15:16",
+		"testCreationFromTwoWords" : "tcf 6/1/2016 15:16",
 		"testDeterminationOfHeaderSize" : "DS 5/25/2016 17:59",
 		"testEquality" : "tcf 6/1/2016 14:51",
 		"testHashing" : "tcf 6/1/2016 14:50" } }

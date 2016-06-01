@@ -2,5 +2,5 @@ testing
 testCreationFromThreeWords
 	| parsed |
 	
-	parsed := ETLObjectHeader parseFrom: self class threeWordHeaderData.
-	self assert: self class threeWordHeader equals: parsed.
+	parsed := ETLObjectHeader parseFrom: ETLTestData threeWordHeaderData.
+	self assert: ETLTestData threeWordHeader equals: parsed.
