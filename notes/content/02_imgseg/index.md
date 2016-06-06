@@ -3,7 +3,7 @@ chapter = true
 date = "2016-05-18T14:23:20+02:00"
 icon = "<b>2. </b>"
 prev = "/01_upgrades/fonts/"
-next = "/02_imgseg/Object_Header/"
+next = "/02_imgseg/object-header/"
 title = "Image Segment"
 weight = 0
 +++

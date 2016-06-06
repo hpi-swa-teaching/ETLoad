@@ -1,14 +1,10 @@
 +++
-chapter = true
-date = "2016-05-18T14:23:20+02:00"
-icon = "<b>2. </b>"
+date = "2016-06-06T19:18:21+02:00"
 prev = "/02_imgseg/"
 next = "/_x_resources/"
-title = "Object_Headers"
+title = "Object Headers"
 weight = 10
 +++
-
-# Object Headers
 
 The header of a Squeak object contains of up to three words with the size of 4 Bytes.
 The first is the so called base header and is always present.
