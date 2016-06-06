@@ -6,7 +6,7 @@ title = "Object Headers"
 weight = 10
 +++
 
-The header of a Squeak object contains of up to three words with the size of 4 Bytes.
+The header of a Squeak object contains of up to three words with the size of 4 bytes.
 The first is the so called base header and is always present.
 The second is the full class pointer of the object, it has an offset of -4 and isn't present all the time.
 The third word is also optional, it has an offset of -8 and contains the size in words of an object.
@@ -24,24 +24,24 @@ Now we need to know which information are stored in the base header:
 | 15-19         | compact class index                                 |
 | 20-23         | object format                                       |
 | 24-29         | size in words                                       |
-| 30-31         | Header type                                         |
+| 30-31         | header type                                         |
 
-The storage management information  and the object hash weren't interesting for us.
+The storage management information and the object hash weren't interesting for us.
 
 The compact class index is an alternative to the full class pointer of the object if the class is one of 32 special classes ('Compact Classes').
 
 The object format gives information about the format of the object. In the table below you can see the meaning of each number:
 
-| Number          | Meaning                                             |
+| Number        | Meaning                                             |
 | ------------- |:---------------------------------------------------:|
-| 0           |  no fields                                 |
-| 1          | fixed pointer fields                                         |
-| 2         | indexable pointer fields                              |
-| 3         | both fixed and indexale pointer fields                                      |
-| 4+5        | not used                                       |
-| 6         | indexable word fields (no pointer)                                         |
-| 7         | not used                                        |
-| 8-11         | indexable byte fields (no pointers): low 2 bits are low 2 bits of size in bytes                                         |
-| 12-15         | compiled methods: low 2 bits are low 2 bits of size in bytes. The number of literals is specified in method header, followed by the indexable bytes that store byte codes.                                         |
+| 0             |  no fields                                          |
+| 1             | fixed pointer fields                                |
+| 2             | indexable pointer fields                            |
+| 3             | both fixed and indexable pointer fields             |
+| 4+5           | not used                                            |
+| 6             | indexable word fields (no pointer)                  |
+| 7             | not used                                            |
+| 8-11          | indexable byte fields (no pointers): low 2 bits are low 2 bits of size in bytes |
+| 12-15         | compiled methods: low 2 bits are low 2 bits of size in bytes. The number of literals is specified in method header, followed by the indexable bytes that store byte codes. |
 
 The size in in words stores the objects size if it isn't bigger than 64 words.
