@@ -7,5 +7,5 @@ oneWordHeader
 		compactClassIndex: 2r11011;
 		classOop: nil;
 		objectFormat: 2r0010;
-		sizeInWords: 2r101010;
+		objectSizeInWords: 2r101010;
 		yourself.

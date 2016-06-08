@@ -1,0 +1,14 @@
+{
+	"category" : "ETLoad-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "ETLTestData",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

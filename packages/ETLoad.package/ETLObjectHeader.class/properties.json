@@ -6,7 +6,7 @@
 		 ],
 	"commentStamp" : "DS 5/25/2016 14:41",
 	"instvars" : [
-		"sizeInWords",
+		"objectSizeInWords",
 		"compactClassIndex",
 		"classOop",
 		"objectHash",

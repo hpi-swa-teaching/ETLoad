@@ -7,7 +7,7 @@ testEquality
 		compactClassIndex: nil;
 		classOop: 123456789;
 		objectFormat: 2r0010;
-		sizeInWords: 31;
+		objectSizeInWords: 31;
 		yourself.
 	self assert: header equals: header copy.
 	
@@ -32,6 +32,6 @@ testEquality
 	self deny: (header = changedFormat).
 	
 	changedSize := header copy
-		sizeInWords: 1;
+		objectSizeInWords: 1;
 		yourself.
 	self deny: (header = changedSize).

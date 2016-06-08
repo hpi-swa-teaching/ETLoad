@@ -6,4 +6,4 @@ comparing
 		and: [ self compactClassIndex = anObjectHeader compactClassIndex. ]
 		and: [ self objectFormat = anObjectHeader objectFormat. ]
 		and: [ self objectHash = anObjectHeader objectHash. ]
-		and: [ self sizeInWords = anObjectHeader sizeInWords. ].
+		and: [ self objectSizeInWords = anObjectHeader objectSizeInWords. ].

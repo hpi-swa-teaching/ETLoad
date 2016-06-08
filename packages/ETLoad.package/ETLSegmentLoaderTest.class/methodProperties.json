@@ -3,5 +3,6 @@
 		 },
 	"instance" : {
 		"testInstanceCreationWithFrom" : "DS 5/25/2016 14:22",
-		"testParsingOfAllHeaders" : "DS 5/26/2016 09:48",
-		"testParsingOfSingleHeader" : "DS 5/26/2016 09:38" } }
+		"testParsingAllToPlaceholders" : "DS 6/8/2016 14:37",
+		"testParsingOfSingleHeader" : "tcf 6/1/2016 15:14",
+		"testParsingToPlaceholder" : "tcf 6/1/2016 15:14" } }

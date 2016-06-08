@@ -1,17 +1,17 @@
 testing
 testParsingOfSingleHeader
 	self
-		assert: ETLObjectHeaderTest oneWordHeader
+		assert: ETLTestData oneWordHeader
 		equals: (ETLSegmentLoader
-			from: ETLObjectHeaderTest oneWordHeaderData)
+			from: ETLTestData oneWordHeaderData)
 			parseHeader.
 	self
-		assert: ETLObjectHeaderTest twoWordHeader
+		assert: ETLTestData twoWordHeader
 		equals: (ETLSegmentLoader
-			from: ETLObjectHeaderTest twoWordHeaderData)
+			from: ETLTestData twoWordHeaderData)
 			parseHeader.
 	self
-		assert: ETLObjectHeaderTest threeWordHeader
+		assert: ETLTestData threeWordHeader
 		equals: (ETLSegmentLoader
-			from: ETLObjectHeaderTest threeWordHeaderData)
+			from: ETLTestData threeWordHeaderData)
 			parseHeader.	
