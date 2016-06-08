@@ -5,12 +5,10 @@ testParsingAllToPlaceholders
 	loader := ETLSegmentLoader from: ETLTestData objectSetData.
 	placeholderMap := loader parseAllToPlaceholders.
 	
-	self 
-		assert: ETLTestData objectSetHeaders asBag
-		equals: (placeholderMap values collect: [ :each | each header. ]) asBag.
-	self 
-		assert: ETLTestData objectSetContents asBag
-		equals: (placeholderMap values collect: [ :each | each bodyStream upToEnd asArray. ]) asBag.
-	self assert: ETLTestData objectSetOops asBag equals: placeholderMap keys asBag.
+	self assert: (placeholderMap associations allSatisfy: [ :association |
+		ETLTestData objectSetExpectedPlaceholderVerifiers
+			at: association key
+			ifPresent: [ :testBlock | testBlock value: association value. ]
+			ifAbsent: [ false. ]. ]).
 	self assert: loader stream atEnd.
 	
