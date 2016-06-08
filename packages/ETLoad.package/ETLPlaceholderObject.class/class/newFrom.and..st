@@ -1,4 +1,4 @@
-as yet unclassified
+instance creation
 newFrom: header and: bodyStream
 	"Create a new placeholder object with the given arguments."
 
