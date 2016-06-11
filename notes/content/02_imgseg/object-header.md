@@ -44,4 +44,4 @@ The object format gives information about the format of the object. In the table
 | 8-11          | indexable byte fields (no pointers): low 2 bits are low 2 bits of size in bytes |
 | 12-15         | compiled methods: low 2 bits are low 2 bits of size in bytes. The number of literals is specified in method header, followed by the indexable bytes that store byte codes. |
 
-The size in in words stores the objects size if it isn't bigger than 64 words.
+the `size in words` field is used to store the object size unless it exceeds 64 words.
