@@ -87,6 +87,129 @@
     </item>
     
     <item>
+      <title>Object Headers</title>
+      <link>http://etoys-notes.xyz/02_imgseg/object-header/</link>
+      <pubDate>Mon, 06 Jun 2016 19:18:21 +0200</pubDate>
+      
+      <guid>http://etoys-notes.xyz/02_imgseg/object-header/</guid>
+      <description>&lt;p&gt;The header of a Squeak object contains of up to three words with the size of 4 bytes.
+The first is the so called base header and is always present.
+The second is the full class pointer of the object, it has an offset of -4 and isn&amp;rsquo;t present all the time.
+The third word is also optional, it has an offset of -8 and contains the size in words of an object.&lt;/p&gt;
+
+&lt;p&gt;Besides the main information every part of the header contains 2 bit which say, how big the header is.
+( 0: just the base header is present, 1: the base header and the full class pointer are present, 3: The header contains all three words)&lt;/p&gt;
+
+&lt;p&gt;Now we need to know which information are stored in the base header:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Bits&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Content&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0-2&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;storage management information&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;3-14&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;object hash&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;15-19&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;compact class index&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;20-23&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;object format&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;24-29&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;size in words&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;30-31&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;header type&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The storage management information and the object hash weren&amp;rsquo;t interesting for us.&lt;/p&gt;
+
+&lt;p&gt;The compact class index is an alternative to the full class pointer of the object if the class is one of 32 special classes (&amp;lsquo;Compact Classes&amp;rsquo;).&lt;/p&gt;
+
+&lt;p&gt;The object format gives information about the format of the object. In the table below you can see the meaning of each number:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Number&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Meaning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;no fields&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;fixed pointer fields&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;indexable pointer fields&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;both fixed and indexable pointer fields&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;4+5&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;not used&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;indexable word fields (no pointer)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;not used&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;8-11&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;indexable byte fields (no pointers): low 2 bits are low 2 bits of size in bytes&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;12-15&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;compiled methods: low 2 bits are low 2 bits of size in bytes. The number of literals is specified in method header, followed by the indexable bytes that store byte codes.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The &lt;code&gt;size in words&lt;/code&gt; field is used to store the object size unless it exceeds 64 words.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Git MergeDriver</title>
       <link>http://etoys-notes.xyz/00_setup/git-merge-driver/</link>
       <pubDate>Thu, 19 May 2016 14:22:21 +0200</pubDate>

@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Class Replacements</title>
+    <title>Object Headers</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -129,7 +129,7 @@ dd:after {
       
       
 
-      <li class="dd-item  parent" data-nav-id="/01_upgrades/">
+      <li class="dd-item  " data-nav-id="/01_upgrades/">
         <a href="/01_upgrades/">
           <span>
             
@@ -152,7 +152,7 @@ dd:after {
           
           
           
-            <li class="dd-item active" data-nav-id="/01_upgrades/class-replacements/">
+            <li class="dd-item " data-nav-id="/01_upgrades/class-replacements/">
               <a href="/01_upgrades/class-replacements/">
                 <span>Class Replacements</span>
               </a>
@@ -175,7 +175,7 @@ dd:after {
       
       
 
-      <li class="dd-item  " data-nav-id="/02_imgseg/">
+      <li class="dd-item  parent" data-nav-id="/02_imgseg/">
         <a href="/02_imgseg/">
           <span>
             
@@ -190,7 +190,7 @@ dd:after {
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/object-header/">
+            <li class="dd-item active" data-nav-id="/02_imgseg/object-header/">
               <a href="/02_imgseg/object-header/">
                 <span>Object Headers</span>
               </a>
@@ -246,17 +246,17 @@ dd:after {
                   
                 
                   
+                
+                  
                     
                     
-                <a href="/01_upgrades/" itemprop="url"><span itemprop="title">Upgrades</span></a> <i class="fa fa-angle-right"></i>
+                <a href="/02_imgseg/" itemprop="url"><span itemprop="title">Image Segment</span></a> <i class="fa fa-angle-right"></i>
                     
                   
                 
                   
                 
-                  
-                
-                <span itemprop="title"> Class Replacements</span>
+                <span itemprop="title"> Object Headers</span>
               </div>
               
 
@@ -264,17 +264,123 @@ dd:after {
             
     	        <div id="body-inner">
                 
-                <h1>Class Replacements</h1>
+                <h1>Object Headers</h1>
                 
 
-<p>The following is a list of classes which no longer exist and have for now been replaced by other classes, usually a super class, if available:</p>
+<p>The header of a Squeak object contains of up to three words with the size of 4 bytes.
+The first is the so called base header and is always present.
+The second is the full class pointer of the object, it has an offset of -4 and isn&rsquo;t present all the time.
+The third word is also optional, it has an offset of -8 and contains the size in words of an object.</p>
 
-<dl>
-<dt><code>MultiNewParagraph</code></dt>
-<dd>⇒ <code>NewParagraph</code></dd>
-<dt><code>UserText</code></dt>
-<dd>⇒ <code>TextMorph</code></dd>
-</dl>
+<p>Besides the main information every part of the header contains 2 bit which say, how big the header is.
+( 0: just the base header is present, 1: the base header and the full class pointer are present, 3: The header contains all three words)</p>
+
+<p>Now we need to know which information are stored in the base header:</p>
+
+<table>
+<thead>
+<tr>
+<th>Bits</th>
+<th align="center">Content</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>0-2</td>
+<td align="center">storage management information</td>
+</tr>
+
+<tr>
+<td>3-14</td>
+<td align="center">object hash</td>
+</tr>
+
+<tr>
+<td>15-19</td>
+<td align="center">compact class index</td>
+</tr>
+
+<tr>
+<td>20-23</td>
+<td align="center">object format</td>
+</tr>
+
+<tr>
+<td>24-29</td>
+<td align="center">size in words</td>
+</tr>
+
+<tr>
+<td>30-31</td>
+<td align="center">header type</td>
+</tr>
+</tbody>
+</table>
+
+<p>The storage management information and the object hash weren&rsquo;t interesting for us.</p>
+
+<p>The compact class index is an alternative to the full class pointer of the object if the class is one of 32 special classes (&lsquo;Compact Classes&rsquo;).</p>
+
+<p>The object format gives information about the format of the object. In the table below you can see the meaning of each number:</p>
+
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th align="center">Meaning</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>0</td>
+<td align="center">no fields</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td align="center">fixed pointer fields</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td align="center">indexable pointer fields</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td align="center">both fixed and indexable pointer fields</td>
+</tr>
+
+<tr>
+<td>4+5</td>
+<td align="center">not used</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td align="center">indexable word fields (no pointer)</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td align="center">not used</td>
+</tr>
+
+<tr>
+<td>8-11</td>
+<td align="center">indexable byte fields (no pointers): low 2 bits are low 2 bits of size in bytes</td>
+</tr>
+
+<tr>
+<td>12-15</td>
+<td align="center">compiled methods: low 2 bits are low 2 bits of size in bytes. The number of literals is specified in method header, followed by the indexable bytes that store byte codes.</td>
+</tr>
+</tbody>
+</table>
+
+<p>The <code>size in words</code> field is used to store the object size unless it exceeds 64 words.</p>
 
 
       
@@ -282,8 +388,8 @@ dd:after {
     </div>
 
     <div id="navigation">
-        <a class="nav nav-prev" href="/01_upgrades/project-bug/"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/01_upgrades/fonts/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/02_imgseg/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/_x_resources/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>
