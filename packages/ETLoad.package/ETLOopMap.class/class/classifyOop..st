@@ -4,8 +4,8 @@ classifyOop: anOop
 	
 	^ ((anOop bitAnd: 1) = 1) 
 		ifTrue: [ #smallInteger. ]
-		ifFalse: [ (anOop isDivisibleBy: 4) 
-			ifTrue: [ anOop > 16r80000000 
+		ifFalse: [ (anOop isDivisibleBy: self wordSize) 
+			ifTrue: [ anOop > self outPointerBaseAddress
 				ifTrue: [ #outPointer. ] 
 				ifFalse: [ #segmentInternalPointer. ]. ]
 			ifFalse: [ #invalid. ]. ].

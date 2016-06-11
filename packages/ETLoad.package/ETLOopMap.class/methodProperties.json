@@ -1,11 +1,13 @@
 {
 	"class" : {
-		"classifyOop:" : "DS 6/11/2016 11:02",
-		"toSmallInteger:" : "DS 6/11/2016 11:21" },
+		"classifyOop:" : "DS 6/11/2016 13:35",
+		"outPointerBaseAddress" : "DS 6/11/2016 13:34",
+		"toSmallInteger:" : "DS 6/11/2016 11:21",
+		"wordSize" : "DS 6/11/2016 13:31" },
 	"instance" : {
 		"initialize" : "DS 6/11/2016 11:50",
 		"internalObjects" : "DS 6/11/2016 11:49",
 		"internalObjects:" : "DS 6/11/2016 11:49",
 		"outPointers" : "DS 6/11/2016 11:49",
 		"outPointers:" : "DS 6/11/2016 11:49",
-		"resolveOutPointer:ifInvalid:" : "DS 6/11/2016 12:20" } }
+		"resolveOutPointer:ifInvalid:" : "DS 6/11/2016 13:36" } }
