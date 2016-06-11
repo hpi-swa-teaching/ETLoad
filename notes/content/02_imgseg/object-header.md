@@ -1,7 +1,7 @@
 +++
 date = "2016-06-06T19:18:21+02:00"
 prev = "/02_imgseg/"
-next = "/_x_resources/"
+next = "/02_imgseg/loading-process"
 title = "Object Headers"
 weight = 10
 +++
