@@ -254,6 +254,48 @@ From now on &lt;code&gt;git merge&lt;/code&gt; should work as expected.&lt;/p&gt
     </item>
     
     <item>
+      <title>Loading Process</title>
+      <link>http://etoys-notes.xyz/02_imgseg/loading-process/</link>
+      <pubDate>Sat, 11 Jun 2016 11:23:21 +0200</pubDate>
+      
+      <guid>http://etoys-notes.xyz/02_imgseg/loading-process/</guid>
+      <description>&lt;p&gt;We load segments with the following algorithm:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For the entire segment:
+
+&lt;ul&gt;
+&lt;li&gt;Load header&lt;/li&gt;
+&lt;li&gt;Create placeholder&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;For all placeholders:
+
+&lt;ul&gt;
+&lt;li&gt;Acquire class oop&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;While not all objects loaded:
+
+&lt;ul&gt;
+&lt;li&gt;For all placeholder objects:
+
+&lt;ul&gt;
+&lt;li&gt;If class is loaded, load object&lt;/li&gt;
+&lt;li&gt;Else do nothing, class will be loaded in a subsequent iteration&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Each object is loaded with the following steps:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;class basicNew&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Write fields via primitives&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;self becomeForward: createdObject&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Class Replacements</title>
       <link>http://etoys-notes.xyz/01_upgrades/class-replacements/</link>
       <pubDate>Wed, 18 May 2016 13:42:44 +0200</pubDate>

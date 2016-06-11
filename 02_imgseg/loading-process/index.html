@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Git MergeDriver</title>
+    <title>Loading Process</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -99,7 +99,7 @@ dd:after {
       
       
 
-      <li class="dd-item  parent" data-nav-id="/00_setup/">
+      <li class="dd-item  " data-nav-id="/00_setup/">
         <a href="/00_setup/">
           <span>
             
@@ -114,7 +114,7 @@ dd:after {
           
           
           
-            <li class="dd-item active" data-nav-id="/00_setup/git-merge-driver/">
+            <li class="dd-item " data-nav-id="/00_setup/git-merge-driver/">
               <a href="/00_setup/git-merge-driver/">
                 <span>Git MergeDriver</span>
               </a>
@@ -175,7 +175,7 @@ dd:after {
       
       
 
-      <li class="dd-item  " data-nav-id="/02_imgseg/">
+      <li class="dd-item  parent" data-nav-id="/02_imgseg/">
         <a href="/02_imgseg/">
           <span>
             
@@ -198,7 +198,7 @@ dd:after {
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/loading-process/">
+            <li class="dd-item active" data-nav-id="/02_imgseg/loading-process/">
               <a href="/02_imgseg/loading-process/">
                 <span>Loading Process</span>
               </a>
@@ -252,19 +252,19 @@ dd:after {
                 
                 
                   
+                
+                  
+                
+                  
                     
                     
-                <a href="/00_setup/" itemprop="url"><span itemprop="title">Setup</span></a> <i class="fa fa-angle-right"></i>
+                <a href="/02_imgseg/" itemprop="url"><span itemprop="title">Image Segment</span></a> <i class="fa fa-angle-right"></i>
                     
                   
                 
                   
                 
-                  
-                
-                  
-                
-                <span itemprop="title"> Git MergeDriver</span>
+                <span itemprop="title"> Loading Process</span>
               </div>
               
 
@@ -272,25 +272,42 @@ dd:after {
             
     	        <div id="body-inner">
                 
-                <h1>Git MergeDriver</h1>
+                <h1>Loading Process</h1>
                 
 
-<p>Due to the dual use of monticello and git, there are some problems with merging.
-Git doesn&rsquo;t know how to merge monticello metadata files, causing a lot of merge conflicts.
-The solution for this problem that was presented in class is manually merging in Smalltalk first, and then committing the merged changes in git.</p>
-
-<p>This process can be automated by using the <a href="https://github.com/ThierryGoubier/GitFileTree-MergeDriver">filetree merge driver</a>.
-Unfortunately, it probably requires Linux or OSX (the merge script itself is a bash script).
-The setup is quite simple:</p>
+<p>We load segments with the following algorithm:</p>
 
 <ul>
-<li>Clone the git repository of the merge driver somewhere where it can stay</li>
-<li>Run <code>make</code> in the repositories root directory</li>
+<li>For the entire segment:
+
+<ul>
+<li>Load header</li>
+<li>Create placeholder</li>
+</ul></li>
+<li>For all placeholders:
+
+<ul>
+<li>Acquire class oop</li>
+</ul></li>
+<li>While not all objects loaded:
+
+<ul>
+<li>For all placeholder objects:
+
+<ul>
+<li>If class is loaded, load object</li>
+<li>Else do nothing, class will be loaded in a subsequent iteration</li>
+</ul></li>
+</ul></li>
 </ul>
 
-<p>This will have appended some lines to your git config (<code>~/.gitconfig</code>) to register the merge driver.
-Because our repository already contains a <code>.gitattributes</code> file which enables the merge driver for the appropriate files, this is all that needs to be done.
-From now on <code>git merge</code> should work as expected.</p>
+<p>Each object is loaded with the following steps:</p>
+
+<ul>
+<li><code>class basicNew</code></li>
+<li>Write fields via primitives</li>
+<li><code>self becomeForward: createdObject</code></li>
+</ul>
 
 
       
@@ -298,8 +315,8 @@ From now on <code>git merge</code> should work as expected.</p>
     </div>
 
     <div id="navigation">
-        <a class="nav nav-prev" href="/00_setup/"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/01_upgrades/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/02_imgseg/object-header/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/_x_resources/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>
