@@ -1,0 +1,1 @@
+An ETLOopMap interprets oops used inside an image segment and manages their associated objects.

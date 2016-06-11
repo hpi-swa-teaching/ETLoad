@@ -1,6 +1,6 @@
-pointer-classification
+oop-classification
 classifyOop: anOop
-	"Classifies the oop into one of four categories: #segmentInternalPointer, #outPointer, #smallInteger, #invalid."
+	"Classifies an oop into one of four categories: #segmentInternalPointer, #outPointer, #smallInteger, #invalid."
 	
 	^ ((anOop bitAnd: 1) = 1) 
 		ifTrue: [ #smallInteger. ]
