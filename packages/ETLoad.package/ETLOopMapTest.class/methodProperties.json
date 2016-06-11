@@ -2,9 +2,9 @@
 	"class" : {
 		 },
 	"instance" : {
-		"testAccessingOfInternalObjects" : "DS 6/11/2016 13:54",
 		"testConversionToSmallInteger" : "DS 6/11/2016 11:30",
 		"testCreationWithNewFrom" : "DS 6/11/2016 13:51",
 		"testOopClassification" : "DS 6/11/2016 11:13",
+		"testResolvingOfArbitraryOops" : "DS 6/11/2016 14:26",
 		"testResolvingOfInternalOops" : "DS 6/11/2016 14:07",
 		"testResolvingOfOutPointer" : "DS 6/11/2016 13:47" } }

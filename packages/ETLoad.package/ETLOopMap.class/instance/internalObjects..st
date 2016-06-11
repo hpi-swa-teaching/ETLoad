@@ -1,3 +1,3 @@
 accessing
 internalObjects: anObject
-	internalObjects := anObject
+	internalObjects := anObject.

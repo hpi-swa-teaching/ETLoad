@@ -1,3 +1,3 @@
 parsing
 stream
-	^ stream
+	^ stream.

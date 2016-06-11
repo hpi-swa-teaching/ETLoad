@@ -1,3 +1,3 @@
 accessing
 outPointers
-	^ outPointers
+	^ outPointers.

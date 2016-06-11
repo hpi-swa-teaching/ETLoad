@@ -6,9 +6,10 @@
 		"toSmallInteger:" : "DS 6/11/2016 11:21",
 		"wordSize" : "DS 6/11/2016 13:31" },
 	"instance" : {
-		"internalObjects" : "DS 6/11/2016 11:49",
-		"internalObjects:" : "DS 6/11/2016 11:49",
-		"outPointers" : "DS 6/11/2016 11:49",
-		"outPointers:" : "DS 6/11/2016 11:49",
+		"internalObjects" : "DS 6/11/2016 16:14",
+		"internalObjects:" : "DS 6/11/2016 16:14",
+		"outPointers" : "DS 6/11/2016 16:14",
+		"outPointers:" : "DS 6/11/2016 16:14",
+		"resolve:ifInvalid:" : "DS 6/11/2016 14:15",
 		"resolveInternalPointer:ifInvalid:" : "DS 6/11/2016 13:58",
 		"resolveOutPointer:ifInvalid:" : "DS 6/11/2016 13:36" } }

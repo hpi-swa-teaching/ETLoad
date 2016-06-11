@@ -1,3 +1,3 @@
 accessing
 outPointers: anObject
-	outPointers := anObject
+	outPointers := anObject.

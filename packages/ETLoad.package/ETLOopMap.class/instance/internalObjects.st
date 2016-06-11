@@ -1,3 +1,3 @@
 accessing
 internalObjects
-	^ internalObjects
+	^ internalObjects.

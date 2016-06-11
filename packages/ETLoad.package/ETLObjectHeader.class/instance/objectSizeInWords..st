@@ -1,3 +1,3 @@
 accessing
 objectSizeInWords: anObject
-	objectSizeInWords := anObject
+	objectSizeInWords := anObject.
