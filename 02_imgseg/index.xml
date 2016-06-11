@@ -194,5 +194,47 @@ The third word is also optional, it has an offset of -8 and contains the size in
 </description>
     </item>
     
+    <item>
+      <title>Test Image Segment Creation</title>
+      <link>http://etoys-notes.xyz/02_imgseg/test-segment-creation/</link>
+      <pubDate>Sat, 11 Jun 2016 14:30:26 +0200</pubDate>
+      
+      <guid>http://etoys-notes.xyz/02_imgseg/test-segment-creation/</guid>
+      <description>&lt;p&gt;To better support automated testing and experimentation, it was necessary to create minimal image segments, containing only specific, known objects.&lt;/p&gt;
+
+&lt;p&gt;Since the creation of minimal test image segments needs to happen in a Squeak 3 VM, which has no support for &lt;code&gt;filetree&lt;/code&gt;, the following method needs to be added manually to some class in the image:&lt;/p&gt;
+
+&lt;div class=&#34;notices note&#34; &gt;&lt;p&gt;This method probably only works for simple objects - classes, methods and out-pointers may or may not be exported correctly.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #447fcf&#34;&gt;dumpSimpleImageSegmentTo:&lt;/span&gt; &lt;span style=&#34;color: #40ffff&#34;&gt;fileName&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;withRoots:&lt;/span&gt; &lt;span style=&#34;color: #40ffff&#34;&gt;rootArray&lt;/span&gt;
+
+&lt;span style=&#34;color: #d0d0d0&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color: #40ffff&#34;&gt; is fs sr symbolHolder &lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;|&lt;/span&gt;
+
+&lt;span style=&#34;color: #40ffff&#34;&gt;symbolHolder&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color: #447fcf; text-decoration: underline&#34;&gt;Symbol&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;allSymbols&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
+
+&lt;span style=&#34;color: #40ffff&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color: #447fcf; text-decoration: underline&#34;&gt;ImageSegment&lt;/span&gt; &lt;span style=&#34;color: #24909d&#34;&gt;new&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
+
+&lt;span style=&#34;color: #40ffff&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;copyFromRoots:&lt;/span&gt; &lt;span style=&#34;color: #40ffff&#34;&gt;rootArray&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;sizeHint:&lt;/span&gt; &lt;span style=&#34;color: #3677a9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;areUnique:&lt;/span&gt; &lt;span style=&#34;color: #24909d&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
+
+&lt;span style=&#34;color: #40ffff&#34;&gt;fs&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color: #447fcf; text-decoration: underline&#34;&gt;FileStream&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;fileNamed:&lt;/span&gt; &lt;span style=&#34;color: #40ffff&#34;&gt;fileName&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
+
+&lt;span style=&#34;color: #40ffff&#34;&gt;sr&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color: #447fcf; text-decoration: underline&#34;&gt;SmartRefStream&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;on:&lt;/span&gt; &lt;span style=&#34;color: #40ffff&#34;&gt;fs&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
+
+&lt;span style=&#34;color: #40ffff&#34;&gt;sr&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;nextPut:&lt;/span&gt; &lt;span style=&#34;color: #40ffff&#34;&gt;is&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
+
+&lt;span style=&#34;color: #40ffff&#34;&gt;sr&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;close&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
+
+&lt;span style=&#34;color: #40ffff&#34;&gt;fs&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;close&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
+
+&lt;span style=&#34;color: #40ffff&#34;&gt;symbolHolder&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then use as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #447fcf; text-decoration: underline&#34;&gt;Dummy&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;dumpSimpleImageSegmentTo:&lt;/span&gt; &lt;span style=&#34;color: #ed9d13&#34;&gt;&amp;#39;/tmp/iseg.dump&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;withRoots:&lt;/span&gt; { &lt;span style=&#34;color: #3677a9&#34;&gt;42&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color: #999999; font-style: italic&#34;&gt;&amp;quot;Hello Worlds&amp;quot;&lt;/span&gt; . &lt;span style=&#34;color: #447fcf; text-decoration: underline&#34;&gt;Object&lt;/span&gt; &lt;span style=&#34;color: #24909d&#34;&gt;new&lt;/span&gt; }&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

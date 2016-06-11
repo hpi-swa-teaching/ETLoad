@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Image Segment</title>
+    <title>Test Image Segment Creation</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -175,7 +175,7 @@ dd:after {
       
       
 
-      <li class="dd-item active parent" data-nav-id="/02_imgseg/">
+      <li class="dd-item  parent" data-nav-id="/02_imgseg/">
         <a href="/02_imgseg/">
           <span>
             
@@ -206,7 +206,7 @@ dd:after {
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/test-segment-creation/">
+            <li class="dd-item active" data-nav-id="/02_imgseg/test-segment-creation/">
               <a href="/02_imgseg/test-segment-creation/">
                 <span>Test Image Segment Creation</span>
               </a>
@@ -266,43 +266,65 @@ dd:after {
                   
                     
                     
+                <a href="/02_imgseg/" itemprop="url"><span itemprop="title">Image Segment</span></a> <i class="fa fa-angle-right"></i>
+                    
                   
                 
                   
                 
-                <span itemprop="title"> Image Segment</span>
+                <span itemprop="title"> Test Image Segment Creation</span>
               </div>
               
 
             </div>
             
-              <div id="chapter">
-            
     	        <div id="body-inner">
                 
+                <h1>Test Image Segment Creation</h1>
+                
 
+<p>To better support automated testing and experimentation, it was necessary to create minimal image segments, containing only specific, known objects.</p>
 
+<p>Since the creation of minimal test image segments needs to happen in a Squeak 3 VM, which has no support for <code>filetree</code>, the following method needs to be added manually to some class in the image:</p>
 
-<h1 id="image-segment">Image Segment</h1>
-
-<p>If no other errors occure during the loading process, attempting to load a Squeak 3 Project in Squeak 5 will result in an error (&rdquo;<code>Error: Segment has not been becommed into the loaded objects</code>&rdquo;) from <code>ImageSegment&gt;&gt;checkAndReportLoadError</code>, which is called immediatly after the primitive at <code>ImageSegment&gt;&gt;loadSegmentFrom:outPointers:</code>.</p>
-
-<div class="notices warning" ><p>The documentation of <code>ImageSegment&gt;&gt;loadSegmentFrom:outPointers:</code> states that &ldquo;[this primitive] will have destroyed the contents of the segment wordArray&rdquo; if it fails.</p>
+<div class="notices note" ><p>This method probably only works for simple objects - classes, methods and out-pointers may or may not be exported correctly.</p>
 </div>
 
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #447fcf">dumpSimpleImageSegmentTo:</span> <span style="color: #40ffff">fileName</span> <span style="color: #447fcf">withRoots:</span> <span style="color: #40ffff">rootArray</span>
 
-<p>As such it will probably be required to save a copy of the segment wordArray prior to executing this primitive. Then, should the primitive fail, an attempt can be made to load the ImageSegement &ldquo;manually&rdquo;.</p>
+<span style="color: #d0d0d0">|</span><span style="color: #40ffff"> is fs sr symbolHolder </span><span style="color: #d0d0d0">|</span>
+
+<span style="color: #40ffff">symbolHolder</span> <span style="color: #d0d0d0">:=</span> <span style="color: #447fcf; text-decoration: underline">Symbol</span> <span style="color: #447fcf">allSymbols</span><span style="color: #d0d0d0">.</span>
+
+<span style="color: #40ffff">is</span> <span style="color: #d0d0d0">:=</span> <span style="color: #447fcf; text-decoration: underline">ImageSegment</span> <span style="color: #24909d">new</span><span style="color: #d0d0d0">.</span>
+
+<span style="color: #40ffff">is</span> <span style="color: #447fcf">copyFromRoots:</span> <span style="color: #40ffff">rootArray</span> <span style="color: #447fcf">sizeHint:</span> <span style="color: #3677a9">0</span> <span style="color: #447fcf">areUnique:</span> <span style="color: #24909d">true</span><span style="color: #d0d0d0">.</span>
+
+<span style="color: #40ffff">fs</span> <span style="color: #d0d0d0">:=</span> <span style="color: #447fcf; text-decoration: underline">FileStream</span> <span style="color: #447fcf">fileNamed:</span> <span style="color: #40ffff">fileName</span><span style="color: #d0d0d0">.</span>
+
+<span style="color: #40ffff">sr</span> <span style="color: #d0d0d0">:=</span> <span style="color: #447fcf; text-decoration: underline">SmartRefStream</span> <span style="color: #447fcf">on:</span> <span style="color: #40ffff">fs</span><span style="color: #d0d0d0">.</span>
+
+<span style="color: #40ffff">sr</span> <span style="color: #447fcf">nextPut:</span> <span style="color: #40ffff">is</span><span style="color: #d0d0d0">.</span>
+
+<span style="color: #40ffff">sr</span> <span style="color: #447fcf">close</span><span style="color: #d0d0d0">.</span>
+
+<span style="color: #40ffff">fs</span> <span style="color: #447fcf">close</span><span style="color: #d0d0d0">.</span>
+
+<span style="color: #40ffff">symbolHolder</span><span style="color: #d0d0d0">.</span>
+</pre></div>
+
+<p>Then use as follows:</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #447fcf; text-decoration: underline">Dummy</span> <span style="color: #447fcf">dumpSimpleImageSegmentTo:</span> <span style="color: #ed9d13">&#39;/tmp/iseg.dump&#39;</span> <span style="color: #447fcf">withRoots:</span> { <span style="color: #3677a9">42</span> <span style="color: #d0d0d0">.</span> <span style="color: #999999; font-style: italic">&quot;Hello Worlds&quot;</span> . <span style="color: #447fcf; text-decoration: underline">Object</span> <span style="color: #24909d">new</span> }<span style="color: #d0d0d0">.</span>
+</pre></div>
 
 
-      
-        </div> 
       
       </div>
     </div>
 
     <div id="navigation">
-        <a class="nav nav-prev" href="/01_upgrades/fonts/"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/02_imgseg/object-header/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/02_imgseg/loading-process/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/_x_resources/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>
