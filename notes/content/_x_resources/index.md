@@ -2,7 +2,7 @@
 chapter = true
 date = "2016-05-18T08:47:54+02:00"
 icon = "<b>X. </b>"
-prev = "/02_imgseg/loading-process/"
+prev = "/02_imgseg/test-segment-creation/"
 next = ""
 title = "Resources"
 weight = 0
