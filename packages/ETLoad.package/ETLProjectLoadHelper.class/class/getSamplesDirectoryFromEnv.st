@@ -6,6 +6,10 @@ getSamplesDirectoryFromEnv
 	
 	directory := libc getenv: 'ETL_SAMPLES_DIRECTORY'.
 	
+	 directory ifNil: [
+  		self error: 'ETL_SAMPLE_DIRECTORY not set'.
+ 	].
+	
 	directory := FileDirectory on: directory.
 	
 	directory directoryEntry. "verify directory exists"
