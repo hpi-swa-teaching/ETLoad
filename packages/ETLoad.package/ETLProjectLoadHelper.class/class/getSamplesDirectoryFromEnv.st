@@ -4,7 +4,7 @@ getSamplesDirectoryFromEnv
 	
 	libc := LibCLibrary new.
 	
-	directory := libc getenv: 'ETL_SAMPLES_DIRECTORY'.
+	directory := libc getenv: 'ETL_SAMPLE_DIRECTORY'.
 	
 	 directory ifNil: [
   		self error: 'ETL_SAMPLE_DIRECTORY not set'.
