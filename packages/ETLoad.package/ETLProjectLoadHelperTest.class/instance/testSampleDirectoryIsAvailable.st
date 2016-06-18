@@ -1,0 +1,3 @@
+testing
+testSampleDirectoryIsAvailable
+	ETLProjectLoadHelper getSamplesDirectoryFromEnv. "raises if not available"

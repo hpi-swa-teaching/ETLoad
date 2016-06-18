@@ -5,4 +5,4 @@ baseline: spec
 		spec
 			package: 'System';
 			package: 'ETLoad' with: [
-				spec requires: 'System'. ]. ].
+				spec requires: 'System'; preLoadDoIt: #preLoad. ]. ].
