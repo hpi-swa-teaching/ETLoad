@@ -1,0 +1,15 @@
+{
+	"category" : "ETLoad-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "DS 6/11/2016 11:05",
+	"instvars" : [
+		"outPointers",
+		"internalObjects" ],
+	"name" : "ETLOopMap",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
