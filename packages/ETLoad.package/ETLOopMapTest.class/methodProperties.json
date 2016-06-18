@@ -2,9 +2,9 @@
 	"class" : {
 		 },
 	"instance" : {
-		"testConversionToSmallInteger" : "tcf 6/18/2016 11:20",
+		"testConversionToSmallInteger" : "DS 6/18/2016 14:15",
 		"testCreationWithNewFrom" : "DS 6/11/2016 13:51",
-		"testOopClassification" : "DS 6/11/2016 11:13",
-		"testResolvingOfArbitraryOops" : "tcf 6/18/2016 13:41",
+		"testOopClassification" : "DS 6/18/2016 14:11",
+		"testResolvingOfArbitraryOops" : "DS 6/18/2016 14:11",
 		"testResolvingOfInternalOops" : "tcf 6/18/2016 13:50",
 		"testResolvingOfOutPointers" : "tcf 6/18/2016 13:53" } }

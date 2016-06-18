@@ -1,6 +1,5 @@
 testing
 testOopClassification
-
 	self assert: #outPointer equals: (ETLOopMap classifyOop: 16r80000004).
 	self assert: #smallInteger equals: (ETLOopMap classifyOop: 16r80000005).
 	self assert: #smallInteger equals: (ETLOopMap classifyOop: 16r00000003).
