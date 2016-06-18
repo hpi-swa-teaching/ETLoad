@@ -1,7 +1,7 @@
 {
 	"category" : "ETLoad-Core",
 	"classinstvars" : [
-		 ],
+		"placeholderCallback" ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
