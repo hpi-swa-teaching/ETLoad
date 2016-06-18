@@ -1,10 +1,10 @@
 {
 	"class" : {
-		"getSamplesDirectoryFromEnv" : "TN 6/16/2016 12:23",
+		"getSamplesDirectoryFromEnv" : "TN 6/18/2016 12:52",
 		"loadProjectFromFile:" : "TN 6/2/2016 08:52",
 		"loadProjectFromFile:inDirectory:" : "TN 6/2/2016 09:02",
 		"loadSampleImageSegment:" : "TN 6/16/2016 12:13",
-		"loadSampleProjectFailSegementBecome:" : "TN 6/16/2016 12:20",
+		"loadSampleProjectFailSegmentBecome:" : "TN 6/18/2016 12:51",
 		"withCalendarMorph:" : "TN 6/16/2016 11:29" },
 	"instance" : {
 		 } }
