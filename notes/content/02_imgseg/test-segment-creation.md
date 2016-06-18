@@ -41,5 +41,5 @@ symbolHolder.
 Then use as follows:
 
 ```squeak
-Dummy dumpSimpleImageSegmentTo: '/tmp/iseg.dump' withRoots: { 42 . "Hello Worlds" . Object new }.
+Dummy dumpSimpleImageSegmentTo: '/tmp/iseg.dump' withRoots: { 42 . 'Hello World' . Object new }.
 ```
