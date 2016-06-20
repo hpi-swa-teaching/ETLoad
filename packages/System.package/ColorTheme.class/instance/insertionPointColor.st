@@ -1,3 +1,0 @@
-theme
-insertionPointColor
-	^ Color red

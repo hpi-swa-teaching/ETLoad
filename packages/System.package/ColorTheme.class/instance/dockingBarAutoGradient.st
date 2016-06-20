@@ -1,3 +1,0 @@
-theme - dockingbar
-dockingBarAutoGradient
-	^ true

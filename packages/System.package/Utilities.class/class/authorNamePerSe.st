@@ -1,4 +1,0 @@
-identification
-authorNamePerSe
-
-	^ AuthorName

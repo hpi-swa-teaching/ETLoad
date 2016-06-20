@@ -1,4 +1,0 @@
-accessing
-clearInterpreter
-
-	interpreter := nil.

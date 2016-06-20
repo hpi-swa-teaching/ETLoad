@@ -1,3 +1,0 @@
-initialization
-cleanUp
-	self removeObsolete.

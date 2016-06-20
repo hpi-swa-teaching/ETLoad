@@ -1,3 +1,0 @@
-private
-formChangedReminder
-	^[World newResourceLoaded].

@@ -1,4 +1,0 @@
-accessing
-allPreferences
-
-	^preferencesDictionary values

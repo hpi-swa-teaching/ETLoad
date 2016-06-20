@@ -1,3 +1,0 @@
-private
-defaultSize
-	^ 30

@@ -1,3 +1,0 @@
-initialization
-defaultBackgroundColor
-	^ self subclassResponsibility

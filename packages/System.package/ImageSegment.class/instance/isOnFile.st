@@ -1,3 +1,0 @@
-testing
-isOnFile
-	^ state == #onFile

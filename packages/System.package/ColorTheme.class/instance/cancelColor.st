@@ -1,3 +1,0 @@
-theme
-cancelColor
-	^ Color lightRed

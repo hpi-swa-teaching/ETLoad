@@ -1,1 +1,0 @@
-An ActionSequence is an array that lists the object's dependant objects.
