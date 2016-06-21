@@ -1,3 +1,0 @@
-private
-autoStarter
-	^AutoStart

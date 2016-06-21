@@ -1,3 +1,0 @@
-accessing
-maximumUsableArea
-	^self maximumUsableAreaInWorld: ActiveWorld

@@ -1,3 +1,0 @@
-preferences
-numberOfRecentSubmissionsToStore: anInteger
-	self default maximumSubmissionCount: anInteger

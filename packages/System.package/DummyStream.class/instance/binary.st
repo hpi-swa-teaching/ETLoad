@@ -1,3 +1,0 @@
-protocol
-binary
-	"do nothing"

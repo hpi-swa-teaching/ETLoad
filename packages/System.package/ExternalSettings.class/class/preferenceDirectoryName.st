@@ -1,3 +1,0 @@
-accessing
-preferenceDirectoryName
-	^'prefs'

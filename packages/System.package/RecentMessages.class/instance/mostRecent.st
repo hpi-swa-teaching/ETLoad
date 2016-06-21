@@ -1,3 +1,0 @@
-accessing
-mostRecent
-	^ methodReferences first

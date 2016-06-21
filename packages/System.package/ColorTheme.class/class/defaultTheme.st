@@ -1,3 +1,0 @@
-accessing
-defaultTheme
-	^ self new.

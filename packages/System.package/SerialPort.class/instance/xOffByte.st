@@ -1,4 +1,0 @@
-settings
-xOffByte
-
-	^ xOffByte

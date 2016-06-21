@@ -1,3 +1,0 @@
-SqueakMap
-squeakMapPackageVersion
-	^'16'

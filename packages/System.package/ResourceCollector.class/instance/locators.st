@@ -1,3 +1,0 @@
-accessing
-locators
-	^locatorMap values

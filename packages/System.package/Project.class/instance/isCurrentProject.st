@@ -1,4 +1,0 @@
-accessing
-isCurrentProject
-
-	^self == CurrentProject
