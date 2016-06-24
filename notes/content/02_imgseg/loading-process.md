@@ -1,9 +1,9 @@
 +++
 date = "2016-06-11T11:23:21+02:00"
-prev = "/02_imgseg/object-header/"
+prev = "/02_imgseg/object-formats/"
 next = "/02_imgseg/test-segment-creation/"
 title = "Loading Process"
-weight = 20
+weight = 30
 +++
 
 We load segments with the following algorithm:
@@ -20,7 +20,9 @@ We load segments with the following algorithm:
 
 Each object is loaded with the following steps:
 
-+ `class basicNew`
++ Create instance (with `class basicNew` or `class basicNew: size`)
 + Write fields via primitives
 + `self becomeForward: createdObject`
+
+The [object formats](/02_imgseg/object-formats/) page goes into more details about how to instantiate and fill objects of different formats.
 
