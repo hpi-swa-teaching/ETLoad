@@ -10,7 +10,7 @@ This page compares the different object storage formats available in Squeak vers
 Both Squeak versions store the format as a number internally (4 bit in Squeak 3, 5 bit in Squeak 5).
 These numbers will be mentioned for each format.
 
-Sources for Squeak 3 this include the article "Back to the future" found on the resources page, and for Squeak 5 the documentation on the `Behavior` class, for example `Behavior#instSpec`.
+Sources for Squeak 3 include the article "Back to the future" found on the resources page, and for Squeak 5 the documentation on the `Behavior` class, for example `Behavior#instSpec`.
 
 ## Formats present in both versions
 
@@ -28,7 +28,7 @@ Fixed (non-indexable) pointer fields
 
 Indexable pointer fields (without instance variables)
 :   Format for classes like `Array`.
-    Must be created with `class basicNew: size`, `class basicNew` throws an exception.
+    Must be created with `class basicNew: size`, `class basicNew` signals an error.
     Fields could be set with the usual `instance at: index put: value`, but `instance instVarAt: index put: value` also works, and is also usable with all other formats.
 
     Represented by a 2 in both versions.
@@ -49,7 +49,7 @@ Indexable word fields (array of 32 bit values)
 
 Indexable byte fields (array of 8 bit values)
 :   Used for classes like `ByteString` or `ByteArray`.
-    Can also be handled similar to indexable pointer fields, however `instance instVarAt: put:` should always be used over `instance at: put:`.
+    Can also be handled similarly to indexable pointer fields, however `instance instVarAt: put:` should always be used over `instance at: put:`.
     For example, `ByteString >> at: put:` expects instances of `Character`, but `ByteString >> instVarAt: put:` works as expected with byte values.
     Also of note, is that `instance instVarAt: put:` sets a single byte, not a word, like in most other cases.
     Therefore, the input words will need to be split up into bytes.
