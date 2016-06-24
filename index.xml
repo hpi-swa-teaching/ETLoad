@@ -205,6 +205,8 @@ The third word is also optional, it has an offset of -8 and contains the size in
 &lt;/tbody&gt;
 &lt;/table&gt;
 
+&lt;p&gt;See the &lt;a href=&#34;http://etoys-notes.xyz/02_imgseg/object-formats/&#34;&gt;object formats&lt;/a&gt; page for information how these formats translate into Squeak 5.&lt;/p&gt;
+
 &lt;p&gt;The &lt;code&gt;size in words&lt;/code&gt; field is used to store the object size unless it exceeds 64 words.&lt;/p&gt;
 </description>
     </item>
@@ -254,6 +256,100 @@ From now on &lt;code&gt;git merge&lt;/code&gt; should work as expected.&lt;/p&gt
     </item>
     
     <item>
+      <title>Object Formats</title>
+      <link>http://etoys-notes.xyz/02_imgseg/object-formats/</link>
+      <pubDate>Fri, 24 Jun 2016 19:18:21 +0200</pubDate>
+      
+      <guid>http://etoys-notes.xyz/02_imgseg/object-formats/</guid>
+      <description>
+
+&lt;p&gt;This page compares the different object storage formats available in Squeak version 3 and 5, how they map to each other and how compatibility is best handled.
+Both Squeak versions store the format as a number internally (4 bit in Squeak 3, 5 bit in Squeak 5).
+These numbers will be mentioned for each format.&lt;/p&gt;
+
+&lt;p&gt;Sources for Squeak 3 include the article &amp;ldquo;Back to the future&amp;rdquo; found on the resources page, and for Squeak 5 the documentation on the &lt;code&gt;Behavior&lt;/code&gt; class, for example &lt;code&gt;Behavior#instSpec&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;formats-present-in-both-versions&#34;&gt;Formats present in both versions&lt;/h2&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;Empty&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;Examples include things like &lt;code&gt;UndefinedObject&lt;/code&gt;, &lt;code&gt;Boolean&lt;/code&gt; and subclasses, etc.
+Instance creation is done via &lt;code&gt;class basicNew&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Represented by a 0 in both Squeak 3 and 5.&lt;/p&gt;&lt;/dd&gt;
+&lt;dt&gt;Fixed (non-indexable) pointer fields&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;Standard format for most classes.
+Instance creation with &lt;code&gt;class basicNew&lt;/code&gt;, followed by setting all fields with &lt;code&gt;instance instVarAt: index put: value&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Represented by a 1 in both Squeak 3 and 5.&lt;/p&gt;&lt;/dd&gt;
+&lt;dt&gt;Indexable pointer fields (without instance variables)&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;Format for classes like &lt;code&gt;Array&lt;/code&gt;.
+Must be created with &lt;code&gt;class basicNew: size&lt;/code&gt;, &lt;code&gt;class basicNew&lt;/code&gt; signals an error.
+Fields could be set with the usual &lt;code&gt;instance at: index put: value&lt;/code&gt;, but &lt;code&gt;instance instVarAt: index put: value&lt;/code&gt; also works, and is also usable with all other formats.&lt;/p&gt;
+
+&lt;p&gt;Represented by a 2 in both versions.&lt;/p&gt;&lt;/dd&gt;
+&lt;dt&gt;Indexable pointer fields with additional instance variables&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;Used for a very small amount of classes like &lt;code&gt;MethodDictionary&lt;/code&gt;, &lt;code&gt;BlockContext&lt;/code&gt; and &lt;code&gt;SparseLargeTable&lt;/code&gt;.
+These also need to be created with &lt;code&gt;class basicNew: size&lt;/code&gt;, however the size does &lt;em&gt;not&lt;/em&gt; include the instance variables.
+Assuming the class hasn&amp;rsquo;t changed, we can do &lt;code&gt;class basicNew: sizeInWords - class instVarNames size&lt;/code&gt;.
+Some testing suggests that in both versions the content is laid out as variables first, followed by indexable variables, so a series of &lt;code&gt;instance instVarAt: put:&lt;/code&gt; calls should do the job.&lt;/p&gt;
+
+&lt;p&gt;Represented by a 3 in both versions.&lt;/p&gt;&lt;/dd&gt;
+&lt;dt&gt;Indexable word fields (array of 32 bit values)&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;Used for classes like &lt;code&gt;Bitmap&lt;/code&gt;, &lt;code&gt;IntegerArray&lt;/code&gt; or &lt;code&gt;WideString&lt;/code&gt;.
+Can be handled like indexable pointer fields, but the contents should not be interpreted as oops but rather as 32 bit words.&lt;/p&gt;
+
+&lt;p&gt;Represented by a 6 in Squeak 3, and by 10-11 in Squeak 5 (the 10 vs. 11 differentiation is used to calculate the byte size in 64 bit VMs).&lt;/p&gt;&lt;/dd&gt;
+&lt;dt&gt;Indexable byte fields (array of 8 bit values)&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;Used for classes like &lt;code&gt;ByteString&lt;/code&gt; or &lt;code&gt;ByteArray&lt;/code&gt;.
+Can also be handled similarly to indexable pointer fields, however &lt;code&gt;instance instVarAt: put:&lt;/code&gt; should always be used over &lt;code&gt;instance at: put:&lt;/code&gt;.
+For example, &lt;code&gt;ByteString &amp;gt;&amp;gt; at: put:&lt;/code&gt; expects instances of &lt;code&gt;Character&lt;/code&gt;, but &lt;code&gt;ByteString &amp;gt;&amp;gt; instVarAt: put:&lt;/code&gt; works as expected with byte values.
+Also of note, is that &lt;code&gt;instance instVarAt: put:&lt;/code&gt; sets a single byte, not a word, like in most other cases.
+Therefore, the input words will need to be split up into bytes.&lt;/p&gt;
+
+&lt;p&gt;Represented by 8-11 in Squeak 3, and 16-23 in Squeak 5.
+The different numbers are used to specify the size in bytes in the last word of the object.
+Squeak 5 has double the options, because it supports VMs with 64 bit words.&lt;/p&gt;&lt;/dd&gt;
+&lt;dt&gt;Compiled methods&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;Represented by 12-15 in Squeak 3, and 24-31 in Squeak 5.
+Some research into the byte code format of both versions is needed to know how compatibility can be handled in this case.&lt;/p&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h2 id=&#34;formats-only-available-in-squeak-5&#34;&gt;Formats only available in Squeak 5&lt;/h2&gt;
+
+&lt;p&gt;Should any object we try to load use a class of one of these formats, we should report an incompatibility.&lt;/p&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;Weak indexable objects with instance variables&lt;/dt&gt;
+&lt;dd&gt;Represented by a 4.&lt;/dd&gt;
+&lt;dt&gt;Weak non-indexable object with instance variables (ephemerons)&lt;/dt&gt;
+&lt;dd&gt;Represented by a 5.&lt;/dd&gt;
+&lt;dt&gt;64 bit indexable (array of 64 bit values)&lt;/dt&gt;
+&lt;dd&gt;Represented by a 9.&lt;/dd&gt;
+&lt;dt&gt;16 bit indexable (array of 16 bit values)&lt;/dt&gt;
+&lt;dd&gt;Represented by 12-15.&lt;/dd&gt;
+&lt;/dl&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Class Replacements</title>
+      <link>http://etoys-notes.xyz/01_upgrades/class-replacements/</link>
+      <pubDate>Wed, 18 May 2016 13:42:44 +0200</pubDate>
+      
+      <guid>http://etoys-notes.xyz/01_upgrades/class-replacements/</guid>
+      <description>&lt;p&gt;The following is a list of classes which no longer exist and have for now been replaced by other classes, usually a super class, if available:&lt;/p&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;&lt;code&gt;MultiNewParagraph&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;⇒ &lt;code&gt;NewParagraph&lt;/code&gt;&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;UserText&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;⇒ &lt;code&gt;TextMorph&lt;/code&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Loading Process</title>
       <link>http://etoys-notes.xyz/02_imgseg/loading-process/</link>
       <pubDate>Sat, 11 Jun 2016 11:23:21 +0200</pubDate>
@@ -288,27 +384,22 @@ From now on &lt;code&gt;git merge&lt;/code&gt; should work as expected.&lt;/p&gt
 &lt;p&gt;Each object is loaded with the following steps:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;class basicNew&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create instance (with &lt;code&gt;class basicNew&lt;/code&gt; or &lt;code&gt;class basicNew: size&lt;/code&gt;)&lt;/li&gt;
 &lt;li&gt;Write fields via primitives&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;self becomeForward: createdObject&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://etoys-notes.xyz/02_imgseg/object-formats/&#34;&gt;object formats&lt;/a&gt; page goes into more details about how to instantiate and fill objects of different formats.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Class Replacements</title>
-      <link>http://etoys-notes.xyz/01_upgrades/class-replacements/</link>
-      <pubDate>Wed, 18 May 2016 13:42:44 +0200</pubDate>
+      <title>Fonts</title>
+      <link>http://etoys-notes.xyz/01_upgrades/fonts/</link>
+      <pubDate>Wed, 18 May 2016 14:16:58 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/01_upgrades/class-replacements/</guid>
-      <description>&lt;p&gt;The following is a list of classes which no longer exist and have for now been replaced by other classes, usually a super class, if available:&lt;/p&gt;
-
-&lt;dl&gt;
-&lt;dt&gt;&lt;code&gt;MultiNewParagraph&lt;/code&gt;&lt;/dt&gt;
-&lt;dd&gt;⇒ &lt;code&gt;NewParagraph&lt;/code&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;code&gt;UserText&lt;/code&gt;&lt;/dt&gt;
-&lt;dd&gt;⇒ &lt;code&gt;TextMorph&lt;/code&gt;&lt;/dd&gt;
-&lt;/dl&gt;
+      <guid>http://etoys-notes.xyz/01_upgrades/fonts/</guid>
+      <description>&lt;p&gt;While loading a project, an error occured in &lt;code&gt;TextStyle&amp;gt;&amp;gt;addNewFontSize:&lt;/code&gt; because a &lt;code&gt;fontArray&lt;/code&gt; contained a &lt;code&gt;TTCFontSet&lt;/code&gt; along with &lt;code&gt;TTCFont&lt;/code&gt;s. As such an extra check was introduced to ignore objects which are not instances of TTCFont.&lt;/p&gt;
 </description>
     </item>
     
@@ -351,16 +442,6 @@ From now on &lt;code&gt;git merge&lt;/code&gt; should work as expected.&lt;/p&gt
 &lt;p&gt;Then use as follows:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #447fcf; text-decoration: underline&#34;&gt;Dummy&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;dumpSimpleImageSegmentTo:&lt;/span&gt; &lt;span style=&#34;color: #ed9d13&#34;&gt;&amp;#39;/tmp/iseg.dump&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;withRoots:&lt;/span&gt; { &lt;span style=&#34;color: #3677a9&#34;&gt;42&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color: #ed9d13&#34;&gt;&amp;#39;Hello World&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color: #447fcf; text-decoration: underline&#34;&gt;Object&lt;/span&gt; &lt;span style=&#34;color: #24909d&#34;&gt;new&lt;/span&gt; }&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Fonts</title>
-      <link>http://etoys-notes.xyz/01_upgrades/fonts/</link>
-      <pubDate>Wed, 18 May 2016 14:16:58 +0200</pubDate>
-      
-      <guid>http://etoys-notes.xyz/01_upgrades/fonts/</guid>
-      <description>&lt;p&gt;While loading a project, an error occured in &lt;code&gt;TextStyle&amp;gt;&amp;gt;addNewFontSize:&lt;/code&gt; because a &lt;code&gt;fontArray&lt;/code&gt; contained a &lt;code&gt;TTCFontSet&lt;/code&gt; along with &lt;code&gt;TTCFont&lt;/code&gt;s. As such an extra check was introduced to ignore objects which are not instances of TTCFont.&lt;/p&gt;
 </description>
     </item>
     
