@@ -1,6 +1,6 @@
 +++
 date = "2016-07-14T09:35:21+02:00"
-prev = "/02_imgseg/object-header/"
+prev = "/02_imgseg/oop/"
 next = "/02_imgseg/loading-process/"
 title = "Object Formats"
 weight = 20
