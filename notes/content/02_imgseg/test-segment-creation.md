@@ -3,7 +3,7 @@ date = "2016-06-11T14:30:26+02:00"
 prev = "/02_imgseg/loading-process/"
 next = "/_x_resources/"
 title = "Test Image Segment Creation"
-weight = 30
+weight = 40
 +++
 
 To better support automated testing and experimentation, it was necessary to create minimal image segments, containing only specific, known objects.

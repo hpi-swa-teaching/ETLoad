@@ -1,7 +1,7 @@
 +++
 date = "2016-06-06T19:18:21+02:00"
 prev = "/02_imgseg/"
-next = "/02_imgseg/loading-process/"
+next = "/02_imgseg/object-formats/"
 title = "Object Headers"
 weight = 10
 +++
@@ -43,5 +43,7 @@ The object format gives information about the format of the object. In the table
 | 7             | not used                                            |
 | 8-11          | indexable byte fields (no pointers): low 2 bits are low 2 bits of size in bytes |
 | 12-15         | compiled methods: low 2 bits are low 2 bits of size in bytes. The number of literals is specified in method header, followed by the indexable bytes that store byte codes. |
+
+See the [object formats](/02_imgseg/object-formats/) page for information how these formats translate into Squeak 5.
 
 The `size in words` field is used to store the object size unless it exceeds 64 words.
