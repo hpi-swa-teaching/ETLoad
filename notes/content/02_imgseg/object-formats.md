@@ -1,9 +1,9 @@
 +++
-date = "2016-07-14T09:35:21+02:00"
+date = "2016-06-24T19:18:21+02:00"
 prev = "/02_imgseg/oop/"
 next = "/02_imgseg/loading-process/"
 title = "Object Formats"
-weight = 20
+weight = 30
 +++
 
 This page compares the different object storage formats available in Squeak version 3 and 5, how they map to each other and how compatibility is best handled.
