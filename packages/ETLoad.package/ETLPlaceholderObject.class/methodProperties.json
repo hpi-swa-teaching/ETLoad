@@ -1,5 +1,7 @@
 {
 	"class" : {
+		"compatibilityTests" : "DS 6/28/2016 11:54",
+		"is:compatibleWith:" : "DS 6/28/2016 11:48",
 		"newFrom:and:" : "txf 6/1/2016 13:57" },
 	"instance" : {
 		"acquireClassFromMap:orCompactClasses:" : "DS 6/27/2016 08:27",
