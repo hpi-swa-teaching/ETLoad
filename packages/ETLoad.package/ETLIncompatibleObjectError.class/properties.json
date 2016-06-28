@@ -6,11 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"header",
-		"bodyStream",
-		"objectClass" ],
-	"name" : "ETLPlaceholderObject",
+		 ],
+	"name" : "ETLIncompatibleObjectError",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "Error",
 	"type" : "normal" }

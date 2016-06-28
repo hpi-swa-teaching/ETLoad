@@ -2,8 +2,13 @@
 	"class" : {
 		"newFrom:and:" : "txf 6/1/2016 13:57" },
 	"instance" : {
+		"acquireClassFromMap:orCompactClasses:" : "DS 6/27/2016 08:27",
+		"acquireCompactClassFrom:" : "DS 6/27/2016 08:24",
+		"acquireNonCompactClassFrom:" : "DS 6/27/2016 08:33",
 		"bodyStream" : "txf 6/1/2016 13:44",
 		"bodyStream:" : "txf 6/1/2016 13:44",
 		"header" : "txf 6/1/2016 13:44",
 		"header:" : "txf 6/1/2016 13:44",
-		"isETLPlaceholder" : "DS 6/26/2016 11:38" } }
+		"isETLPlaceholder" : "DS 6/26/2016 11:38",
+		"objectClass" : "DS 6/26/2016 14:12",
+		"objectClass:" : "DS 6/26/2016 14:12" } }
