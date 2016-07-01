@@ -1,7 +1,7 @@
 testing
 testObjectFormatCompatibilityTesting
 	"See 'Object Formats' wiki page for more info."
-	|  compatibilityTable |
+	| compatibilityTable |
 	
 	compatibilityTable := Dictionary
 		newFrom: { 0 -> (0 to: 0) .

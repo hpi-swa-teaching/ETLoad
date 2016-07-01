@@ -2,10 +2,10 @@
 	"class" : {
 		 },
 	"instance" : {
-		"testCompactClassAcquisition" : "DS 6/26/2016 18:09",
+		"testCompactClassAcquisition" : "DS 7/1/2016 11:17",
 		"testCompactClassAcquisitionError" : "DS 6/26/2016 18:22",
 		"testInstanceCreationWithNewFromAnd" : "tcf 6/1/2016 15:14",
 		"testNonCompactClassAcquisition" : "DS 6/27/2016 08:30",
 		"testNonCompactClassAcquisitionError" : "DS 6/27/2016 08:31",
-		"testObjectFormatCompatibilityTesting" : "DS 6/28/2016 11:42",
+		"testObjectFormatCompatibilityTesting" : "DS 7/1/2016 11:26",
 		"testPlaceholderIdentification" : "DS 6/26/2016 11:45" } }
