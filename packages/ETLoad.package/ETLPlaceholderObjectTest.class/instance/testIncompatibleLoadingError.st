@@ -15,5 +15,5 @@ testIncompatibleLoadingError
 			detect: [ :c | c instSpec = s5Format. ]
 			ifFound: [ :c |
 				placeholder objectClass: c.
-				self should: [ placeholder load. ] raise: ETLIncompatibleObjectError. ]
+				self should: [ placeholder loadUsing: nil. ] raise: ETLIncompatibleObjectError. ]
 			ifNone: [ ]. ]

@@ -4,9 +4,10 @@
 	"instance" : {
 		"testCompactClassAcquisition" : "DS 7/1/2016 11:17",
 		"testCompactClassAcquisitionError" : "DS 6/26/2016 18:22",
-		"testIncompatibleLoadingError" : "DS 7/1/2016 12:23",
+		"testIncompatibleLoadingError" : "DS 7/1/2016 13:35",
 		"testInstanceCreationWithNewFromAnd" : "tcf 6/1/2016 15:14",
 		"testLoadibilityTest" : "DS 7/1/2016 11:50",
+		"testLoadingOfIndexablePointerFieldObjects" : "DS 7/1/2016 13:36",
 		"testNonCompactClassAcquisition" : "DS 6/27/2016 08:30",
 		"testNonCompactClassAcquisitionError" : "DS 6/27/2016 08:31",
 		"testObjectFormatCompatibilityTesting" : "DS 7/1/2016 12:07",
