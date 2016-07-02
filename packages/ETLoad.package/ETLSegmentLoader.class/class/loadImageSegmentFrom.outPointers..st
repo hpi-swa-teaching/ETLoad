@@ -5,8 +5,6 @@ loadImageSegmentFrom: segmentWordArray outPointers: outPointerArray
 	placeholders := (self from: segmentWordArray)
 		skipVersion;
 		parseAllToPlaceholders.
-		
-	placeholderCallback ifNotNil: [ placeholderCallback value: placeholders. ].
 
 	oopMap := ETLOopMap
 		newFromInternalObjects: placeholders
