@@ -3,7 +3,7 @@ testCompactClassAcquisition
 	| header compactClass compactClasses placeholder |
 	
 	header := ETLTestData oneWordHeader copy
-		compactClassIndex: 0;
+		compactClassIndex: 1;
 		yourself.
 	compactClass := Object new.
 	compactClasses := { compactClass }, ((1 to: 31) collect: [ :i | nil. ]).
