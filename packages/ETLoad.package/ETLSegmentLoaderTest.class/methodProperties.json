@@ -3,8 +3,9 @@
 		 },
 	"instance" : {
 		"testGettingLoadResult" : "DS 7/2/2016 10:40",
-		"testInstanceCreationWithFrom" : "DS 5/25/2016 14:22",
+		"testInstanceCreationWithFrom" : "DS 7/2/2016 12:17",
 		"testLoadingImageSegmentContainingSingleNumber" : "DS 7/2/2016 12:02",
-		"testParsingAllToPlaceholders" : "DS 6/8/2016 14:37",
-		"testParsingOfSingleHeader" : "tcf 6/1/2016 15:14",
-		"testParsingToPlaceholder" : "tcf 6/1/2016 15:14" } }
+		"testParsingAllToPlaceholders" : "DS 7/2/2016 12:17",
+		"testParsingOfSingleHeader" : "DS 7/2/2016 12:18",
+		"testParsingToPlaceholder" : "DS 7/2/2016 12:17",
+		"testPlaceholderClassAcquisition" : "DS 7/2/2016 12:39" } }

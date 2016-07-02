@@ -3,15 +3,15 @@ testParsingOfSingleHeader
 	self
 		assert: ETLTestData oneWordHeader
 		equals: (ETLSegmentLoader
-			from: ETLTestData oneWordHeaderData)
+			newFor: ETLTestData oneWordHeaderData)
 			parseHeader.
 	self
 		assert: ETLTestData twoWordHeader
 		equals: (ETLSegmentLoader
-			from: ETLTestData twoWordHeaderData)
+			newFor: ETLTestData twoWordHeaderData)
 			parseHeader.
 	self
 		assert: ETLTestData threeWordHeader
 		equals: (ETLSegmentLoader
-			from: ETLTestData threeWordHeaderData)
+			newFor: ETLTestData threeWordHeaderData)
 			parseHeader.	

@@ -4,7 +4,7 @@ testParsingToPlaceholder
 	
 	content := 1 to: ETLTestData oneWordHeader objectSizeInWords - 1.
 	data := ETLTestData oneWordHeaderData , content.
-	loader := ETLSegmentLoader from: data.
+	loader := ETLSegmentLoader newFor: data.
 	placeholder := loader parseToPlaceholder.
 	
 	self assert: ETLTestData oneWordHeader equals: placeholder header.
