@@ -28,7 +28,8 @@ Now we need to know which information are stored in the base header:
 
 The storage management information and the object hash weren't interesting for us.
 
-The compact class index is an alternative to the full class pointer of the object if the class is one of 32 special classes ('Compact Classes').
+The compact class index is an alternative to the full class pointer of the object if the class is one of 31 so called "compact classes".
+The index is (as usual with Smalltalk) one-based, resulting in 31 different possible values instead of 32.
 
 The object format gives information about the format of the object. In the table below you can see the meaning of each number:
 
