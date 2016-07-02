@@ -2,6 +2,7 @@
 	"class" : {
 		 },
 	"instance" : {
+		"testGettingLoadResult" : "DS 7/2/2016 10:40",
 		"testInstanceCreationWithFrom" : "DS 5/25/2016 14:22",
 		"testParsingAllToPlaceholders" : "DS 6/8/2016 14:37",
 		"testParsingOfSingleHeader" : "tcf 6/1/2016 15:14",

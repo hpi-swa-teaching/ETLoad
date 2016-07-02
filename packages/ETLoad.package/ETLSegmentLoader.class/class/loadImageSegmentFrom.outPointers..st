@@ -1,6 +1,6 @@
 loading
 loadImageSegmentFrom: segmentWordArray outPointers: outPointerArray
-	| placeholders oopMap |
+	| placeholders oopMap rootObject |
 	
 	placeholders := (self from: segmentWordArray)
 		skipVersion;
@@ -17,4 +17,6 @@ loadImageSegmentFrom: segmentWordArray outPointers: outPointerArray
 		placeholder isLoadable ifFalse: [ ETLIncompatibleObjectError
 			signal: 'Loading classes is not yet supported'. ].
 		placeholder loadUsing: oopMap. ].
-	^ placeholders values first.
+	rootObject := placeholders values at: 1 ifAbsent: [ nil. ].
+	ETLLoadCallback value ifNotNilDo: [ :callback | callback cull: rootObject. ].
+	^ rootObject.

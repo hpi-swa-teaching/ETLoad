@@ -1,0 +1,14 @@
+{
+	"category" : "ETLoad-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "DS 7/2/2016 10:09",
+	"instvars" : [
+		 ],
+	"name" : "ETLLoadCallback",
+	"pools" : [
+		 ],
+	"super" : "DynamicVariable",
+	"type" : "normal" }
