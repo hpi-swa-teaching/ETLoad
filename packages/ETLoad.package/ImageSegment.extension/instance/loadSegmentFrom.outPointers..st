@@ -10,7 +10,6 @@ loadSegmentFrom: segmentWordArray outPointers: outPointerArray
 		ifNil: [ "failure returns nil"
 			segmentWordArray
 				become: (self loadOldSegmentFrom: backup outPointers: outPointerArray).
-			self halt.
 			^ segmentWordArray. ]
 		ifNotNil: [ "successful completion returns the array of roots"
 			^ returnValue. ].
