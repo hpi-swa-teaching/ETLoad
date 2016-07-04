@@ -1,0 +1,14 @@
+{
+	"category" : "ETLoad-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "TN 7/4/2016 10:39",
+	"instvars" : [
+		 ],
+	"name" : "ETLDirectoryTestCase",
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }

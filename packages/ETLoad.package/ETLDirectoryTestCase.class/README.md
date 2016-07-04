@@ -1,0 +1,1 @@
+A TestCase which runs a specific test method for all files in a given directory.

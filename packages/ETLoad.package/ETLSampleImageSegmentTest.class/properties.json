@@ -1,0 +1,14 @@
+{
+	"category" : "ETLoad-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "ETLSampleImageSegmentTest",
+	"pools" : [
+		 ],
+	"super" : "ETLDirectoryTestCase",
+	"type" : "normal" }

@@ -1,0 +1,12 @@
+{
+	"class" : {
+		"isAbstract" : "TN 7/4/2016 09:59",
+		"mapFile:" : "TN 7/4/2016 10:47",
+		"searchDirectory" : "TN 7/4/2016 09:51",
+		"shouldInheritSelectors" : "TN 7/4/2016 10:46",
+		"testSelectors" : "TN 7/4/2016 10:27" },
+	"instance" : {
+		"doesNotUnderstand:" : "TN 7/4/2016 10:40",
+		"testFile:" : "TN 7/4/2016 10:41",
+		"timeoutForSetUp" : "TN 7/4/2016 10:42",
+		"timeoutForTest" : "TN 7/4/2016 10:42" } }
