@@ -1,0 +1,1 @@
+^ { Morph new openInWorld }.
