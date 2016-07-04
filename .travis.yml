@@ -7,10 +7,6 @@ matrix:
       smalltalk: Squeak-trunk
 
     - os: linux
-      language: smalltalk
-      smalltalk: Squeak-5.0
-
-    - os: linux
       script: notes/deploy.sh
       before_install:
         # travis provides go 1.4 by default which causes problems, use 1.6
