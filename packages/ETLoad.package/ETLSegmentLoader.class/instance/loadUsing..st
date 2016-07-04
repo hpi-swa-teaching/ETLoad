@@ -14,4 +14,6 @@ loadUsing: outPointers
 	self loadFromPlaceholders: placeholderMap values usingMap: oopMap.
 	
 	"4 = oop to the first object in an image segment (bytes 0-3 = header)"
-	^ placeholderMap at: 4 ifAbsent: [ nil. ].
+	{ 8 . 12 . 16 } do: [ :oop |
+		placeholderMap at: oop ifPresent: [ :obj | ^ obj. ]. ].
+	^ nil.

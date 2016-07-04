@@ -11,4 +11,3 @@ testParsingAllToPlaceholders
 			ifPresent: [ :testBlock | testBlock value: association value. ]
 			ifAbsent: [ false. ]. ]).
 	self assert: loader stream atEnd.
-	

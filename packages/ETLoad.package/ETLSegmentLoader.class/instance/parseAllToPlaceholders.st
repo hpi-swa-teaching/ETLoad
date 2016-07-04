@@ -4,5 +4,4 @@ parseAllToPlaceholders
 	
 	^Dictionary newFrom: (OrderedCollection streamContents: [ :dictionaryStream | 
 		[self stream atEnd ] whileFalse: [ 
-			dictionaryStream 
-				nextPut: (self stream position * 4) ->  self parseToPlaceholder. ]. ]).
+			dictionaryStream nextPut: self parseToPlaceholder ]. ]).
