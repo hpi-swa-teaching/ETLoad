@@ -1,12 +1,7 @@
 loading
 loadImageSegmentFrom: segmentWordArray outPointers: outPointerArray
-	| placeholders |
+	| rootObject |
 	
-	placeholders := (self from: segmentWordArray)
-		skipVersion;
-		parseAllToPlaceholders.
-		
-	placeholderCallback ifNotNil: [ placeholderCallback value: placeholders. ].
-		
-	self error: 'the image segment contained objects which cannot yet be loaded.'.
-		
+	rootObject := (ETLSegmentLoader newFor: segmentWordArray) loadUsing: outPointerArray.
+	ETLLoadCallback value ifNotNilDo: [ :callback | callback value: rootObject. ].
+	^ rootObject.

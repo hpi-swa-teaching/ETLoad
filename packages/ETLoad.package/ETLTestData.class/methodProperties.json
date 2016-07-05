@@ -1,16 +1,21 @@
 {
 	"class" : {
 		"dummyContentFor:" : "tcf 6/1/2016 16:45",
+		"emptyImageSegmentData" : "DS 7/5/2016 10:26",
+		"emptyImageSegmentOutPointers" : "DS 7/5/2016 10:27",
+		"objectFormatCompatibilityTable" : "DS 7/1/2016 12:01",
 		"objectSetContents" : "tcf 6/1/2016 15:42",
 		"objectSetData" : "tcf 6/1/2016 15:47",
 		"objectSetExpectedPlaceholderVerifiers" : "DS 6/8/2016 14:41",
 		"objectSetHeaders" : "tcf 6/1/2016 15:36",
-		"objectSetOops" : "tcf 6/1/2016 16:49",
+		"objectSetOops" : "DS 7/4/2016 10:58",
 		"oneWordHeader" : "tcf 6/1/2016 15:10",
 		"oneWordHeaderData" : "tcf 6/1/2016 15:10",
 		"threeWordHeader" : "tcf 6/1/2016 15:11",
 		"threeWordHeaderData" : "tcf 6/1/2016 15:10",
 		"twoWordHeader" : "tcf 6/1/2016 15:11",
-		"twoWordHeaderData" : "tcf 6/1/2016 15:11" },
+		"twoWordHeaderData" : "tcf 6/1/2016 15:11",
+		"withCompatibleFormatPairsDo:" : "DS 7/1/2016 12:06",
+		"withIncompatibleFormatPairsDo:" : "DS 7/1/2016 12:05" },
 	"instance" : {
 		 } }

@@ -1,13 +1,17 @@
 {
 	"class" : {
-		"from:" : "DS 5/25/2016 14:26",
-		"loadImageSegmentFrom:outPointers:" : "TN 6/18/2016 14:41",
-		"withPlaceholderCallback:do:" : "TN 6/18/2016 14:27" },
+		"assumedCompactClasses" : "DS 6/26/2016 11:22",
+		"do:withLoadResultDo:" : "DS 7/2/2016 10:10",
+		"loadImageSegmentFrom:outPointers:" : "DS 7/5/2016 10:06",
+		"newFor:" : "DS 7/2/2016 12:09" },
 	"instance" : {
+		"acquireClassesFor:usingMap:" : "DS 7/2/2016 12:27",
 		"data" : "DS 5/25/2016 14:09",
 		"data:" : "DS 5/26/2016 10:36",
-		"parseAllToPlaceholders" : "tcf 6/1/2016 16:24",
+		"loadFromPlaceholders:usingMap:" : "DS 7/2/2016 12:28",
+		"loadUsing:" : "DS 7/5/2016 10:08",
+		"parseAllToPlaceholders" : "DS 7/4/2016 11:00",
 		"parseHeader" : "DS 5/25/2016 22:45",
-		"parseToPlaceholder" : "DS 6/8/2016 14:35",
+		"parseToPlaceholder" : "DS 7/4/2016 10:59",
 		"skipVersion" : "TN 6/18/2016 14:21",
 		"stream" : "DS 6/11/2016 16:14" } }
