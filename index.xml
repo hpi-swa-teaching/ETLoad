@@ -145,7 +145,8 @@ The third word is also optional, it has an offset of -8 and contains the size in
 
 &lt;p&gt;The storage management information and the object hash weren&amp;rsquo;t interesting for us.&lt;/p&gt;
 
-&lt;p&gt;The compact class index is an alternative to the full class pointer of the object if the class is one of 32 special classes (&amp;lsquo;Compact Classes&amp;rsquo;).&lt;/p&gt;
+&lt;p&gt;The compact class index is an alternative to the full class pointer of the object if the class is one of 31 so called &amp;ldquo;compact classes&amp;rdquo;.
+The index is (as usual with Smalltalk) one-based, resulting in 31 different possible values instead of 32.&lt;/p&gt;
 
 &lt;p&gt;The object format gives information about the format of the object. In the table below you can see the meaning of each number:&lt;/p&gt;
 
