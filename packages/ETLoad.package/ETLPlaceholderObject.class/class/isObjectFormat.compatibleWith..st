@@ -1,5 +1,5 @@
 compatibility
-is: squeak3ObjectFormat compatibleWith: squeak5InstSpec
+isObjectFormat: squeak3ObjectFormat compatibleWith: squeak5InstSpec
 	"Answers whether the Squeak 3 object format is compatible with the Squeak 5 object format."
 	| testBlock |
 	

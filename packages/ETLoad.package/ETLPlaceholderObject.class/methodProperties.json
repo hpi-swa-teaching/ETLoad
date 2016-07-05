@@ -1,7 +1,7 @@
 {
 	"class" : {
-		"compatibilityTests" : "DS 6/28/2016 11:54",
-		"is:compatibleWith:" : "DS 6/28/2016 11:48",
+		"compatibilityTests" : "DS 7/5/2016 09:54",
+		"isObjectFormat:compatibleWith:" : "DS 7/5/2016 09:55",
 		"newFrom:and:" : "txf 6/1/2016 13:57" },
 	"instance" : {
 		"acquireClassFromMap:orCompactClasses:" : "DS 6/27/2016 08:27",
@@ -13,7 +13,8 @@
 		"header:" : "txf 6/1/2016 13:44",
 		"isETLPlaceholder" : "DS 6/26/2016 11:38",
 		"isLoadable" : "DS 7/1/2016 11:44",
-		"loadIndexablePointerFieldsObjectUsing:" : "DS 7/4/2016 10:44",
-		"loadUsing:" : "DS 7/1/2016 13:35",
+		"loadIndexablePointerFieldsObjectUsing:" : "DS 7/5/2016 10:03",
+		"loadUsing:" : "DS 7/5/2016 09:56",
 		"objectClass" : "DS 6/26/2016 14:12",
-		"objectClass:" : "DS 6/26/2016 14:12" } }
+		"objectClass:" : "DS 6/26/2016 14:12",
+		"resolve:using:" : "DS 7/5/2016 10:03" } }

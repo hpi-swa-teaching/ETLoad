@@ -3,5 +3,5 @@ testGettingLoadResult
 	ETLSegmentLoader
 		do: [ ETLSegmentLoader
 			loadImageSegmentFrom: ETLTestData emptyImageSegmentData
-			outPointers: { } ]
-		withLoadResultDo: [ :result | self assert: nil equals: result. ].
+			outPointers: ETLTestData emptyImageSegmentOutPointers. ]
+		withLoadResultDo: [ :result | self assert: { } equals: result. ].

@@ -8,5 +8,5 @@ loadIndexablePointerFieldsObjectUsing: oopMap
 	1 to: fieldCount do: [ :i |
 		object
 			instVarAt: i
-			put: (oopMap resolve: self bodyStream next ifInvalid: [ nil. ]). ].
+			put: (self resolve: self bodyStream next using: oopMap). ].
 	^ object.

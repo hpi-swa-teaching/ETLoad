@@ -1,6 +1,8 @@
 compatibility
 compatibilityTests
-	"Table of compatibility test blocks between Squeak 3 and 5 object formats.
+	"Answers a dictionary containing, for each valid Squeak 3 object format a block that
+	takes a Squeak 5 object format and answers, whether it is compatibel with the Squeak 3
+	format.
 	
 	See the wiki page 'Object Formats' for further info."
 	| indexableByteFieldsTest compiledMethodTest |
