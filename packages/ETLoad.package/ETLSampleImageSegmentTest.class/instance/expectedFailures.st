@@ -1,3 +1,3 @@
 testing
 expectedFailures
-	^ #(testHelloWorldStr testMorph).
+	^ #(HelloWorldStr Morph) collect: [ :test | self class testMethodPrefix , test. ].
