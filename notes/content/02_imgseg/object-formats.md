@@ -1,5 +1,5 @@
 +++
-date = "2016-06-24T19:18:21+02:00"
+date = "2016-07-14T09:35:21+02:00"
 prev = "/02_imgseg/object-header/"
 next = "/02_imgseg/loading-process/"
 title = "Object Formats"
@@ -41,6 +41,12 @@ Indexable pointer fields with additional instance variables
 
     Represented by a 3 in both versions.
 
+Weak indexable objects with instance variables
+:   Used for classes like `WeakArray`.
+    Can be created exactly like indexable pointer fields (`class basicNew: size` followed by a series of `instance instVarAt: index put: value` calls).
+
+    Represented by a 4 in both versions.
+
 Indexable word fields (array of 32 bit values)
 :   Used for classes like `Bitmap`, `IntegerArray` or `WideString`.
     Can be handled like indexable pointer fields, but the contents should not be interpreted as oops but rather as 32 bit words.
@@ -65,9 +71,6 @@ Compiled methods
 ## Formats only available in Squeak 5
 
 Should any object we try to load use a class of one of these formats, we should report an incompatibility.
-
-Weak indexable objects with instance variables
-:   Represented by a 4.
 
 Weak non-indexable object with instance variables (ephemerons)
 :   Represented by a 5.
