@@ -325,6 +325,11 @@ Assuming the class hasn&rsquo;t changed, we can do <code>class basicNew: sizeInW
 Some testing suggests that in both versions the content is laid out as variables first, followed by indexable variables, so a series of <code>instance instVarAt: put:</code> calls should do the job.</p>
 
 <p>Represented by a 3 in both versions.</p></dd>
+<dt>Weak indexable objects with instance variables</dt>
+<dd><p>Used for classes like <code>WeakArray</code>.
+Can be created exactly like indexable pointer fields (<code>class basicNew: size</code> followed by a series of <code>instance instVarAt: index put: value</code> calls).</p>
+
+<p>Represented by a 4 in both versions.</p></dd>
 <dt>Indexable word fields (array of 32 bit values)</dt>
 <dd><p>Used for classes like <code>Bitmap</code>, <code>IntegerArray</code> or <code>WideString</code>.
 Can be handled like indexable pointer fields, but the contents should not be interpreted as oops but rather as 32 bit words.</p>
@@ -350,8 +355,6 @@ Some research into the byte code format of both versions is needed to know how c
 <p>Should any object we try to load use a class of one of these formats, we should report an incompatibility.</p>
 
 <dl>
-<dt>Weak indexable objects with instance variables</dt>
-<dd>Represented by a 4.</dd>
 <dt>Weak non-indexable object with instance variables (ephemerons)</dt>
 <dd>Represented by a 5.</dd>
 <dt>64 bit indexable (array of 64 bit values)</dt>
