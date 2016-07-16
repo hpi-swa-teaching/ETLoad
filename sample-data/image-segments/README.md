@@ -8,4 +8,5 @@ This directory contains image segments with known contents. The following is a l
 * **`Morph.ims`**: An instance of the `Morph` class, which has been `open(ed)InWorld`.
 * **`FatBitsPaint.ims`**: A Morph used by Etoys.
 * **`FlexMorph.ims`**: Another Morph used by Etoys.
+* **`BouncingAtomsMorph.ims`** Sample Morph of Squeak.
 * **`Set.ims`**: Contains a set of SmallInteger.
