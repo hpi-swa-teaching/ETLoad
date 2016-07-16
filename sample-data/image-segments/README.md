@@ -11,3 +11,5 @@ This directory contains image segments with known contents. The following is a l
 * **`BouncingAtomsMorph.ims`** Sample Morph of Squeak.
 * **`Set.ims`**: Contains a set of SmallInteger.
 * **`Nil.ims`**: Contains a nil object.
+
+Currently not working (not importable) image segments are "excluded" from the tests in `ETLSampleImageSegmentTest>>expectedFailures`.
