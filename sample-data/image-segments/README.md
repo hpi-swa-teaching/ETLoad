@@ -6,4 +6,6 @@ This directory contains image segments with known contents. The following is a l
 * **`MixedArraySmallInteger.ims`**: mixed arrays with SmallIntegers.
 * **`HelloWorldStr.ims`**: The string `'Hello World'`.
 * **`Morph.ims`**: An instance of the `Morph` class, which has been `open(ed)InWorld`.
+* **`FatBitsPaint.ims`**: A Morph used by Etoys.
+* **`FlexMorph.ims`**: Another Morph used by Etoys.
 * **`Set.ims`**: Contains a set of SmallInteger.

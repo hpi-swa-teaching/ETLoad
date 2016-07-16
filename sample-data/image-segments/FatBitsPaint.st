@@ -1,0 +1,1 @@
+^ { FatBitsPaint new openInWorld }.
