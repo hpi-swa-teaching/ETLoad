@@ -1,3 +1,3 @@
 testing
 expectedFailures
-	^ #(HelloWorldStr Morph FatBitsPaint FlexMorph BouncingAtomsMorph) collect: [ :test | self class testMethodPrefix , test. ].
+	^ #(HelloWorldStr Morph FatBitsPaint FlexMorph BouncingAtomsMorph Nil) collect: [ :test | self class testMethodPrefix , test. ].
