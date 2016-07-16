@@ -6,3 +6,4 @@ This directory contains image segments with known contents. The following is a l
 * **`MixedArraySmallInteger.ims`**: mixed arrays with SmallIntegers.
 * **`hello_world_str.ims`**: The string `'Hello World'`.
 * **`morph.ims`**: An instance of the `Morph` class, which has been `open(ed)InWorld`.
+* **`Set.ims`**: Contains a set of SmallInteger.
