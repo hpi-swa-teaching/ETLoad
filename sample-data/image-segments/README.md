@@ -1,23 +1,7 @@
-This directory contains image segments with known contents. The following is a list of all files in the directory and the content of the image segement inside of them:
+This directory contains image segments with known contents. Each of these will become a separate test case of the `ETLSampleImageSegmentTest` class.
 
-* **`42.ims`**: A `SmallInteger` with the value `42`.
-* **`Array1To9.ims`**: Array of `SmallInteger` with values from `1` to `9`.
-* **`ArrayOfArrayOf1.ims`**: Nested array containing `SmallInteger` in last level.
-* **`MixedArraySmallInteger.ims`**: mixed arrays with SmallIntegers.
-* **`HelloWorldStr.ims`**: The string `'Hello World'`.
-* **`Morph.ims`**: An instance of the `Morph` class, which has been `open(ed)InWorld`.
-* **`FatBitsPaint.ims`**: A Morph used by Etoys.
-* **`FlexMorph.ims`**: Another Morph used by Etoys.
-* **`BouncingAtomsMorph.ims`** Sample Morph of Squeak.
-* **`Set.ims`**: Contains a Set of SmallInteger.
-* **`Bag.ims`**: Contains a Bag of SmallInteger.
-* **`Nil.ims`**: Contains a nil object.
-* **`ColorX.ims`**: Contains a color object of certain color.
-* **`True.ims` / `False.ims`**: Contains True/False object.
-* **`TrueClass.ims` / `FalseClass.ims`**: Contains True/False class.
-* **`MethodDictionary.ims`**: Contains an object of MethodDictionary.
-* **`WeakArray.ims`**: Contains a WeakArray containing an object.
-* **`IntegerArray.ims`**: Contains an IntegerArray with two elements.
-* **`LargeNegativeInteger.ims` / `LargePositiveInteger.ims`**: Contains large integers.
+Image segments should be named `ShortDescription.ims` and be created as described under ["test segment creation"](http://etoys-notes.xyz/02_imgseg/test-segment-creation/).
+
+Additionally for each image segment there must exists a file with the same name but with an `.st` extension (ie. `ShortDescription.st`) which must contains smalltalk code to reproduce the same objects as present in the image segment.
 
 Currently not working (not importable) image segments are "excluded" from the tests in `ETLSampleImageSegmentTest class>>ignoredImageSegments`.
