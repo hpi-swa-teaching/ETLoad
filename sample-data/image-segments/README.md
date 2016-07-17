@@ -12,5 +12,6 @@ This directory contains image segments with known contents. The following is a l
 * **`Set.ims`**: Contains a Set of SmallInteger.
 * **`Bag.ims`**: Contains a Bag of SmallInteger.
 * **`Nil.ims`**: Contains a nil object.
+* **`ColorX.ims`**: Contains a color object of certain color.
 
 Currently not working (not importable) image segments are "excluded" from the tests in `ETLSampleImageSegmentTest>>expectedFailures`.
