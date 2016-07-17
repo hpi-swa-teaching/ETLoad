@@ -1,10 +1,10 @@
 testing
 testParsingAllToPlaceholders
 	| loader placeholderMap |
-	
+
 	loader := ETLSegmentLoader newFor: ETLTestData objectSetData.
 	placeholderMap := loader parseAllToPlaceholders.
-	
+
 	self assert: (placeholderMap associations allSatisfy: [ :association |
 		ETLTestData objectSetExpectedPlaceholderVerifiers
 			at: association key

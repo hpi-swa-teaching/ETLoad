@@ -12,8 +12,8 @@ testIncompatibleLoadingError
 			newFrom: header
 			and: (ReadStream on: { }).
 		s5Class := classes
-			detect: [ :c | c instSpec = s5Format. ]
-			ifFound: [ :c |
-				placeholder objectClass: c.
+			detect: [ :class | class instSpec = s5Format. ]
+			ifFound: [ :class |
+				placeholder objectClass: class.
 				self should: [ placeholder loadUsing: nil. ] raise: ETLIncompatibleObjectError. ]
-			ifNone: [ ]. ]
+			ifNone: [ ]. ].

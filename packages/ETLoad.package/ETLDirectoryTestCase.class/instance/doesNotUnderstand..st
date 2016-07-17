@@ -5,5 +5,5 @@ doesNotUnderstand: aMessage
 
 	(aMessage selector startsWith: self class testMethodPrefix) ifTrue: [
 		^ self testFile: (aMessage selector allButFirst: self class testMethodPrefix size). ].
-	
+
 	^ super doesNotUnderstand: aMessage.

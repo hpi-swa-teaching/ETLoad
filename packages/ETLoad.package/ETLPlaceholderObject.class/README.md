@@ -1,0 +1,1 @@
+The methods in this class contain code for loading placeholder objects.

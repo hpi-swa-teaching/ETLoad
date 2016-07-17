@@ -1,3 +1,3 @@
 testing
 isAbstract
-	^ self name = #ETLDirectoryTestCase
+	^ self name = #ETLDirectoryTestCase.

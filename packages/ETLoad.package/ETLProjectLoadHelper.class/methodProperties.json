@@ -1,11 +1,11 @@
 {
 	"class" : {
-		"getSamplesDirectoryFromEnv" : "TN 6/18/2016 12:52",
+		"getSamplesDirectoryFromEnv" : "LMM 7/17/2016 12:13",
 		"loadProjectFromFile:" : "TN 6/2/2016 08:52",
 		"loadProjectFromFile:inDirectory:" : "TN 6/2/2016 09:02",
 		"loadSampleImageSegment:" : "TN 7/4/2016 14:37",
-		"loadSampleImageSegmentReference:" : "TN 7/4/2016 14:35",
-		"loadSampleProjectFailSegmentBecome:" : "TN 6/18/2016 12:51",
+		"loadSampleImageSegmentReference:" : "LMM 7/17/2016 12:15",
+		"loadSampleProjectFailSegmentBecome:" : "LMM 7/17/2016 12:15",
 		"withCalendarMorph:" : "TN 6/16/2016 11:29" },
 	"instance" : {
 		 } }

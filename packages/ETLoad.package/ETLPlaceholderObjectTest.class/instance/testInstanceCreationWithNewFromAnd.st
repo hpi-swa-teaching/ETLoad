@@ -6,7 +6,6 @@ testInstanceCreationWithNewFromAnd
 	placeholderObject := ETLPlaceholderObject 
 		newFrom: ETLTestData oneWordHeader 
 		and: stream.
-		
+
 	self assert: ETLTestData oneWordHeader equals: placeholderObject header.
 	self assert: stream equals: placeholderObject bodyStream.
-	

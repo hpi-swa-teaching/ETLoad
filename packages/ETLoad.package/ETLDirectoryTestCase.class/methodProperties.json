@@ -1,13 +1,13 @@
 {
 	"class" : {
-		"isAbstract" : "TN 7/4/2016 09:59",
-		"mapFile:" : "TN 7/4/2016 10:47",
+		"isAbstract" : "LMM 7/17/2016 12:10",
+		"mapFile:" : "LMM 7/17/2016 13:31",
 		"searchDirectory" : "TN 7/7/2016 14:44",
-		"shouldInheritSelectors" : "TN 7/4/2016 10:46",
+		"shouldInheritSelectors" : "LMM 7/17/2016 13:34",
 		"testMethodPrefix" : "TN 7/7/2016 14:42",
 		"testSelectors" : "TN 7/7/2016 14:44" },
 	"instance" : {
-		"doesNotUnderstand:" : "TN 7/7/2016 14:45",
+		"doesNotUnderstand:" : "LMM 7/17/2016 13:12",
 		"testFile:" : "TN 7/4/2016 10:41",
-		"timeoutForSetUp" : "TN 7/4/2016 10:42",
-		"timeoutForTest" : "TN 7/4/2016 10:42" } }
+		"timeoutForSetUp" : "LMM 7/17/2016 13:12",
+		"timeoutForTest" : "LMM 7/17/2016 13:13" } }

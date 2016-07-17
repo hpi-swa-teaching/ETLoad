@@ -11,7 +11,8 @@
 		"parseFromBaseHeader:andClassHeader:" : "tcf 6/1/2016 14:49",
 		"parseFromBaseHeader:andClassHeader:andSizeHeader:" : "tcf 6/1/2016 14:49" },
 	"instance" : {
-		"=" : "tcf 6/1/2016 14:52",
+		"=" : "LMM 7/17/2016 12:36",
+		"bodySizeInWords" : "LMM 7/17/2016 12:50",
 		"classOop" : "DS 5/26/2016 10:35",
 		"classOop:" : "DS 5/26/2016 10:35",
 		"compactClassIndex" : "DS 5/26/2016 10:35",
@@ -21,5 +22,5 @@
 		"objectFormat:" : "DS 5/26/2016 10:36",
 		"objectHash" : "DS 5/26/2016 10:36",
 		"objectHash:" : "DS 5/26/2016 10:36",
-		"objectSizeInWords" : "DS 6/11/2016 16:13",
+		"objectSizeInWords" : "LMM 7/17/2016 12:50",
 		"objectSizeInWords:" : "DS 6/11/2016 16:13" } }

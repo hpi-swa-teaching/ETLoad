@@ -1,7 +1,7 @@
 testing
 testPlaceholderClassAcquisition
 	| classDummy header placeholder oopMap |
-	
+
 	classDummy := Object new.
 	header := ETLTestData twoWordHeader
 		classOop: 4;

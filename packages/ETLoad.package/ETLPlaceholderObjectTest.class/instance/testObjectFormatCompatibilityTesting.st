@@ -1,7 +1,7 @@
 testing
 testObjectFormatCompatibilityTesting
 	"See 'Object Formats' wiki page for more info."
-	
+
 	ETLTestData withCompatibleFormatPairsDo: [ :s3Format :s5Format |
 		self assert: (ETLPlaceholderObject
 			isObjectFormat: s3Format
