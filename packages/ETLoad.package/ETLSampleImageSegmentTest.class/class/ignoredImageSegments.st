@@ -5,7 +5,9 @@ ignoredImageSegments
 		FatBitsPaint
 		FlexMorph
 		HelloWorldStr
+		MethodDictionary
 		Morph
 		Nil
 		True False
-		TrueClass FalseClass).
+		TrueClass FalseClass
+		TrueBasicNew FalseBasicNew).
