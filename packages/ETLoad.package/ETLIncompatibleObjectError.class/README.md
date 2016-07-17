@@ -1,1 +1,1 @@
-This exception raises if the object cannot be loaded.
+This exception is signaled when an object cannot be loaded.

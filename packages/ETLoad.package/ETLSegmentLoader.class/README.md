@@ -1,1 +1,1 @@
-This class handles the segment loading of an image segement and is therefore our main entry point.
+This class handles loading of image segements and is the entry point for loading whole images.
