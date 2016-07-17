@@ -1,1 +1,0 @@
-^ { FlexMorph new openInWorld }.

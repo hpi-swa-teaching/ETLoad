@@ -1,3 +1,3 @@
 testing
 expectedFailures
-	^ self class ignoredImageSegments collect: [ :test | self class testMethodPrefix , test. ].
+	^ #(HelloWorldStr Morph) collect: [ :test | self class testMethodPrefix , test. ].

@@ -1,1 +1,0 @@
-^ { Object new . Object new }.

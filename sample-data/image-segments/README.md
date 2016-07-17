@@ -1,7 +1,5 @@
-This directory contains image segments with known contents. Each of these will become a separate test case of the `ETLSampleImageSegmentTest` class.
+This directory contains image segments with known contents. The following is a list of all files in the directory and the content of the image segement inside of them:
 
-Image segments should be named `ShortDescription.ims` and be created as described under ["test segment creation"](http://etoys-notes.xyz/02_imgseg/test-segment-creation/).
-
-Additionally for each image segment there must exists a file with the same name but with an `.st` extension (ie. `ShortDescription.st`) which must contains smalltalk code to reproduce the same objects as present in the image segment.
-
-Currently not working (not importable) image segments are "excluded" from the tests in `ETLSampleImageSegmentTest class>>ignoredImageSegments`.
+* **`42.ims`**: A `SmallInteger` with the value `42`.
+* **`hello_world_str.ims`**: The string `'Hello World'`.
+* **`morph.ims`**: An instance of the `Morph` class, which has been `open(ed)InWorld`.
