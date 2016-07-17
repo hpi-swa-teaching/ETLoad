@@ -1,3 +1,3 @@
 loading
 loadEmptyObject
-	^ self objectClass basicNew.
+	^ self objectClass initializedInstance.
