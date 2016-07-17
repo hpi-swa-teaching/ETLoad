@@ -18,6 +18,6 @@ This directory contains image segments with known contents. The following is a l
 * **`MethodDictionary.ims`**: Contains an object of MethodDictionary.
 * **`WeakArray.ims`**: Contains a WeakArray containing an object.
 * **`IntegerArray.ims`**: Contains an IntegerArray with two elements.
-
+* **`LargeNegativeInteger.ims` / `LargePositiveInteger.ims`**: Contains large integers.
 
 Currently not working (not importable) image segments are "excluded" from the tests in `ETLSampleImageSegmentTest>>expectedFailures`.
