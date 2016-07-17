@@ -1,2 +1,2 @@
 "Object format 8"
-^ { LargePositiveInteger new: 110 }.
+^ { 123456789123456789123456789 }.
