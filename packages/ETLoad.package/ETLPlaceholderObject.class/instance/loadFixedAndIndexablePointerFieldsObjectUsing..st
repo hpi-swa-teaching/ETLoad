@@ -6,7 +6,7 @@ loadFixedAndIndexablePointerFieldsObjectUsing: oopMap
 	
 	"Object size includes base header word"
 	fieldCount := self header objectSizeInWords - 1.
-	object := self objectClass basicNew: fieldCount - self objectClass instVarNames size.
+	object := self objectClass basicNew: fieldCount - self objectClass allInstVarNames size.
 	1 to: fieldCount do: [ :i |
 		object
 			instVarAt: i

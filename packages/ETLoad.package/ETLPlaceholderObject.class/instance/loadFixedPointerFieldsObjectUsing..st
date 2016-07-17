@@ -5,7 +5,7 @@ loadFixedPointerFieldsObjectUsing: oopMap
 	"Object size includes base header word"
 	fieldCount := self header objectSizeInWords - 1.
 	
-	fieldCount ~= self objectClass instVarNames size
+	fieldCount ~= self objectClass allInstVarNames size
 		ifTrue: [ ETLIncompatibleObjectError
 			signal: 'Incompatible object: differing variable count'. ].
 	
