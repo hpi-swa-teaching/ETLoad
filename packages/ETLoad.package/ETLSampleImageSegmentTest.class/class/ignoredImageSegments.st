@@ -10,4 +10,5 @@ ignoredImageSegments
 		Nil
 		True False
 		TrueClass FalseClass
-		TrueBasicNew FalseBasicNew).
+		TrueBasicNew FalseBasicNew
+		WeakArray).

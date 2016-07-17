@@ -16,5 +16,6 @@ This directory contains image segments with known contents. The following is a l
 * **`True.ims` / `False.ims`**: Contains True/False object.
 * **`TrueClass.ims` / `FalseClass.ims`**: Contains True/False class.
 * **`MethodDictionary.ims`**: Contains an object of MethodDictionary.
+* **`WeakArray.ims`**: Contains a WeakArray containing an object.
 
 Currently not working (not importable) image segments are "excluded" from the tests in `ETLSampleImageSegmentTest>>expectedFailures`.
