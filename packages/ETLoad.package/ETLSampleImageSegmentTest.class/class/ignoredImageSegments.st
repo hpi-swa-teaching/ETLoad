@@ -5,6 +5,7 @@ ignoredImageSegments
 		FatBitsPaint
 		FlexMorph
 		HelloWorldStr
+		IntegerArray
 		MethodDictionary
 		Morph
 		Nil
