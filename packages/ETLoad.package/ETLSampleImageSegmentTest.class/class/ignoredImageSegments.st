@@ -3,6 +3,7 @@ ignoredImageSegments
 	^ #(Bag
 		BasicFloats
 		BouncingAtomsMorph
+		Chars
 		ColorBlue ColorWhite ColorBlack
 		FatBitsPaint
 		FlexMorph
