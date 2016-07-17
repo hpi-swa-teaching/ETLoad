@@ -5,5 +5,5 @@ resolveOutPointer: anOop ifInvalid: aBlock
 	If the out pointer is out of range, answer the result of executing the given block."
 	
 	^ self outPointers
-		at: (anOop - self class outPointerBaseAddress) / self class wordSize
+		at: (anOop - self class outPointerBaseAddress) / ETLSegmentLoader segmentWordSize 
 		ifAbsent: aBlock.

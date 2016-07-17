@@ -2,9 +2,9 @@
 	"class" : {
 		 },
 	"instance" : {
-		"testCreationFromOneWord" : "tcf 6/1/2016 15:13",
-		"testCreationFromThreeWords" : "tcf 6/1/2016 15:16",
+		"testCreationFromOneWord" : "LMM 7/17/2016 13:20",
+		"testCreationFromThreeWords" : "LMM 7/17/2016 13:20",
 		"testCreationFromTwoWords" : "tcf 6/1/2016 15:16",
-		"testDeterminationOfHeaderSize" : "DS 5/25/2016 17:59",
+		"testDeterminationOfHeaderSize" : "LMM 7/17/2016 13:20",
 		"testEquality" : "tcf 6/1/2016 14:51",
 		"testHashing" : "tcf 6/1/2016 14:50" } }

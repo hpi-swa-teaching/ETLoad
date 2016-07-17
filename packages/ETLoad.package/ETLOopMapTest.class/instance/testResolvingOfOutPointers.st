@@ -1,7 +1,7 @@
 testing
 testResolvingOfOutPointers
 	| oopMap outPointer1 outPointer2 invalidMarker |
-	
+
 	outPointer1 := Object new.
 	outPointer2 := Object new.
 	invalidMarker := Object new.

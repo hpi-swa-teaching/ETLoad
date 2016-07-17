@@ -1,7 +1,7 @@
 testing
 testNonCompactClassAcquisition
 	| header class oopMap placeholder |
-	
+
 	header := ETLTestData twoWordHeader copy
 		classOop: 0;
 		yourself.

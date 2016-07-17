@@ -5,6 +5,7 @@ testParsingOfSingleHeader
 		equals: (ETLSegmentLoader
 			newFor: ETLTestData oneWordHeaderData)
 			parseHeader.
+
 	self
 		assert: ETLTestData twoWordHeader
 		equals: (ETLSegmentLoader

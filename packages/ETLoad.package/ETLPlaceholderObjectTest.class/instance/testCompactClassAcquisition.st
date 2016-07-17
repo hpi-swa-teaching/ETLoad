@@ -1,7 +1,7 @@
 testing
 testCompactClassAcquisition
 	| header compactClass compactClasses placeholder |
-	
+
 	header := ETLTestData oneWordHeader copy
 		compactClassIndex: 1;
 		yourself.

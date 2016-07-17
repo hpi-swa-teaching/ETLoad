@@ -4,7 +4,7 @@ classifyOop: anOop
 	
 	^ ((anOop bitAnd: 1) = 1) 
 		ifTrue: [ #smallInteger. ]
-		ifFalse: [ (anOop isDivisibleBy: self wordSize) 
+		ifFalse: [ (anOop isDivisibleBy: ETLSegmentLoader segmentWordSize) 
 			ifTrue: [ anOop > self outPointerBaseAddress
 				ifTrue: [ #outPointer. ] 
 				ifFalse: [ #segmentInternalPointer. ]. ]

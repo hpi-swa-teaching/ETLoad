@@ -1,0 +1,1 @@
+This is the exception raising if the object header cannot be loaded.

@@ -1,12 +1,12 @@
 {
 	"class" : {
-		"dummyContentFor:" : "tcf 6/1/2016 16:45",
-		"emptyImageSegmentData" : "DS 7/5/2016 10:26",
-		"emptyImageSegmentOutPointers" : "DS 7/5/2016 10:27",
+		"dummyContentFor:" : "LMM 7/17/2016 12:52",
+		"emptyImageSegmentData" : "LMM 7/17/2016 13:36",
+		"emptyImageSegmentOutPointers" : "LMM 7/17/2016 13:36",
 		"objectFormatCompatibilityTable" : "DS 7/1/2016 12:01",
 		"objectSetContents" : "tcf 6/1/2016 15:42",
-		"objectSetData" : "tcf 6/1/2016 15:47",
-		"objectSetExpectedPlaceholderVerifiers" : "DS 6/8/2016 14:41",
+		"objectSetData" : "LMM 7/17/2016 13:36",
+		"objectSetExpectedPlaceholderVerifiers" : "LMM 7/17/2016 13:36",
 		"objectSetHeaders" : "tcf 6/1/2016 15:36",
 		"objectSetOops" : "DS 7/4/2016 10:58",
 		"oneWordHeader" : "tcf 6/1/2016 15:10",

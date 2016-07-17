@@ -1,7 +1,7 @@
 testing
 testResolvingOfArbitraryOops
 	| oopMap internalObject outPointerObject invalidMarker |
-	
+
 	internalObject := Object new.
 	outPointerObject := Object new.
 	invalidMarker := Object new.

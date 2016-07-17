@@ -1,7 +1,7 @@
 parsing
 parseAllToPlaceholders
 	"Parses all remaining objects in the stream to a new placeholder object."
-	
-	^Dictionary newFrom: (OrderedCollection streamContents: [ :dictionaryStream | 
-		[self stream atEnd ] whileFalse: [ 
+
+	^ Dictionary newFrom: (OrderedCollection streamContents: [ :dictionaryStream | 
+		[ self stream atEnd ] whileFalse: [ 
 			dictionaryStream nextPut: self parseToPlaceholder ]. ]).
