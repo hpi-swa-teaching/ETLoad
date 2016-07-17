@@ -8,11 +8,14 @@ ignoredImageSegments
 		Fractions
 		HelloWorldStr
 		IntegerArray
+		LargePositiveInteger LargeNegativeInteger
 		MethodDictionary
 		Morph
 		Nil
 		PlainObjects
 		Points
+		SymbolETLDummy
+		SymbolObject
 		True False
 		TrueClass FalseClass
 		TrueBasicNew FalseBasicNew
