@@ -1,12 +1,14 @@
 accessing
 ignoredImageSegments
-	^ #(BasicFloats
+	^ #(Bag
+		BasicFloats
 		BouncingAtomsMorph
 		ColorBlue ColorWhite ColorBlack
 		FatBitsPaint
 		FlexMorph
 		Fractions
 		HelloWorldStr
+		HelloWorldStrMultiple
 		IntegerArray
 		LargePositiveInteger LargeNegativeInteger
 		MethodDictionary
@@ -14,6 +16,7 @@ ignoredImageSegments
 		Nil
 		PlainObjects
 		Points
+		Set
 		SymbolETLDummy
 		SymbolObject
 		True False
