@@ -1,1 +1,3 @@
-^ { BouncingAtomsMorph new openInWorld }.
+"^ { BouncingAtomsMorph new openInWorld }."
+
+^ [ :testCase :result | testCase fail. "TODO" ].

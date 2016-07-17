@@ -1,1 +1,3 @@
-^ { FatBitsPaint new openInWorld }.
+"^ { FatBitsPaint new openInWorld }."
+
+^ [ :testCase :result | testCase fail. "TODO" ].

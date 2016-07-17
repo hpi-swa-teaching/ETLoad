@@ -1,1 +1,3 @@
-^ { FlexMorph new openInWorld }.
+"^ { FlexMorph new openInWorld }."
+
+^ [ :testCase :result | testCase fail. "TODO" ].
