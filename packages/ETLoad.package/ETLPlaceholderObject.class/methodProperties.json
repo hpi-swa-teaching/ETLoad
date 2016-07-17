@@ -19,7 +19,9 @@
 		"loadIndexableByteFieldsObject" : "DS 7/17/2016 11:19",
 		"loadIndexablePointerFieldsObjectUsing:" : "DS 7/5/2016 10:03",
 		"loadIndexableWordFieldsObject" : "DS 7/17/2016 10:40",
-		"loadUsing:" : "DS 7/17/2016 11:08",
+		"loadNormallyUsing:" : "DS 7/17/2016 15:17",
+		"loadObjectUsing:" : "DS 7/17/2016 15:21",
+		"loadUsing:" : "DS 7/17/2016 15:18",
 		"objectClass" : "DS 6/26/2016 14:12",
 		"objectClass:" : "DS 6/26/2016 14:12",
 		"resolve:using:" : "DS 7/5/2016 10:03" } }
