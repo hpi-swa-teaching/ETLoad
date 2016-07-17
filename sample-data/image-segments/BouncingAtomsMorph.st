@@ -1,1 +1,0 @@
-^ { BouncingAtomsMorph new openInWorld }.
