@@ -1,0 +1,7 @@
+testing
+expectedFailures
+<<<<<<< HEAD
+	^ self class ignoredImageSegments collect: [ :test | self class testMethodPrefix , test. ].
+=======
+	^ #(Morph) collect: [ :test | self class testMethodPrefix , test. ].
+>>>>>>> swt/load-more-object-formats
