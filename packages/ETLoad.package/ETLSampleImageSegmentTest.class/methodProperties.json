@@ -1,10 +1,10 @@
 {
 	"class" : {
 		"after:dismissMorphsIn:" : "TN 7/17/2016 12:47",
-		"ignoredImageSegments" : "LMM 7/17/2016 14:58",
+		"ignoredImageSegments" : "TN 7/21/2016 13:24",
 		"mapFile:" : "TN 7/4/2016 10:21",
 		"searchDirectory" : "TN 7/4/2016 10:18",
 		"testMethodPrefix" : "TN 7/7/2016 14:46" },
 	"instance" : {
-		"expectedFailures" : "LMM 7/17/2016 10:33",
+		"expectedFailures" : "DS 7/17/2016 11:25",
 		"testFile:" : "TN 7/17/2016 13:20" } }
