@@ -4,7 +4,6 @@
 	"instance" : {
 		"testCompactClassAcquisition" : "LMM 7/17/2016 13:26",
 		"testCompactClassAcquisitionError" : "LMM 7/17/2016 13:26",
-		"testIncompatibleLoadingError" : "LMM 7/17/2016 13:27",
 		"testInstanceCreationWithNewFromAnd" : "LMM 7/17/2016 13:27",
 		"testLoadibilityTest" : "LMM 7/17/2016 13:27",
 		"testLoadingOfIndexablePointerFieldObjects" : "LMM 7/17/2016 13:28",
