@@ -4,6 +4,7 @@ objectFormatCompatibilityTable
 							 1 -> (1 to: 1) .
 							 2 -> (2 to: 2) .
 							 3 -> (3 to: 3) .
+							 4 -> (4 to: 4) .
 							 6 -> (10 to: 11) .
 							 8 -> (16 to: 23) .
 							 9 -> (16 to: 23) .

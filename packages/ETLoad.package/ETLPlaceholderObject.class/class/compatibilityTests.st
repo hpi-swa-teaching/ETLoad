@@ -14,6 +14,7 @@ compatibilityTests
 		1 -> [ :squeak5InstSpec | squeak5InstSpec = 1. ] .
 		2 -> [ :squeak5InstSpec | squeak5InstSpec = 2. ] .
 		3 -> [ :squeak5InstSpec | squeak5InstSpec = 3. ] .
+		4 -> [ :squeak5InstSpec | squeak5InstSpec = 4. ] .
 		6 -> [ :squeak5InstSpec | squeak5InstSpec between: 10 and: 11. ] .
 		8 -> indexableByteFieldsTest .
 		9 -> indexableByteFieldsTest .
