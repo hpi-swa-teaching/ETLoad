@@ -1,6 +1,6 @@
 +++
 date = "2016-06-11T14:30:26+02:00"
-prev = "/02_imgseg/loading-process/"
+prev = "/03_image-segment/loading-process/"
 next = "/_x_resources/"
 title = "Test Image Segment Creation"
 weight = 50

@@ -1,7 +1,7 @@
 +++
 date = "2016-06-06T19:18:21+02:00"
-prev = "/02_imgseg/"
-next = "/02_imgseg/oop/"
+prev = "/03_image-segment/"
+next = "/03_image-segment/oop/"
 title = "Object Headers"
 weight = 10
 +++
