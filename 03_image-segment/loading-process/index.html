@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Object Oriented Pointer</title>
+    <title>Loading Process</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -165,11 +165,27 @@ dd:after {
       
       
 
-      <li class="dd-item  parent" data-nav-id="/02_imgseg/">
-        <a href="/02_imgseg/">
+      <li class="dd-item  " data-nav-id="/02_project-file/">
+        <a href="/02_project-file/">
           <span>
             
               <b>2. </b>
+            
+             Project file format
+           </span>
+        </a>
+        
+      </li>
+      
+      
+      
+      
+
+      <li class="dd-item  parent" data-nav-id="/03_image-segment/">
+        <a href="/03_image-segment/">
+          <span>
+            
+              <b>3. </b>
             
              Image Segment
            </span>
@@ -180,40 +196,40 @@ dd:after {
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/object-header/">
-              <a href="/02_imgseg/object-header/">
+            <li class="dd-item " data-nav-id="/03_image-segment/object-header/">
+              <a href="/03_image-segment/object-header/">
                 <span>Object Headers</span>
               </a>
             </li>
           
           
           
-            <li class="dd-item active" data-nav-id="/02_imgseg/oop/">
-              <a href="/02_imgseg/oop/">
+            <li class="dd-item " data-nav-id="/03_image-segment/oop/">
+              <a href="/03_image-segment/oop/">
                 <span>Object Oriented Pointer</span>
               </a>
             </li>
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/object-formats/">
-              <a href="/02_imgseg/object-formats/">
+            <li class="dd-item " data-nav-id="/03_image-segment/object-formats/">
+              <a href="/03_image-segment/object-formats/">
                 <span>Object Formats</span>
               </a>
             </li>
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/loading-process/">
-              <a href="/02_imgseg/loading-process/">
+            <li class="dd-item active" data-nav-id="/03_image-segment/loading-process/">
+              <a href="/03_image-segment/loading-process/">
                 <span>Loading Process</span>
               </a>
             </li>
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/test-segment-creation/">
-              <a href="/02_imgseg/test-segment-creation/">
+            <li class="dd-item " data-nav-id="/03_image-segment/test-segment-creation/">
+              <a href="/03_image-segment/test-segment-creation/">
                 <span>Test Image Segment Creation</span>
               </a>
             </li>
@@ -270,15 +286,17 @@ dd:after {
                   
                 
                   
+                
+                  
                     
                     
-                <a href="/02_imgseg/" itemprop="url"><span itemprop="title">Image Segment</span></a> <i class="fa fa-angle-right"></i>
+                <a href="/03_image-segment/" itemprop="url"><span itemprop="title">Image Segment</span></a> <i class="fa fa-angle-right"></i>
                     
                   
                 
                   
                 
-                <span itemprop="title"> Object Oriented Pointer</span>
+                <span itemprop="title"> Loading Process</span>
               </div>
               
 
@@ -286,18 +304,44 @@ dd:after {
             
     	        <div id="body-inner">
                 
-                <h1>Object Oriented Pointer</h1>
+                <h1>Loading Process</h1>
                 
 
-<p>When an object contains an oop it isn&rsquo;t even sure that this is a real pointer. Because the last bit of the oop shows if it refers a real object or if it is a so called small integer. A zero means that it is a real pointer, a one that it is a small integer.</p>
+<p>We load segments with the following algorithm:</p>
 
-<p>A small integer has 31 bit (the last one can&rsquo;t be used for the integer) and can be positive or negative. This means that it can encode every number from -0x40000000 to 0x3FFFFFFF (as usual the numbers are encoded using two&rsquo;s complement).</p>
+<ul>
+<li>For the entire segment:
 
-<p>Now we&rsquo;ll look at the case that an oop is not a small integer. Since every word in squeak is 4 bytes long, the two least significant bits of all pointers are zero, which means that we have to check, if the bit at position 1 equals one. If that is the case we have an invalid pointer (this should obviously never happen).</p>
+<ul>
+<li>Load header</li>
+<li>Create placeholder</li>
+</ul></li>
+<li>For all placeholders:
 
-<p>A valid pointer can refer to an object in two different ways. If the value of the pointer is smaller than 0x80000004 the pointer points to an object inside of the segment. In that case the pointer contains the actual address of the object.</p>
+<ul>
+<li>Acquire class oop</li>
+</ul></li>
+<li>While not all objects loaded:
 
-<p>But if the value of the pointer is greater than 0x80000000 the pointer refers to an object outside of the segment. All outpointers are stored in the so called <code>outPointerArray</code>, and we need to select the right pointer in this array to find out which object is referred to. The value 0x80000004 refers to the first element of the array and the value 0x80000000 + n * 4 refers to the nth element of the array. This way we get the actual pointer to the object outside of the segment.</p>
+<ul>
+<li>For all placeholder objects:
+
+<ul>
+<li>If class is loaded, load object</li>
+<li>Else do nothing, class will be loaded in a subsequent iteration</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Each object is loaded with the following steps:</p>
+
+<ul>
+<li>Create instance (with <code>class basicNew</code> or <code>class basicNew: size</code>)</li>
+<li>Write fields via primitives</li>
+<li><code>self becomeForward: createdObject</code></li>
+</ul>
+
+<p>The <a href="/02_imgseg/object-formats/">object formats</a> page goes into more details about how to instantiate and fill objects of different formats.</p>
 
 
       
@@ -305,8 +349,8 @@ dd:after {
     </div>
 
     <div id="navigation">
-        <a class="nav nav-prev" href="/02_imgseg/object-header"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/02_imgseg/object-formats/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/03_image-segment/object-formats/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/03_image-segment/test-segment-creation/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

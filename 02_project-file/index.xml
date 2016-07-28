@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>02_project-files on SWT EToys Notes</title>
+    <link>http://etoys-notes.xyz/02_project-file/</link>
+    <description>Recent content in 02_project-files on SWT EToys Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 Jul 2016 20:50:20 +0200</lastBuildDate>
+    <atom:link href="http://etoys-notes.xyz/02_project-file/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Project file format</title>
+      <link>http://etoys-notes.xyz/02_project-file/</link>
+      <pubDate>Mon, 25 Jul 2016 20:50:20 +0200</pubDate>
+      
+      <guid>http://etoys-notes.xyz/02_project-file/</guid>
+      <description>
+
+&lt;h1 id=&#34;project-file-format&#34;&gt;Project file format&lt;/h1&gt;
+
+&lt;p&gt;The project file format is basically a normal Squeak project file which can be read by standard Squeak tools. Most of the layers are a consequence of the history of Squeak.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;project-file-structure.svg&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Project file structure of an Etoys project file&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;As you can see in the figure the project file consists mainly of an image segment. This image segment is the most important part of the project file. For an exact description of this image segment take look at &lt;a href=&#34;http://etoys-notes.xyz/03_image-segment/&#34;&gt;the image segment part of the wiki&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The next layer is a &lt;code&gt;SmartRefStream&lt;/code&gt; which is commonly used to transfer objects between Squeak images.&lt;/p&gt;
+
+&lt;p&gt;This layer is contained by a &lt;code&gt;Self-Describing Stream&lt;/code&gt;, basically consisting of many parts each containing a bit of Squeak code, which gets executed on load and the binary data itself. In our case we have one main part, which consists our image segment.&lt;/p&gt;
+
+&lt;p&gt;All these layers then are compressed by the next layer.&lt;/p&gt;
+
+&lt;p&gt;Afterwards all the content is zipped into a zip file which contains some metadata beside the binary gzipped file.&lt;/p&gt;
+
+&lt;h2 id=&#34;work-with-project-files&#34;&gt;Work with project files&lt;/h2&gt;
+
+&lt;p&gt;Please keep in mind that this structure is already simplified: Often these files are beginning with unusual data which makes them not readable for standard programs.&lt;/p&gt;
+
+&lt;p&gt;We suggest to use &lt;a href=&#34;http://binwalk.org/&#34;&gt;&lt;code&gt;binwalk&lt;/code&gt;&lt;/a&gt; to analyse the project files.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Loading Process</title>
+    <title>Image Segment</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -165,11 +165,27 @@ dd:after {
       
       
 
-      <li class="dd-item  parent" data-nav-id="/02_imgseg/">
-        <a href="/02_imgseg/">
+      <li class="dd-item  " data-nav-id="/02_project-file/">
+        <a href="/02_project-file/">
           <span>
             
               <b>2. </b>
+            
+             Project file format
+           </span>
+        </a>
+        
+      </li>
+      
+      
+      
+      
+
+      <li class="dd-item active parent" data-nav-id="/03_image-segment/">
+        <a href="/03_image-segment/">
+          <span>
+            
+              <b>3. </b>
             
              Image Segment
            </span>
@@ -180,40 +196,40 @@ dd:after {
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/object-header/">
-              <a href="/02_imgseg/object-header/">
+            <li class="dd-item " data-nav-id="/03_image-segment/object-header/">
+              <a href="/03_image-segment/object-header/">
                 <span>Object Headers</span>
               </a>
             </li>
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/oop/">
-              <a href="/02_imgseg/oop/">
+            <li class="dd-item " data-nav-id="/03_image-segment/oop/">
+              <a href="/03_image-segment/oop/">
                 <span>Object Oriented Pointer</span>
               </a>
             </li>
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/object-formats/">
-              <a href="/02_imgseg/object-formats/">
+            <li class="dd-item " data-nav-id="/03_image-segment/object-formats/">
+              <a href="/03_image-segment/object-formats/">
                 <span>Object Formats</span>
               </a>
             </li>
           
           
           
-            <li class="dd-item active" data-nav-id="/02_imgseg/loading-process/">
-              <a href="/02_imgseg/loading-process/">
+            <li class="dd-item " data-nav-id="/03_image-segment/loading-process/">
+              <a href="/03_image-segment/loading-process/">
                 <span>Loading Process</span>
               </a>
             </li>
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/test-segment-creation/">
-              <a href="/02_imgseg/test-segment-creation/">
+            <li class="dd-item " data-nav-id="/03_image-segment/test-segment-creation/">
+              <a href="/03_image-segment/test-segment-creation/">
                 <span>Test Image Segment Creation</span>
               </a>
             </li>
@@ -270,69 +286,47 @@ dd:after {
                   
                 
                   
+                
+                  
                     
-                    
-                <a href="/02_imgseg/" itemprop="url"><span itemprop="title">Image Segment</span></a> <i class="fa fa-angle-right"></i>
                     
                   
                 
                   
                 
-                <span itemprop="title"> Loading Process</span>
+                <span itemprop="title"> Image Segment</span>
               </div>
               
 
             </div>
             
+              <div id="chapter">
+            
     	        <div id="body-inner">
                 
-                <h1>Loading Process</h1>
-                
-
-<p>We load segments with the following algorithm:</p>
-
-<ul>
-<li>For the entire segment:
-
-<ul>
-<li>Load header</li>
-<li>Create placeholder</li>
-</ul></li>
-<li>For all placeholders:
-
-<ul>
-<li>Acquire class oop</li>
-</ul></li>
-<li>While not all objects loaded:
-
-<ul>
-<li>For all placeholder objects:
-
-<ul>
-<li>If class is loaded, load object</li>
-<li>Else do nothing, class will be loaded in a subsequent iteration</li>
-</ul></li>
-</ul></li>
-</ul>
-
-<p>Each object is loaded with the following steps:</p>
-
-<ul>
-<li>Create instance (with <code>class basicNew</code> or <code>class basicNew: size</code>)</li>
-<li>Write fields via primitives</li>
-<li><code>self becomeForward: createdObject</code></li>
-</ul>
-
-<p>The <a href="/02_imgseg/object-formats/">object formats</a> page goes into more details about how to instantiate and fill objects of different formats.</p>
 
 
+
+<h1 id="image-segment">Image Segment</h1>
+
+<p>If no other errors occure during the loading process, attempting to load a Squeak 3 Project in Squeak 5 will result in an error (&rdquo;<code>Error: Segment has not been becommed into the loaded objects</code>&rdquo;) from <code>ImageSegment&gt;&gt;checkAndReportLoadError</code>, which is called immediatly after the primitive at <code>ImageSegment&gt;&gt;loadSegmentFrom:outPointers:</code>.</p>
+
+<div class="notices warning" ><p>The documentation of <code>ImageSegment&gt;&gt;loadSegmentFrom:outPointers:</code> states that &ldquo;[this primitive] will have destroyed the contents of the segment wordArray&rdquo; if it fails.</p>
+</div>
+
+
+<p>As such it will probably be required to save a copy of the segment wordArray prior to executing this primitive. Then, should the primitive fail, an attempt can be made to load the ImageSegement &ldquo;manually&rdquo;.</p>
+
+
+      
+        </div> 
       
       </div>
     </div>
 
     <div id="navigation">
-        <a class="nav nav-prev" href="/02_imgseg/object-formats/"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/02_imgseg/test-segment-creation/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/02_project-file/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/03_image-segment/object-header/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

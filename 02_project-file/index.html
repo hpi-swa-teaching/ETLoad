@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Object Headers</title>
+    <title>Project file format</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -165,11 +165,27 @@ dd:after {
       
       
 
-      <li class="dd-item  parent" data-nav-id="/02_imgseg/">
-        <a href="/02_imgseg/">
+      <li class="dd-item active parent" data-nav-id="/02_project-file/">
+        <a href="/02_project-file/">
           <span>
             
               <b>2. </b>
+            
+             Project file format
+           </span>
+        </a>
+        
+      </li>
+      
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/03_image-segment/">
+        <a href="/03_image-segment/">
+          <span>
+            
+              <b>3. </b>
             
              Image Segment
            </span>
@@ -180,40 +196,40 @@ dd:after {
           
           
           
-            <li class="dd-item active" data-nav-id="/02_imgseg/object-header/">
-              <a href="/02_imgseg/object-header/">
+            <li class="dd-item " data-nav-id="/03_image-segment/object-header/">
+              <a href="/03_image-segment/object-header/">
                 <span>Object Headers</span>
               </a>
             </li>
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/oop/">
-              <a href="/02_imgseg/oop/">
+            <li class="dd-item " data-nav-id="/03_image-segment/oop/">
+              <a href="/03_image-segment/oop/">
                 <span>Object Oriented Pointer</span>
               </a>
             </li>
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/object-formats/">
-              <a href="/02_imgseg/object-formats/">
+            <li class="dd-item " data-nav-id="/03_image-segment/object-formats/">
+              <a href="/03_image-segment/object-formats/">
                 <span>Object Formats</span>
               </a>
             </li>
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/loading-process/">
-              <a href="/02_imgseg/loading-process/">
+            <li class="dd-item " data-nav-id="/03_image-segment/loading-process/">
+              <a href="/03_image-segment/loading-process/">
                 <span>Loading Process</span>
               </a>
             </li>
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/test-segment-creation/">
-              <a href="/02_imgseg/test-segment-creation/">
+            <li class="dd-item " data-nav-id="/03_image-segment/test-segment-creation/">
+              <a href="/03_image-segment/test-segment-creation/">
                 <span>Test Image Segment Creation</span>
               </a>
             </li>
@@ -272,149 +288,69 @@ dd:after {
                   
                     
                     
-                <a href="/02_imgseg/" itemprop="url"><span itemprop="title">Image Segment</span></a> <i class="fa fa-angle-right"></i>
-                    
                   
                 
                   
                 
-                <span itemprop="title"> Object Headers</span>
+                  
+                
+                <span itemprop="title"> Project file format</span>
               </div>
               
 
             </div>
             
+              <div id="chapter">
+            
     	        <div id="body-inner">
                 
-                <h1>Object Headers</h1>
-                
-
-<p>The header of a Squeak object contains of up to three words with the size of 4 bytes.
-The first is the so called base header and is always present.
-The second is the full class pointer of the object, it has an offset of -4 and isn&rsquo;t present all the time.
-The third word is also optional, it has an offset of -8 and contains the size in words of an object.</p>
-
-<p>Besides the main information every part of the header contains 2 bit which say, how big the header is.
-( 0: just the base header is present, 1: the base header and the full class pointer are present, 3: The header contains all three words)</p>
-
-<p>Now we need to know which information are stored in the base header:</p>
-
-<table>
-<thead>
-<tr>
-<th>Bits</th>
-<th align="center">Content</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>0-2</td>
-<td align="center">storage management information</td>
-</tr>
-
-<tr>
-<td>3-14</td>
-<td align="center">object hash</td>
-</tr>
-
-<tr>
-<td>15-19</td>
-<td align="center">compact class index</td>
-</tr>
-
-<tr>
-<td>20-23</td>
-<td align="center">object format</td>
-</tr>
-
-<tr>
-<td>24-29</td>
-<td align="center">size in words</td>
-</tr>
-
-<tr>
-<td>30-31</td>
-<td align="center">header type</td>
-</tr>
-</tbody>
-</table>
-
-<p>The storage management information and the object hash weren&rsquo;t interesting for us.</p>
-
-<p>The compact class index is an alternative to the full class pointer of the object if the class is one of 31 so called &ldquo;compact classes&rdquo;.
-The index is (as usual with Smalltalk) one-based, resulting in 31 different possible values instead of 32.</p>
-
-<p>The object format gives information about the format of the object. In the table below you can see the meaning of each number:</p>
-
-<table>
-<thead>
-<tr>
-<th>Number</th>
-<th align="center">Meaning</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>0</td>
-<td align="center">no fields</td>
-</tr>
-
-<tr>
-<td>1</td>
-<td align="center">fixed pointer fields</td>
-</tr>
-
-<tr>
-<td>2</td>
-<td align="center">indexable pointer fields</td>
-</tr>
-
-<tr>
-<td>3</td>
-<td align="center">both fixed and indexable pointer fields</td>
-</tr>
-
-<tr>
-<td>4+5</td>
-<td align="center">not used</td>
-</tr>
-
-<tr>
-<td>6</td>
-<td align="center">indexable word fields (no pointer)</td>
-</tr>
-
-<tr>
-<td>7</td>
-<td align="center">not used</td>
-</tr>
-
-<tr>
-<td>8-11</td>
-<td align="center">indexable byte fields (no pointers): low 2 bits are low 2 bits of size in bytes</td>
-</tr>
-
-<tr>
-<td>12-15</td>
-<td align="center">compiled methods: low 2 bits are low 2 bits of size in bytes. The number of literals is specified in method header, followed by the indexable bytes that store byte codes.</td>
-</tr>
-</tbody>
-</table>
-
-<p>See the <a href="/02_imgseg/object-formats/">object formats</a> page for information how these formats translate into Squeak 5.</p>
-
-<p>The <code>size in words</code> field is used to store the object size unless it exceeds 64 words.</p>
 
 
+
+<h1 id="project-file-format">Project file format</h1>
+
+<p>The project file format is basically a normal Squeak project file which can be read by standard Squeak tools. Most of the layers are a consequence of the history of Squeak.</p>
+
+
+<figure >
+    
+        <img src="project-file-structure.svg" />
+    
+    
+    <figcaption>
+        <h4>Project file structure of an Etoys project file</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>As you can see in the figure the project file consists mainly of an image segment. This image segment is the most important part of the project file. For an exact description of this image segment take look at <a href="http://etoys-notes.xyz/03_image-segment/">the image segment part of the wiki</a>.</p>
+
+<p>The next layer is a <code>SmartRefStream</code> which is commonly used to transfer objects between Squeak images.</p>
+
+<p>This layer is contained by a <code>Self-Describing Stream</code>, basically consisting of many parts each containing a bit of Squeak code, which gets executed on load and the binary data itself. In our case we have one main part, which consists our image segment.</p>
+
+<p>All these layers then are compressed by the next layer.</p>
+
+<p>Afterwards all the content is zipped into a zip file which contains some metadata beside the binary gzipped file.</p>
+
+<h2 id="work-with-project-files">Work with project files</h2>
+
+<p>Please keep in mind that this structure is already simplified: Often these files are beginning with unusual data which makes them not readable for standard programs.</p>
+
+<p>We suggest to use <a href="http://binwalk.org/"><code>binwalk</code></a> to analyse the project files.</p>
+
+
+      
+        </div> 
       
       </div>
     </div>
 
     <div id="navigation">
-        <a class="nav nav-prev" href="/02_imgseg/"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/02_imgseg/oop/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/01_upgrades/fonts/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/03_image-segment/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

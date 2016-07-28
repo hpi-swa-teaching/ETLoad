@@ -6,15 +6,59 @@
     <description>Recent content on SWT EToys Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 May 2016 14:23:20 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 25 Jul 2016 20:50:20 +0200</lastBuildDate>
     <atom:link href="http://etoys-notes.xyz/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Project file format</title>
+      <link>http://etoys-notes.xyz/02_project-file/</link>
+      <pubDate>Mon, 25 Jul 2016 20:50:20 +0200</pubDate>
+      
+      <guid>http://etoys-notes.xyz/02_project-file/</guid>
+      <description>
+
+&lt;h1 id=&#34;project-file-format&#34;&gt;Project file format&lt;/h1&gt;
+
+&lt;p&gt;The project file format is basically a normal Squeak project file which can be read by standard Squeak tools. Most of the layers are a consequence of the history of Squeak.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;project-file-structure.svg&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Project file structure of an Etoys project file&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;As you can see in the figure the project file consists mainly of an image segment. This image segment is the most important part of the project file. For an exact description of this image segment take look at &lt;a href=&#34;http://etoys-notes.xyz/03_image-segment/&#34;&gt;the image segment part of the wiki&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The next layer is a &lt;code&gt;SmartRefStream&lt;/code&gt; which is commonly used to transfer objects between Squeak images.&lt;/p&gt;
+
+&lt;p&gt;This layer is contained by a &lt;code&gt;Self-Describing Stream&lt;/code&gt;, basically consisting of many parts each containing a bit of Squeak code, which gets executed on load and the binary data itself. In our case we have one main part, which consists our image segment.&lt;/p&gt;
+
+&lt;p&gt;All these layers then are compressed by the next layer.&lt;/p&gt;
+
+&lt;p&gt;Afterwards all the content is zipped into a zip file which contains some metadata beside the binary gzipped file.&lt;/p&gt;
+
+&lt;h2 id=&#34;work-with-project-files&#34;&gt;Work with project files&lt;/h2&gt;
+
+&lt;p&gt;Please keep in mind that this structure is already simplified: Often these files are beginning with unusual data which makes them not readable for standard programs.&lt;/p&gt;
+
+&lt;p&gt;We suggest to use &lt;a href=&#34;http://binwalk.org/&#34;&gt;&lt;code&gt;binwalk&lt;/code&gt;&lt;/a&gt; to analyse the project files.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Image Segment</title>
-      <link>http://etoys-notes.xyz/02_imgseg/</link>
+      <link>http://etoys-notes.xyz/03_image-segment/</link>
       <pubDate>Wed, 18 May 2016 14:23:20 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/02_imgseg/</guid>
+      <guid>http://etoys-notes.xyz/03_image-segment/</guid>
       <description>
 
 &lt;h1 id=&#34;image-segment&#34;&gt;Image Segment&lt;/h1&gt;
@@ -88,10 +132,10 @@
     
     <item>
       <title>Object Headers</title>
-      <link>http://etoys-notes.xyz/02_imgseg/object-header/</link>
+      <link>http://etoys-notes.xyz/03_image-segment/object-header/</link>
       <pubDate>Mon, 06 Jun 2016 19:18:21 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/02_imgseg/object-header/</guid>
+      <guid>http://etoys-notes.xyz/03_image-segment/object-header/</guid>
       <description>&lt;p&gt;The header of a Squeak object contains of up to three words with the size of 4 bytes.
 The first is the so called base header and is always present.
 The second is the full class pointer of the object, it has an offset of -4 and isn&amp;rsquo;t present all the time.
@@ -258,10 +302,10 @@ From now on &lt;code&gt;git merge&lt;/code&gt; should work as expected.&lt;/p&gt
     
     <item>
       <title>Object Oriented Pointer</title>
-      <link>http://etoys-notes.xyz/02_imgseg/oop/</link>
+      <link>http://etoys-notes.xyz/03_image-segment/oop/</link>
       <pubDate>Mon, 06 Jun 2016 19:18:21 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/02_imgseg/oop/</guid>
+      <guid>http://etoys-notes.xyz/03_image-segment/oop/</guid>
       <description>&lt;p&gt;When an object contains an oop it isn&amp;rsquo;t even sure that this is a real pointer. Because the last bit of the oop shows if it refers a real object or if it is a so called small integer. A zero means that it is a real pointer, a one that it is a small integer.&lt;/p&gt;
 
 &lt;p&gt;A small integer has 31 bit (the last one can&amp;rsquo;t be used for the integer) and can be positive or negative. This means that it can encode every number from -0x40000000 to 0x3FFFFFFF (as usual the numbers are encoded using two&amp;rsquo;s complement).&lt;/p&gt;
@@ -293,10 +337,10 @@ From now on &lt;code&gt;git merge&lt;/code&gt; should work as expected.&lt;/p&gt
     
     <item>
       <title>Object Formats</title>
-      <link>http://etoys-notes.xyz/02_imgseg/object-formats/</link>
+      <link>http://etoys-notes.xyz/03_image-segment/object-formats/</link>
       <pubDate>Fri, 24 Jun 2016 19:18:21 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/02_imgseg/object-formats/</guid>
+      <guid>http://etoys-notes.xyz/03_image-segment/object-formats/</guid>
       <description>
 
 &lt;p&gt;This page compares the different object storage formats available in Squeak version 3 and 5, how they map to each other and how compatibility is best handled.
@@ -383,10 +427,10 @@ Some research into the byte code format of both versions is needed to know how c
     
     <item>
       <title>Loading Process</title>
-      <link>http://etoys-notes.xyz/02_imgseg/loading-process/</link>
+      <link>http://etoys-notes.xyz/03_image-segment/loading-process/</link>
       <pubDate>Sat, 11 Jun 2016 11:23:21 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/02_imgseg/loading-process/</guid>
+      <guid>http://etoys-notes.xyz/03_image-segment/loading-process/</guid>
       <description>&lt;p&gt;We load segments with the following algorithm:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -427,10 +471,10 @@ Some research into the byte code format of both versions is needed to know how c
     
     <item>
       <title>Test Image Segment Creation</title>
-      <link>http://etoys-notes.xyz/02_imgseg/test-segment-creation/</link>
+      <link>http://etoys-notes.xyz/03_image-segment/test-segment-creation/</link>
       <pubDate>Sat, 11 Jun 2016 14:30:26 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/02_imgseg/test-segment-creation/</guid>
+      <guid>http://etoys-notes.xyz/03_image-segment/test-segment-creation/</guid>
       <description>&lt;p&gt;To better support automated testing and experimentation, it was necessary to create minimal image segments, containing only specific, known objects.&lt;/p&gt;
 
 &lt;p&gt;Since the creation of minimal test image segments needs to happen in a Squeak 3 VM, which has no support for &lt;code&gt;filetree&lt;/code&gt;, the following method needs to be added manually to some class in the image:&lt;/p&gt;

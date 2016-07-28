@@ -3,11 +3,16 @@
   
   <url>
     <loc>http://etoys-notes.xyz/</loc>
-    <lastmod>2016-05-18T14:23:20+02:00</lastmod>
+    <lastmod>2016-07-25T20:50:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://etoys-notes.xyz/02_imgseg/</loc>
+    <loc>http://etoys-notes.xyz/02_project-file/</loc>
+    <lastmod>2016-07-25T20:50:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://etoys-notes.xyz/03_image-segment/</loc>
     <lastmod>2016-05-18T14:23:20+02:00</lastmod>
   </url>
   
@@ -27,7 +32,7 @@
   </url>
   
   <url>
-    <loc>http://etoys-notes.xyz/02_imgseg/object-header/</loc>
+    <loc>http://etoys-notes.xyz/03_image-segment/object-header/</loc>
     <lastmod>2016-06-06T19:18:21+02:00</lastmod>
   </url>
   
@@ -42,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://etoys-notes.xyz/02_imgseg/oop/</loc>
+    <loc>http://etoys-notes.xyz/03_image-segment/oop/</loc>
     <lastmod>2016-06-06T19:18:21+02:00</lastmod>
   </url>
   
@@ -52,7 +57,7 @@
   </url>
   
   <url>
-    <loc>http://etoys-notes.xyz/02_imgseg/object-formats/</loc>
+    <loc>http://etoys-notes.xyz/03_image-segment/object-formats/</loc>
     <lastmod>2016-06-24T19:18:21+02:00</lastmod>
   </url>
   
@@ -62,12 +67,12 @@
   </url>
   
   <url>
-    <loc>http://etoys-notes.xyz/02_imgseg/loading-process/</loc>
+    <loc>http://etoys-notes.xyz/03_image-segment/loading-process/</loc>
     <lastmod>2016-06-11T11:23:21+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://etoys-notes.xyz/02_imgseg/test-segment-creation/</loc>
+    <loc>http://etoys-notes.xyz/03_image-segment/test-segment-creation/</loc>
     <lastmod>2016-06-11T14:30:26+02:00</lastmod>
   </url>
   

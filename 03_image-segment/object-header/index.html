@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Object Formats</title>
+    <title>Object Headers</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -165,11 +165,27 @@ dd:after {
       
       
 
-      <li class="dd-item  parent" data-nav-id="/02_imgseg/">
-        <a href="/02_imgseg/">
+      <li class="dd-item  " data-nav-id="/02_project-file/">
+        <a href="/02_project-file/">
           <span>
             
               <b>2. </b>
+            
+             Project file format
+           </span>
+        </a>
+        
+      </li>
+      
+      
+      
+      
+
+      <li class="dd-item  parent" data-nav-id="/03_image-segment/">
+        <a href="/03_image-segment/">
+          <span>
+            
+              <b>3. </b>
             
              Image Segment
            </span>
@@ -180,40 +196,40 @@ dd:after {
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/object-header/">
-              <a href="/02_imgseg/object-header/">
+            <li class="dd-item active" data-nav-id="/03_image-segment/object-header/">
+              <a href="/03_image-segment/object-header/">
                 <span>Object Headers</span>
               </a>
             </li>
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/oop/">
-              <a href="/02_imgseg/oop/">
+            <li class="dd-item " data-nav-id="/03_image-segment/oop/">
+              <a href="/03_image-segment/oop/">
                 <span>Object Oriented Pointer</span>
               </a>
             </li>
           
           
           
-            <li class="dd-item active" data-nav-id="/02_imgseg/object-formats/">
-              <a href="/02_imgseg/object-formats/">
+            <li class="dd-item " data-nav-id="/03_image-segment/object-formats/">
+              <a href="/03_image-segment/object-formats/">
                 <span>Object Formats</span>
               </a>
             </li>
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/loading-process/">
-              <a href="/02_imgseg/loading-process/">
+            <li class="dd-item " data-nav-id="/03_image-segment/loading-process/">
+              <a href="/03_image-segment/loading-process/">
                 <span>Loading Process</span>
               </a>
             </li>
           
           
           
-            <li class="dd-item " data-nav-id="/02_imgseg/test-segment-creation/">
-              <a href="/02_imgseg/test-segment-creation/">
+            <li class="dd-item " data-nav-id="/03_image-segment/test-segment-creation/">
+              <a href="/03_image-segment/test-segment-creation/">
                 <span>Test Image Segment Creation</span>
               </a>
             </li>
@@ -270,15 +286,17 @@ dd:after {
                   
                 
                   
+                
+                  
                     
                     
-                <a href="/02_imgseg/" itemprop="url"><span itemprop="title">Image Segment</span></a> <i class="fa fa-angle-right"></i>
+                <a href="/03_image-segment/" itemprop="url"><span itemprop="title">Image Segment</span></a> <i class="fa fa-angle-right"></i>
                     
                   
                 
                   
                 
-                <span itemprop="title"> Object Formats</span>
+                <span itemprop="title"> Object Headers</span>
               </div>
               
 
@@ -286,80 +304,126 @@ dd:after {
             
     	        <div id="body-inner">
                 
-                <h1>Object Formats</h1>
+                <h1>Object Headers</h1>
                 
 
+<p>The header of a Squeak object contains of up to three words with the size of 4 bytes.
+The first is the so called base header and is always present.
+The second is the full class pointer of the object, it has an offset of -4 and isn&rsquo;t present all the time.
+The third word is also optional, it has an offset of -8 and contains the size in words of an object.</p>
 
+<p>Besides the main information every part of the header contains 2 bit which say, how big the header is.
+( 0: just the base header is present, 1: the base header and the full class pointer are present, 3: The header contains all three words)</p>
 
-<p>This page compares the different object storage formats available in Squeak version 3 and 5, how they map to each other and how compatibility is best handled.
-Both Squeak versions store the format as a number internally (4 bit in Squeak 3, 5 bit in Squeak 5).
-These numbers will be mentioned for each format.</p>
+<p>Now we need to know which information are stored in the base header:</p>
 
-<p>Sources for Squeak 3 include the article &ldquo;Back to the future&rdquo; found on the resources page, and for Squeak 5 the documentation on the <code>Behavior</code> class, for example <code>Behavior#instSpec</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Bits</th>
+<th align="center">Content</th>
+</tr>
+</thead>
 
-<h2 id="formats-present-in-both-versions">Formats present in both versions</h2>
+<tbody>
+<tr>
+<td>0-2</td>
+<td align="center">storage management information</td>
+</tr>
 
-<dl>
-<dt>Empty</dt>
-<dd><p>Examples include things like <code>UndefinedObject</code>, <code>Boolean</code> and subclasses, etc.
-Instance creation is done via <code>class basicNew</code>.</p>
+<tr>
+<td>3-14</td>
+<td align="center">object hash</td>
+</tr>
 
-<p>Represented by a 0 in both Squeak 3 and 5.</p></dd>
-<dt>Fixed (non-indexable) pointer fields</dt>
-<dd><p>Standard format for most classes.
-Instance creation with <code>class basicNew</code>, followed by setting all fields with <code>instance instVarAt: index put: value</code>.</p>
+<tr>
+<td>15-19</td>
+<td align="center">compact class index</td>
+</tr>
 
-<p>Represented by a 1 in both Squeak 3 and 5.</p></dd>
-<dt>Indexable pointer fields (without instance variables)</dt>
-<dd><p>Format for classes like <code>Array</code>.
-Must be created with <code>class basicNew: size</code>, <code>class basicNew</code> signals an error.
-Fields could be set with the usual <code>instance at: index put: value</code>, but <code>instance instVarAt: index put: value</code> also works, and is also usable with all other formats.</p>
+<tr>
+<td>20-23</td>
+<td align="center">object format</td>
+</tr>
 
-<p>Represented by a 2 in both versions.</p></dd>
-<dt>Indexable pointer fields with additional instance variables</dt>
-<dd><p>Used for a very small amount of classes like <code>MethodDictionary</code>, <code>BlockContext</code> and <code>SparseLargeTable</code>.
-These also need to be created with <code>class basicNew: size</code>, however the size does <em>not</em> include the instance variables.
-Assuming the class hasn&rsquo;t changed, we can do <code>class basicNew: sizeInWords - class instVarNames size</code>.
-Some testing suggests that in both versions the content is laid out as variables first, followed by indexable variables, so a series of <code>instance instVarAt: put:</code> calls should do the job.</p>
+<tr>
+<td>24-29</td>
+<td align="center">size in words</td>
+</tr>
 
-<p>Represented by a 3 in both versions.</p></dd>
-<dt>Weak indexable objects with instance variables</dt>
-<dd><p>Used for classes like <code>WeakArray</code>.
-Can be created exactly like indexable pointer fields (<code>class basicNew: size</code> followed by a series of <code>instance instVarAt: index put: value</code> calls).</p>
+<tr>
+<td>30-31</td>
+<td align="center">header type</td>
+</tr>
+</tbody>
+</table>
 
-<p>Represented by a 4 in both versions.</p></dd>
-<dt>Indexable word fields (array of 32 bit values)</dt>
-<dd><p>Used for classes like <code>Bitmap</code>, <code>IntegerArray</code> or <code>WideString</code>.
-Can be handled like indexable pointer fields, but the contents should not be interpreted as oops but rather as 32 bit words.</p>
+<p>The storage management information and the object hash weren&rsquo;t interesting for us.</p>
 
-<p>Represented by a 6 in Squeak 3, and by 10-11 in Squeak 5 (the 10 vs. 11 differentiation is used to calculate the byte size in 64 bit VMs).</p></dd>
-<dt>Indexable byte fields (array of 8 bit values)</dt>
-<dd><p>Used for classes like <code>ByteString</code> or <code>ByteArray</code>.
-Can also be handled similarly to indexable pointer fields, however <code>instance instVarAt: put:</code> should always be used over <code>instance at: put:</code>.
-For example, <code>ByteString &gt;&gt; at: put:</code> expects instances of <code>Character</code>, but <code>ByteString &gt;&gt; instVarAt: put:</code> works as expected with byte values.
-Also of note, is that <code>instance instVarAt: put:</code> sets a single byte, not a word, like in most other cases.
-Therefore, the input words will need to be split up into bytes.</p>
+<p>The compact class index is an alternative to the full class pointer of the object if the class is one of 31 so called &ldquo;compact classes&rdquo;.
+The index is (as usual with Smalltalk) one-based, resulting in 31 different possible values instead of 32.</p>
 
-<p>Represented by 8-11 in Squeak 3, and 16-23 in Squeak 5.
-The different numbers are used to specify the size in bytes in the last word of the object.
-Squeak 5 has double the options, because it supports VMs with 64 bit words.</p></dd>
-<dt>Compiled methods</dt>
-<dd><p>Represented by 12-15 in Squeak 3, and 24-31 in Squeak 5.
-Some research into the byte code format of both versions is needed to know how compatibility can be handled in this case.</p></dd>
-</dl>
+<p>The object format gives information about the format of the object. In the table below you can see the meaning of each number:</p>
 
-<h2 id="formats-only-available-in-squeak-5">Formats only available in Squeak 5</h2>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th align="center">Meaning</th>
+</tr>
+</thead>
 
-<p>Should any object we try to load use a class of one of these formats, we should report an incompatibility.</p>
+<tbody>
+<tr>
+<td>0</td>
+<td align="center">no fields</td>
+</tr>
 
-<dl>
-<dt>Weak non-indexable object with instance variables (ephemerons)</dt>
-<dd>Represented by a 5.</dd>
-<dt>64 bit indexable (array of 64 bit values)</dt>
-<dd>Represented by a 9.</dd>
-<dt>16 bit indexable (array of 16 bit values)</dt>
-<dd>Represented by 12-15.</dd>
-</dl>
+<tr>
+<td>1</td>
+<td align="center">fixed pointer fields</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td align="center">indexable pointer fields</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td align="center">both fixed and indexable pointer fields</td>
+</tr>
+
+<tr>
+<td>4+5</td>
+<td align="center">not used</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td align="center">indexable word fields (no pointer)</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td align="center">not used</td>
+</tr>
+
+<tr>
+<td>8-11</td>
+<td align="center">indexable byte fields (no pointers): low 2 bits are low 2 bits of size in bytes</td>
+</tr>
+
+<tr>
+<td>12-15</td>
+<td align="center">compiled methods: low 2 bits are low 2 bits of size in bytes. The number of literals is specified in method header, followed by the indexable bytes that store byte codes.</td>
+</tr>
+</tbody>
+</table>
+
+<p>See the <a href="/02_imgseg/object-formats/">object formats</a> page for information how these formats translate into Squeak 5.</p>
+
+<p>The <code>size in words</code> field is used to store the object size unless it exceeds 64 words.</p>
 
 
       
@@ -367,8 +431,8 @@ Some research into the byte code format of both versions is needed to know how c
     </div>
 
     <div id="navigation">
-        <a class="nav nav-prev" href="/02_imgseg/oop/"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/02_imgseg/loading-process/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/03_image-segment/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/03_image-segment/oop/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

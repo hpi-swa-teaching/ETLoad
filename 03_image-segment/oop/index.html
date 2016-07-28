@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Git MergeDriver</title>
+    <title>Object Oriented Pointer</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -89,7 +89,7 @@ dd:after {
       
       
 
-      <li class="dd-item  parent" data-nav-id="/00_setup/">
+      <li class="dd-item  " data-nav-id="/00_setup/">
         <a href="/00_setup/">
           <span>
             
@@ -104,7 +104,7 @@ dd:after {
           
           
           
-            <li class="dd-item active" data-nav-id="/00_setup/git-merge-driver/">
+            <li class="dd-item " data-nav-id="/00_setup/git-merge-driver/">
               <a href="/00_setup/git-merge-driver/">
                 <span>Git MergeDriver</span>
               </a>
@@ -181,7 +181,7 @@ dd:after {
       
       
 
-      <li class="dd-item  " data-nav-id="/03_image-segment/">
+      <li class="dd-item  parent" data-nav-id="/03_image-segment/">
         <a href="/03_image-segment/">
           <span>
             
@@ -204,7 +204,7 @@ dd:after {
           
           
           
-            <li class="dd-item " data-nav-id="/03_image-segment/oop/">
+            <li class="dd-item active" data-nav-id="/03_image-segment/oop/">
               <a href="/03_image-segment/oop/">
                 <span>Object Oriented Pointer</span>
               </a>
@@ -282,21 +282,21 @@ dd:after {
                 
                 
                   
+                
+                  
+                
+                  
+                
+                  
                     
                     
-                <a href="/00_setup/" itemprop="url"><span itemprop="title">Setup</span></a> <i class="fa fa-angle-right"></i>
+                <a href="/03_image-segment/" itemprop="url"><span itemprop="title">Image Segment</span></a> <i class="fa fa-angle-right"></i>
                     
                   
                 
                   
                 
-                  
-                
-                  
-                
-                  
-                
-                <span itemprop="title"> Git MergeDriver</span>
+                <span itemprop="title"> Object Oriented Pointer</span>
               </div>
               
 
@@ -304,25 +304,18 @@ dd:after {
             
     	        <div id="body-inner">
                 
-                <h1>Git MergeDriver</h1>
+                <h1>Object Oriented Pointer</h1>
                 
 
-<p>Due to the dual use of monticello and git, there are some problems with merging.
-Git doesn&rsquo;t know how to merge monticello metadata files, causing a lot of merge conflicts.
-The solution for this problem that was presented in class is manually merging in Smalltalk first, and then committing the merged changes in git.</p>
+<p>When an object contains an oop it isn&rsquo;t even sure that this is a real pointer. Because the last bit of the oop shows if it refers a real object or if it is a so called small integer. A zero means that it is a real pointer, a one that it is a small integer.</p>
 
-<p>This process can be automated by using the <a href="https://github.com/ThierryGoubier/GitFileTree-MergeDriver">filetree merge driver</a>.
-Unfortunately, it probably requires Linux or OSX (the merge script itself is a bash script).
-The setup is quite simple:</p>
+<p>A small integer has 31 bit (the last one can&rsquo;t be used for the integer) and can be positive or negative. This means that it can encode every number from -0x40000000 to 0x3FFFFFFF (as usual the numbers are encoded using two&rsquo;s complement).</p>
 
-<ul>
-<li>Clone the git repository of the merge driver somewhere where it can stay</li>
-<li>Run <code>make</code> in the repositories root directory</li>
-</ul>
+<p>Now we&rsquo;ll look at the case that an oop is not a small integer. Since every word in squeak is 4 bytes long, the two least significant bits of all pointers are zero, which means that we have to check, if the bit at position 1 equals one. If that is the case we have an invalid pointer (this should obviously never happen).</p>
 
-<p>This will have appended some lines to your git config (<code>~/.gitconfig</code>) to register the merge driver.
-Because our repository already contains a <code>.gitattributes</code> file which enables the merge driver for the appropriate files, this is all that needs to be done.
-From now on <code>git merge</code> should work as expected.</p>
+<p>A valid pointer can refer to an object in two different ways. If the value of the pointer is smaller than 0x80000004 the pointer points to an object inside of the segment. In that case the pointer contains the actual address of the object.</p>
+
+<p>But if the value of the pointer is greater than 0x80000000 the pointer refers to an object outside of the segment. All outpointers are stored in the so called <code>outPointerArray</code>, and we need to select the right pointer in this array to find out which object is referred to. The value 0x80000004 refers to the first element of the array and the value 0x80000000 + n * 4 refers to the nth element of the array. This way we get the actual pointer to the object outside of the segment.</p>
 
 
       
@@ -330,8 +323,8 @@ From now on <code>git merge</code> should work as expected.</p>
     </div>
 
     <div id="navigation">
-        <a class="nav nav-prev" href="/00_setup/"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/01_upgrades/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/03_image-segment/object-header"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/03_image-segment/object-formats/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>
