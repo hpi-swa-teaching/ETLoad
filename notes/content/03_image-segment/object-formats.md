@@ -1,7 +1,7 @@
 +++
 date = "2016-06-24T19:18:21+02:00"
-prev = "/02_imgseg/oop/"
-next = "/02_imgseg/loading-process/"
+prev = "/03_image-segment/oop/"
+next = "/03_image-segment/loading-process/"
 title = "Object Formats"
 weight = 30
 +++

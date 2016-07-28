@@ -1,9 +1,9 @@
 +++
 chapter = true
 date = "2016-05-18T14:23:20+02:00"
-icon = "<b>2. </b>"
-prev = "/01_upgrades/fonts/"
-next = "/02_imgseg/object-header/"
+icon = "<b>3. </b>"
+prev = "/02_project-file/"
+next = "/03_image-segment/object-header/"
 title = "Image Segment"
 weight = 0
 +++

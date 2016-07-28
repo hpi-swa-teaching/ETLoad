@@ -1,7 +1,7 @@
 +++
 date = "2016-06-06T19:18:21+02:00"
-prev = "/02_imgseg/object-header"
-next = "/02_imgseg/object-formats/"
+prev = "/03_image-segment/object-header"
+next = "/03_image-segment/object-formats/"
 title = "Object Oriented Pointer"
 weight = 20
 +++
