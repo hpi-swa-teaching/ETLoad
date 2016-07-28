@@ -28,5 +28,35 @@
 </description>
     </item>
     
+    <item>
+      <title>About this wiki</title>
+      <link>http://etoys-notes.xyz/_x_resources/wiki/</link>
+      <pubDate>Thu, 28 Jul 2016 08:47:54 +0200</pubDate>
+      
+      <guid>http://etoys-notes.xyz/_x_resources/wiki/</guid>
+      <description>
+
+&lt;h2 id=&#34;software&#34;&gt;Software&lt;/h2&gt;
+
+&lt;p&gt;This wiki is built with &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt;. The syntax highlighting is done by &lt;a href=&#34;http://pygments.org/&#34;&gt;pygments&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;modifying-the-wiki&#34;&gt;Modifying the wiki&lt;/h2&gt;
+
+&lt;p&gt;The source files of the wiki are in the &lt;code&gt;notes/content&lt;/code&gt; directory of the main repository. All source files are written in &lt;code&gt;markdown&lt;/code&gt; with some hugo specific enhancements. If you want to modify the wiki simply modify the markdown files and push to the github repository.&lt;/p&gt;
+
+&lt;p&gt;On every push the wiki gets build by travis. You can find the build script in the &lt;code&gt;.travis.yml&lt;/code&gt; of the main repository. Please note that the wiki gets only deployed for builds on the master branch.&lt;/p&gt;
+
+&lt;h3 id=&#34;hugo-webserver&#34;&gt;Hugo webserver&lt;/h3&gt;
+
+&lt;p&gt;Hugo provides a simple possibility to preview changes made to the wiki: An own, simple webserver. You can start the webserver in the &lt;code&gt;notes&lt;/code&gt; directory by typing &lt;code&gt;hugo server&lt;/code&gt; at your command line.&lt;/p&gt;
+
+&lt;p&gt;To use this you need to install hugo. You can either install hugo by downloading an install package directly from their &lt;a href=&#34;https://gohugo.io&#34;&gt;website&lt;/a&gt;, or using the package manager of your choice.&lt;/p&gt;
+
+&lt;h2 id=&#34;modifying-the-wiki-s-theme&#34;&gt;Modifying the wiki&amp;rsquo;s theme&lt;/h2&gt;
+
+&lt;p&gt;We are using the &lt;a href=&#34;http://getgrav.org/&#34;&gt;grav&lt;/a&gt; theme for hugo. All changes made to the theme were in &lt;code&gt;notes/layouts/partials/&lt;/code&gt;. So if you want to make any changes to the wiki theme you probably should apply the changes there.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

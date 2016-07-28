@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Upgrades</title>
+    <title>About this wiki</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -119,7 +119,7 @@ dd:after {
       
       
 
-      <li class="dd-item active parent" data-nav-id="/01_upgrades/">
+      <li class="dd-item  " data-nav-id="/01_upgrades/">
         <a href="/01_upgrades/">
           <span>
             
@@ -243,7 +243,7 @@ dd:after {
       
       
 
-      <li class="dd-item  " data-nav-id="/_x_resources/">
+      <li class="dd-item  parent" data-nav-id="/_x_resources/">
         <a href="/_x_resources/">
           <span>
             
@@ -258,7 +258,7 @@ dd:after {
           
           
           
-            <li class="dd-item " data-nav-id="/_x_resources/wiki/">
+            <li class="dd-item active" data-nav-id="/_x_resources/wiki/">
               <a href="/_x_resources/wiki/">
                 <span>About this wiki</span>
               </a>
@@ -298,43 +298,59 @@ dd:after {
                   
                 
                   
+                
+                  
+                
+                  
+                
+                  
                     
                     
+                <a href="/_x_resources/" itemprop="url"><span itemprop="title">Resources</span></a> <i class="fa fa-angle-right"></i>
+                    
                   
                 
-                  
-                
-                  
-                
-                  
-                
-                <span itemprop="title"> Upgrades</span>
+                <span itemprop="title"> About this wiki</span>
               </div>
               
 
             </div>
             
-              <div id="chapter">
-            
     	        <div id="body-inner">
+                
+                <h1>About this wiki</h1>
                 
 
 
 
-<h1 id="upgrades">Upgrades</h1>
+<h2 id="software">Software</h2>
 
-<p>This section records &amp; documents upgrades / conversions which have been registered with the <code>SmartRefStream</code>.</p>
+<p>This wiki is built with <a href="https://gohugo.io/">hugo</a>. The syntax highlighting is done by <a href="http://pygments.org/">pygments</a>.</p>
+
+<h2 id="modifying-the-wiki">Modifying the wiki</h2>
+
+<p>The source files of the wiki are in the <code>notes/content</code> directory of the main repository. All source files are written in <code>markdown</code> with some hugo specific enhancements. If you want to modify the wiki simply modify the markdown files and push to the github repository.</p>
+
+<p>On every push the wiki gets build by travis. You can find the build script in the <code>.travis.yml</code> of the main repository. Please note that the wiki gets only deployed for builds on the master branch.</p>
+
+<h3 id="hugo-webserver">Hugo webserver</h3>
+
+<p>Hugo provides a simple possibility to preview changes made to the wiki: An own, simple webserver. You can start the webserver in the <code>notes</code> directory by typing <code>hugo server</code> at your command line.</p>
+
+<p>To use this you need to install hugo. You can either install hugo by downloading an install package directly from their <a href="https://gohugo.io">website</a>, or using the package manager of your choice.</p>
+
+<h2 id="modifying-the-wiki-s-theme">Modifying the wiki&rsquo;s theme</h2>
+
+<p>We are using the <a href="http://getgrav.org/">grav</a> theme for hugo. All changes made to the theme were in <code>notes/layouts/partials/</code>. So if you want to make any changes to the wiki theme you probably should apply the changes there.</p>
 
 
-      
-        </div> 
       
       </div>
     </div>
 
     <div id="navigation">
-        <a class="nav nav-prev" href="/00_setup/git-merge-driver/"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/01_upgrades/project-bug/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/_x_resources/"> <i class="fa fa-chevron-left"></i></a>
+        
     </div>
 
     </section>
