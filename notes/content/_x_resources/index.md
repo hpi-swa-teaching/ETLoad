@@ -3,7 +3,7 @@ chapter = true
 date = "2016-05-18T08:47:54+02:00"
 icon = "<b>X. </b>"
 prev = "/03_image-segment/test-segment-creation/"
-next = ""
+next = "/_x_resources/wiki/"
 title = "Resources"
 weight = 0
 +++
