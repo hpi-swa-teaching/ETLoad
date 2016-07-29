@@ -14,5 +14,5 @@ loadNormallyUsing: oopMap
 		[ 8 ] -> [ self loadIndexableByteFieldsObject.  ] .
 		[ 9 ] -> [ self loadIndexableByteFieldsObject.  ] .
 		[ 10 ] -> [ self loadIndexableByteFieldsObject.  ] .
-		[ 11 ] -> [ self loadIndexableByteFieldsObject.  ]
+		[ 11 ] -> [ self loadIndexableByteFieldsObject.  ] .
 	} otherwise: [ ETLIncompatibleObjectError signal: 'Not loadable/corrupt object'. ].
