@@ -3,6 +3,6 @@ loadSampleImageSegmentReference: name
 	| file |
 
 	file := self getSamplesDirectoryFromEnv / 'image-segments' / (name, '.st').
-	
-	FileStream fileNamed: file pathName do: [ :stream |
+
+	file readStreamDo: [ :stream |
 		^ Compiler evaluate: stream contents. ].

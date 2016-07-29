@@ -4,5 +4,5 @@ loadSampleImageSegment: name
 
 	file := self getSamplesDirectoryFromEnv / 'image-segments' / (name, '.ims').
 	
-	FileStream fileNamed: file pathName do: [ :stream |
+	file readStreamDo: [ :stream |
 		(ObjectScanner new scanFrom: stream). ].
