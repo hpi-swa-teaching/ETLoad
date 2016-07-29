@@ -1,5 +1,7 @@
 steps
 preLoad
+	self checkFileCompatibility.
+
 	Gofer it
 		squeaksource:'MetacelloRepository' ;
 		package: 'ConfigurationOfAlien';
