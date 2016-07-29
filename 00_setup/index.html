@@ -335,6 +335,18 @@ dd:after {
     <span style="color: #447fcf">load</span><span style="color: #d0d0d0">.</span>
 </pre></div>
 
+<h2 id="loading-sample-data">Loading Sample Data</h2>
+
+<p>Any method loading sample data requires the <code>ETL_SAMPLE_DIRECTORY</code> environment variable to be set to the <strong>absolute</strong> path of the <code>sample-data</code> directory.</p>
+
+<div class="notices warning" ><p>This functionality is extensively used by tests, making a correctly set <code>ETL_SAMPLE_DIRECTORY</code> environment variable mandatory for a successful test run.</p>
+</div>
+
+
+<div class="notices note" ><p>On *nix this may be achieved by executing <code>export ETL_SAMPLE_DIRECTORY=$PWD/sample-data</code> from the root directory of the repository checkout and then starting the vm from the same shell.</p>
+</div>
+
+
 
       
         </div> 
