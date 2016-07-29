@@ -3,7 +3,7 @@ preLoad
 	self checkFileCompatibility.
 
 	Gofer it
-		squeaksource:'MetacelloRepository' ;
+		squeaksource: 'MetacelloRepository';
 		package: 'ConfigurationOfAlien';
 		load.
 
