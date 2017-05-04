@@ -7,3 +7,4 @@ theme = "learn"
 
 PygmentsCodeFences = true
 pygmentsstyle = "native"
+canonifyURLs = true
