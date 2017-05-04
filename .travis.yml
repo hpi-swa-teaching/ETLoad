@@ -20,7 +20,6 @@ matrix:
 
 env:
   global:
-    - CNAME="etoys-notes.xyz"
     - GOPATH="$HOME/go"
     - PATH="$GOPATH/bin:$PATH"
     - ETL_SAMPLE_DIRECTORY="$TRAVIS_BUILD_DIR/sample-data"
