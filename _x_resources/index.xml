@@ -2,60 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>_x_resources on SWT EToys Notes</title>
-    <link>http://etoys-notes.xyz/_x_resources/</link>
+    <link>http://HPI-SWA-Teaching.github.io/ETLoad/_x_resources/</link>
     <description>Recent content in _x_resources on SWT EToys Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 18 May 2016 08:47:54 +0200</lastBuildDate>
-    <atom:link href="http://etoys-notes.xyz/_x_resources/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://HPI-SWA-Teaching.github.io/ETLoad/_x_resources/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Resources</title>
-      <link>http://etoys-notes.xyz/_x_resources/</link>
+      <link>http://HPI-SWA-Teaching.github.io/ETLoad/_x_resources/</link>
       <pubDate>Wed, 18 May 2016 08:47:54 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/_x_resources/</guid>
-      <description>
-
-&lt;h1 id=&#34;resources&#34;&gt;Resources&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;EToys / SqueakLand: &lt;a href=&#34;http://squeakland.org/download/&#34;&gt;http://squeakland.org/download/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Blue Book / VM documentation: &lt;a href=&#34;http://sdmeta.gforge.inria.fr/FreeBooks/CollectiveNBlueBook/oe-tour-sept19.pdf&#34;&gt;http://sdmeta.gforge.inria.fr/FreeBooks/CollectiveNBlueBook/oe-tour-sept19.pdf&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Potato (Java) VM minimal Image format documentation: &lt;a href=&#34;http://potatovm.blogspot.de/&#34;&gt;http://potatovm.blogspot.de/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Minimal Squeak Object Memory Representation: &lt;a href=&#34;http://ftp.squeak.org/docs/OOPSLA.Squeak.html&#34;&gt;http://ftp.squeak.org/docs/OOPSLA.Squeak.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://HPI-SWA-Teaching.github.io/ETLoad/_x_resources/</guid>
+      <description> Resources  EToys / SqueakLand: http://squeakland.org/download/ Blue Book / VM documentation: http://sdmeta.gforge.inria.fr/FreeBooks/CollectiveNBlueBook/oe-tour-sept19.pdf Potato (Java) VM minimal Image format documentation: http://potatovm.blogspot.de/ Minimal Squeak Object Memory Representation: http://ftp.squeak.org/docs/OOPSLA.Squeak.html  </description>
     </item>
     
     <item>
       <title>About this wiki</title>
-      <link>http://etoys-notes.xyz/_x_resources/wiki/</link>
+      <link>http://HPI-SWA-Teaching.github.io/ETLoad/_x_resources/wiki/</link>
       <pubDate>Thu, 28 Jul 2016 08:47:54 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/_x_resources/wiki/</guid>
-      <description>
-
-&lt;h2 id=&#34;software&#34;&gt;Software&lt;/h2&gt;
-
-&lt;p&gt;This wiki is built with &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt;. The syntax highlighting is done by &lt;a href=&#34;http://pygments.org/&#34;&gt;pygments&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;modifying-the-wiki&#34;&gt;Modifying the wiki&lt;/h2&gt;
-
-&lt;p&gt;The source files of the wiki are in the &lt;code&gt;notes/content&lt;/code&gt; directory of the main repository. All source files are written in &lt;code&gt;markdown&lt;/code&gt; with some hugo specific enhancements. If you want to modify the wiki simply modify the markdown files and push to the github repository.&lt;/p&gt;
-
-&lt;p&gt;On every push the wiki gets build by travis. You can find the build script in the &lt;code&gt;.travis.yml&lt;/code&gt; of the main repository. Please note that the wiki gets only deployed for builds on the master branch.&lt;/p&gt;
-
-&lt;h3 id=&#34;hugo-webserver&#34;&gt;Hugo webserver&lt;/h3&gt;
-
-&lt;p&gt;Hugo provides a simple possibility to preview changes made to the wiki: An own, simple webserver. You can start the webserver in the &lt;code&gt;notes&lt;/code&gt; directory by typing &lt;code&gt;hugo server&lt;/code&gt; at your command line.&lt;/p&gt;
-
-&lt;p&gt;To use this you need to install hugo. You can either install hugo by downloading an install package directly from their &lt;a href=&#34;https://gohugo.io&#34;&gt;website&lt;/a&gt;, or using the package manager of your choice.&lt;/p&gt;
-
-&lt;h2 id=&#34;modifying-the-wiki-s-theme&#34;&gt;Modifying the wiki&amp;rsquo;s theme&lt;/h2&gt;
-
-&lt;p&gt;We are using the &lt;a href=&#34;http://getgrav.org/&#34;&gt;grav&lt;/a&gt; theme for hugo. All changes made to the theme were in &lt;code&gt;notes/layouts/partials/&lt;/code&gt;. So if you want to make any changes to the wiki theme you probably should apply the changes there.&lt;/p&gt;
-</description>
+      <guid>http://HPI-SWA-Teaching.github.io/ETLoad/_x_resources/wiki/</guid>
+      <description>Software This wiki is built with hugo. The syntax highlighting is done by pygments.
+Modifying the wiki The source files of the wiki are in the notes/content directory of the main repository. All source files are written in markdown with some hugo specific enhancements. If you want to modify the wiki simply modify the markdown files and push to the github repository.
+On every push the wiki gets build by travis.</description>
     </item>
     
   </channel>

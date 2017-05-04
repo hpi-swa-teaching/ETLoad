@@ -2,72 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>00_setups on SWT EToys Notes</title>
-    <link>http://etoys-notes.xyz/00_setup/</link>
+    <link>http://HPI-SWA-Teaching.github.io/ETLoad/00_setup/</link>
     <description>Recent content in 00_setups on SWT EToys Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 29 Jul 2016 19:30:25 +0200</lastBuildDate>
-    <atom:link href="http://etoys-notes.xyz/00_setup/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://HPI-SWA-Teaching.github.io/ETLoad/00_setup/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Setup</title>
-      <link>http://etoys-notes.xyz/00_setup/</link>
+      <link>http://HPI-SWA-Teaching.github.io/ETLoad/00_setup/</link>
       <pubDate>Fri, 29 Jul 2016 19:30:25 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/00_setup/</guid>
-      <description>
-
-&lt;h1 id=&#34;setup&#34;&gt;Setup&lt;/h1&gt;
-
-&lt;h2 id=&#34;local-development-setup&#34;&gt;Local Development Setup&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Clone the repository at &lt;a href=&#34;https://github.com/HPI-SWA-Teaching/SWT16-Project-14&#34;&gt;github.com/HPI-SWA-Teaching/SWT16-Project-14&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Execute this code:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #447fcf; text-decoration: underline&#34;&gt;Metacello&lt;/span&gt; &lt;span style=&#34;color: #24909d&#34;&gt;new&lt;/span&gt;
-    &lt;span style=&#34;color: #447fcf&#34;&gt;baseline:&lt;/span&gt; &lt;span style=&#34;color: #ed9d13&#34;&gt;&amp;#39;ETLoad&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;;&lt;/span&gt;
-    &lt;span style=&#34;color: #447fcf&#34;&gt;repository:&lt;/span&gt; &lt;span style=&#34;color: #ed9d13&#34;&gt;&amp;#39;filetree:///$PATH/WHERE/YOU/CLONED/THE/REPO/packages&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;;&lt;/span&gt;
-    &lt;span style=&#34;color: #447fcf&#34;&gt;load&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;loading-sample-data&#34;&gt;Loading Sample Data&lt;/h2&gt;
-
-&lt;p&gt;Any method loading sample data requires the &lt;code&gt;ETL_SAMPLE_DIRECTORY&lt;/code&gt; environment variable to be set to the &lt;strong&gt;absolute&lt;/strong&gt; path of the &lt;code&gt;sample-data&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;div class=&#34;notices warning&#34; &gt;&lt;p&gt;This functionality is extensively used by tests, making a correctly set &lt;code&gt;ETL_SAMPLE_DIRECTORY&lt;/code&gt; environment variable mandatory for a successful test run.&lt;/p&gt;
-&lt;/div&gt;
-
-
-&lt;div class=&#34;notices note&#34; &gt;&lt;p&gt;On *nix this may be achieved by executing &lt;code&gt;export ETL_SAMPLE_DIRECTORY=$PWD/sample-data&lt;/code&gt; from the root directory of the repository checkout and then starting the vm from the same shell.&lt;/p&gt;
-&lt;/div&gt;
-
-</description>
+      <guid>http://HPI-SWA-Teaching.github.io/ETLoad/00_setup/</guid>
+      <description>Setup Local Development Setup  Clone the repository at github.com/HPI-SWA-Teaching/SWT16-Project-14. Execute this code:  Metacello new baseline: &amp;#39;ETLoad&amp;#39;; repository: &amp;#39;filetree:///$PATH/WHERE/YOU/CLONED/THE/REPO/packages&amp;#39;; load.  Loading Sample Data Any method loading sample data requires the ETL_SAMPLE_DIRECTORY environment variable to be set to the absolute path of the sample-data directory.
+This functionality is extensively used by tests, making a correctly set ETL_SAMPLE_DIRECTORY environment variable mandatory for a successful test run.
+ On *nix this may be achieved by executing export ETL_SAMPLE_DIRECTORY=$PWD/sample-data from the root directory of the repository checkout and then starting the vm from the same shell.</description>
     </item>
     
     <item>
       <title>Git MergeDriver</title>
-      <link>http://etoys-notes.xyz/00_setup/git-merge-driver/</link>
+      <link>http://HPI-SWA-Teaching.github.io/ETLoad/00_setup/git-merge-driver/</link>
       <pubDate>Thu, 19 May 2016 14:22:21 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/00_setup/git-merge-driver/</guid>
-      <description>&lt;p&gt;Due to the dual use of monticello and git, there are some problems with merging.
-Git doesn&amp;rsquo;t know how to merge monticello metadata files, causing a lot of merge conflicts.
-The solution for this problem that was presented in class is manually merging in Smalltalk first, and then committing the merged changes in git.&lt;/p&gt;
-
-&lt;p&gt;This process can be automated by using the &lt;a href=&#34;https://github.com/ThierryGoubier/GitFileTree-MergeDriver&#34;&gt;filetree merge driver&lt;/a&gt;.
-Unfortunately, it probably requires Linux or OSX (the merge script itself is a bash script).
-The setup is quite simple:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Clone the git repository of the merge driver somewhere where it can stay&lt;/li&gt;
-&lt;li&gt;Run &lt;code&gt;make&lt;/code&gt; in the repositories root directory&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This will have appended some lines to your git config (&lt;code&gt;~/.gitconfig&lt;/code&gt;) to register the merge driver.
-Because our repository already contains a &lt;code&gt;.gitattributes&lt;/code&gt; file which enables the merge driver for the appropriate files, this is all that needs to be done.
-From now on &lt;code&gt;git merge&lt;/code&gt; should work as expected.&lt;/p&gt;
-</description>
+      <guid>http://HPI-SWA-Teaching.github.io/ETLoad/00_setup/git-merge-driver/</guid>
+      <description>Due to the dual use of monticello and git, there are some problems with merging. Git doesn&amp;rsquo;t know how to merge monticello metadata files, causing a lot of merge conflicts. The solution for this problem that was presented in class is manually merging in Smalltalk first, and then committing the merged changes in git.
+This process can be automated by using the filetree merge driver. Unfortunately, it probably requires Linux or OSX (the merge script itself is a bash script).</description>
     </item>
     
   </channel>

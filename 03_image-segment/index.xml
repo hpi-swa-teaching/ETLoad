@@ -2,341 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>03_image-segments on SWT EToys Notes</title>
-    <link>http://etoys-notes.xyz/03_image-segment/</link>
+    <link>http://HPI-SWA-Teaching.github.io/ETLoad/03_image-segment/</link>
     <description>Recent content in 03_image-segments on SWT EToys Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 18 May 2016 14:23:20 +0200</lastBuildDate>
-    <atom:link href="http://etoys-notes.xyz/03_image-segment/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://HPI-SWA-Teaching.github.io/ETLoad/03_image-segment/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Image Segment</title>
-      <link>http://etoys-notes.xyz/03_image-segment/</link>
+      <link>http://HPI-SWA-Teaching.github.io/ETLoad/03_image-segment/</link>
       <pubDate>Wed, 18 May 2016 14:23:20 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/03_image-segment/</guid>
-      <description>
-
-&lt;h1 id=&#34;image-segment&#34;&gt;Image Segment&lt;/h1&gt;
-
-&lt;p&gt;If no other errors occure during the loading process, attempting to load a Squeak 3 Project in Squeak 5 will result in an error (&amp;rdquo;&lt;code&gt;Error: Segment has not been becommed into the loaded objects&lt;/code&gt;&amp;rdquo;) from &lt;code&gt;ImageSegment&amp;gt;&amp;gt;checkAndReportLoadError&lt;/code&gt;, which is called immediatly after the primitive at &lt;code&gt;ImageSegment&amp;gt;&amp;gt;loadSegmentFrom:outPointers:&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class=&#34;notices warning&#34; &gt;&lt;p&gt;The documentation of &lt;code&gt;ImageSegment&amp;gt;&amp;gt;loadSegmentFrom:outPointers:&lt;/code&gt; states that &amp;ldquo;[this primitive] will have destroyed the contents of the segment wordArray&amp;rdquo; if it fails.&lt;/p&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;As such it will probably be required to save a copy of the segment wordArray prior to executing this primitive. Then, should the primitive fail, an attempt can be made to load the ImageSegement &amp;ldquo;manually&amp;rdquo;.&lt;/p&gt;
-</description>
+      <guid>http://HPI-SWA-Teaching.github.io/ETLoad/03_image-segment/</guid>
+      <description>Image Segment If no other errors occure during the loading process, attempting to load a Squeak 3 Project in Squeak 5 will result in an error (&amp;rdquo;Error: Segment has not been becommed into the loaded objects&amp;rdquo;) from ImageSegment&amp;gt;&amp;gt;checkAndReportLoadError, which is called immediatly after the primitive at ImageSegment&amp;gt;&amp;gt;loadSegmentFrom:outPointers:.
+The documentation of ImageSegment&amp;gt;&amp;gt;loadSegmentFrom:outPointers: states that &amp;ldquo;[this primitive] will have destroyed the contents of the segment wordArray&amp;rdquo; if it fails.
+ As such it will probably be required to save a copy of the segment wordArray prior to executing this primitive.</description>
     </item>
     
     <item>
       <title>Object Headers</title>
-      <link>http://etoys-notes.xyz/03_image-segment/object-header/</link>
+      <link>http://HPI-SWA-Teaching.github.io/ETLoad/03_image-segment/object-header/</link>
       <pubDate>Mon, 06 Jun 2016 19:18:21 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/03_image-segment/object-header/</guid>
-      <description>&lt;p&gt;The header of a Squeak object contains of up to three words with the size of 4 bytes.
-The first is the so called base header and is always present.
-The second is the full class pointer of the object, it has an offset of -4 and isn&amp;rsquo;t present all the time.
-The third word is also optional, it has an offset of -8 and contains the size in words of an object.&lt;/p&gt;
-
-&lt;p&gt;Besides the main information every part of the header contains 2 bit which say, how big the header is.
-( 0: just the base header is present, 1: the base header and the full class pointer are present, 3: The header contains all three words)&lt;/p&gt;
-
-&lt;p&gt;Now we need to know which information are stored in the base header:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Bits&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Content&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;0-2&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;storage management information&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;3-14&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;object hash&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;15-19&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;compact class index&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;20-23&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;object format&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;24-29&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;size in words&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;30-31&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;header type&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;The storage management information and the object hash weren&amp;rsquo;t interesting for us.&lt;/p&gt;
-
-&lt;p&gt;The compact class index is an alternative to the full class pointer of the object if the class is one of 31 so called &amp;ldquo;compact classes&amp;rdquo;.
-The index is (as usual with Smalltalk) one-based, resulting in 31 different possible values instead of 32.&lt;/p&gt;
-
-&lt;p&gt;The object format gives information about the format of the object. In the table below you can see the meaning of each number:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Number&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Meaning&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;no fields&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;fixed pointer fields&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;indexable pointer fields&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;both fixed and indexable pointer fields&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;4+5&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;not used&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;6&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;indexable word fields (no pointer)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;7&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;not used&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;8-11&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;indexable byte fields (no pointers): low 2 bits are low 2 bits of size in bytes&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;12-15&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;compiled methods: low 2 bits are low 2 bits of size in bytes. The number of literals is specified in method header, followed by the indexable bytes that store byte codes.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;See the &lt;a href=&#34;http://etoys-notes.xyz/02_imgseg/object-formats/&#34;&gt;object formats&lt;/a&gt; page for information how these formats translate into Squeak 5.&lt;/p&gt;
-
-&lt;p&gt;The &lt;code&gt;size in words&lt;/code&gt; field is used to store the object size unless it exceeds 64 words.&lt;/p&gt;
-</description>
+      <guid>http://HPI-SWA-Teaching.github.io/ETLoad/03_image-segment/object-header/</guid>
+      <description>The header of a Squeak object contains of up to three words with the size of 4 bytes. The first is the so called base header and is always present. The second is the full class pointer of the object, it has an offset of -4 and isn&amp;rsquo;t present all the time. The third word is also optional, it has an offset of -8 and contains the size in words of an object.</description>
     </item>
     
     <item>
       <title>Object Oriented Pointer</title>
-      <link>http://etoys-notes.xyz/03_image-segment/oop/</link>
+      <link>http://HPI-SWA-Teaching.github.io/ETLoad/03_image-segment/oop/</link>
       <pubDate>Mon, 06 Jun 2016 19:18:21 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/03_image-segment/oop/</guid>
-      <description>&lt;p&gt;When an object contains an oop it isn&amp;rsquo;t even sure that this is a real pointer. Because the last bit of the oop shows if it refers a real object or if it is a so called small integer. A zero means that it is a real pointer, a one that it is a small integer.&lt;/p&gt;
-
-&lt;p&gt;A small integer has 31 bit (the last one can&amp;rsquo;t be used for the integer) and can be positive or negative. This means that it can encode every number from -0x40000000 to 0x3FFFFFFF (as usual the numbers are encoded using two&amp;rsquo;s complement).&lt;/p&gt;
-
-&lt;p&gt;Now we&amp;rsquo;ll look at the case that an oop is not a small integer. Since every word in squeak is 4 bytes long, the two least significant bits of all pointers are zero, which means that we have to check, if the bit at position 1 equals one. If that is the case we have an invalid pointer (this should obviously never happen).&lt;/p&gt;
-
-&lt;p&gt;A valid pointer can refer to an object in two different ways. If the value of the pointer is smaller than 0x80000004 the pointer points to an object inside of the segment. In that case the pointer contains the actual address of the object.&lt;/p&gt;
-
-&lt;p&gt;But if the value of the pointer is greater than 0x80000000 the pointer refers to an object outside of the segment. All outpointers are stored in the so called &lt;code&gt;outPointerArray&lt;/code&gt;, and we need to select the right pointer in this array to find out which object is referred to. The value 0x80000004 refers to the first element of the array and the value 0x80000000 + n * 4 refers to the nth element of the array. This way we get the actual pointer to the object outside of the segment.&lt;/p&gt;
-</description>
+      <guid>http://HPI-SWA-Teaching.github.io/ETLoad/03_image-segment/oop/</guid>
+      <description>When an object contains an oop it isn&amp;rsquo;t even sure that this is a real pointer. Because the last bit of the oop shows if it refers a real object or if it is a so called small integer. A zero means that it is a real pointer, a one that it is a small integer.
+A small integer has 31 bit (the last one can&amp;rsquo;t be used for the integer) and can be positive or negative.</description>
     </item>
     
     <item>
       <title>Object Formats</title>
-      <link>http://etoys-notes.xyz/03_image-segment/object-formats/</link>
+      <link>http://HPI-SWA-Teaching.github.io/ETLoad/03_image-segment/object-formats/</link>
       <pubDate>Fri, 24 Jun 2016 19:18:21 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/03_image-segment/object-formats/</guid>
-      <description>
-
-&lt;p&gt;This page compares the different object storage formats available in Squeak version 3 and 5, how they map to each other and how compatibility is best handled.
-Both Squeak versions store the format as a number internally (4 bit in Squeak 3, 5 bit in Squeak 5).
-These numbers will be mentioned for each format.&lt;/p&gt;
-
-&lt;p&gt;Sources for Squeak 3 include the article &amp;ldquo;Back to the future&amp;rdquo; found on the resources page, and for Squeak 5 the documentation on the &lt;code&gt;Behavior&lt;/code&gt; class, for example &lt;code&gt;Behavior#instSpec&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;formats-present-in-both-versions&#34;&gt;Formats present in both versions&lt;/h2&gt;
-
-&lt;dl&gt;
-&lt;dt&gt;Empty&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;Examples include things like &lt;code&gt;UndefinedObject&lt;/code&gt;, &lt;code&gt;Boolean&lt;/code&gt; and subclasses, etc.
-Instance creation is done via &lt;code&gt;class basicNew&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Represented by a 0 in both Squeak 3 and 5.&lt;/p&gt;&lt;/dd&gt;
-&lt;dt&gt;Fixed (non-indexable) pointer fields&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;Standard format for most classes.
-Instance creation with &lt;code&gt;class basicNew&lt;/code&gt;, followed by setting all fields with &lt;code&gt;instance instVarAt: index put: value&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Represented by a 1 in both Squeak 3 and 5.&lt;/p&gt;&lt;/dd&gt;
-&lt;dt&gt;Indexable pointer fields (without instance variables)&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;Format for classes like &lt;code&gt;Array&lt;/code&gt;.
-Must be created with &lt;code&gt;class basicNew: size&lt;/code&gt;, &lt;code&gt;class basicNew&lt;/code&gt; signals an error.
-Fields could be set with the usual &lt;code&gt;instance at: index put: value&lt;/code&gt;, but &lt;code&gt;instance instVarAt: index put: value&lt;/code&gt; also works, and is also usable with all other formats.&lt;/p&gt;
-
-&lt;p&gt;Represented by a 2 in both versions.&lt;/p&gt;&lt;/dd&gt;
-&lt;dt&gt;Indexable pointer fields with additional instance variables&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;Used for a very small amount of classes like &lt;code&gt;MethodDictionary&lt;/code&gt;, &lt;code&gt;BlockContext&lt;/code&gt; and &lt;code&gt;SparseLargeTable&lt;/code&gt;.
-These also need to be created with &lt;code&gt;class basicNew: size&lt;/code&gt;, however the size does &lt;em&gt;not&lt;/em&gt; include the instance variables.
-Assuming the class hasn&amp;rsquo;t changed, we can do &lt;code&gt;class basicNew: sizeInWords - class instVarNames size&lt;/code&gt;.
-Some testing suggests that in both versions the content is laid out as variables first, followed by indexable variables, so a series of &lt;code&gt;instance instVarAt: put:&lt;/code&gt; calls should do the job.&lt;/p&gt;
-
-&lt;p&gt;Represented by a 3 in both versions.&lt;/p&gt;&lt;/dd&gt;
-&lt;dt&gt;Weak indexable objects with instance variables&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;Used for classes like &lt;code&gt;WeakArray&lt;/code&gt;.
-Can be created exactly like indexable pointer fields (&lt;code&gt;class basicNew: size&lt;/code&gt; followed by a series of &lt;code&gt;instance instVarAt: index put: value&lt;/code&gt; calls).&lt;/p&gt;
-
-&lt;p&gt;Represented by a 4 in both versions.&lt;/p&gt;&lt;/dd&gt;
-&lt;dt&gt;Indexable word fields (array of 32 bit values)&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;Used for classes like &lt;code&gt;Bitmap&lt;/code&gt;, &lt;code&gt;IntegerArray&lt;/code&gt; or &lt;code&gt;WideString&lt;/code&gt;.
-Can be handled like indexable pointer fields, but the contents should not be interpreted as oops but rather as 32 bit words.&lt;/p&gt;
-
-&lt;p&gt;Represented by a 6 in Squeak 3, and by 10-11 in Squeak 5 (the 10 vs. 11 differentiation is used to calculate the byte size in 64 bit VMs).&lt;/p&gt;&lt;/dd&gt;
-&lt;dt&gt;Indexable byte fields (array of 8 bit values)&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;Used for classes like &lt;code&gt;ByteString&lt;/code&gt; or &lt;code&gt;ByteArray&lt;/code&gt;.
-Can also be handled similarly to indexable pointer fields, however &lt;code&gt;instance instVarAt: put:&lt;/code&gt; should always be used over &lt;code&gt;instance at: put:&lt;/code&gt;.
-For example, &lt;code&gt;ByteString &amp;gt;&amp;gt; at: put:&lt;/code&gt; expects instances of &lt;code&gt;Character&lt;/code&gt;, but &lt;code&gt;ByteString &amp;gt;&amp;gt; instVarAt: put:&lt;/code&gt; works as expected with byte values.
-Also of note, is that &lt;code&gt;instance instVarAt: put:&lt;/code&gt; sets a single byte, not a word, like in most other cases.
-Therefore, the input words will need to be split up into bytes.&lt;/p&gt;
-
-&lt;p&gt;Represented by 8-11 in Squeak 3, and 16-23 in Squeak 5.
-The different numbers are used to specify the size in bytes in the last word of the object.
-Squeak 5 has double the options, because it supports VMs with 64 bit words.&lt;/p&gt;&lt;/dd&gt;
-&lt;dt&gt;Compiled methods&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;Represented by 12-15 in Squeak 3, and 24-31 in Squeak 5.
-Some research into the byte code format of both versions is needed to know how compatibility can be handled in this case.&lt;/p&gt;&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;h2 id=&#34;formats-only-available-in-squeak-5&#34;&gt;Formats only available in Squeak 5&lt;/h2&gt;
-
-&lt;p&gt;Should any object we try to load use a class of one of these formats, we should report an incompatibility.&lt;/p&gt;
-
-&lt;dl&gt;
-&lt;dt&gt;Weak non-indexable object with instance variables (ephemerons)&lt;/dt&gt;
-&lt;dd&gt;Represented by a 5.&lt;/dd&gt;
-&lt;dt&gt;64 bit indexable (array of 64 bit values)&lt;/dt&gt;
-&lt;dd&gt;Represented by a 9.&lt;/dd&gt;
-&lt;dt&gt;16 bit indexable (array of 16 bit values)&lt;/dt&gt;
-&lt;dd&gt;Represented by 12-15.&lt;/dd&gt;
-&lt;/dl&gt;
-</description>
+      <guid>http://HPI-SWA-Teaching.github.io/ETLoad/03_image-segment/object-formats/</guid>
+      <description>This page compares the different object storage formats available in Squeak version 3 and 5, how they map to each other and how compatibility is best handled. Both Squeak versions store the format as a number internally (4 bit in Squeak 3, 5 bit in Squeak 5). These numbers will be mentioned for each format.
+Sources for Squeak 3 include the article &amp;ldquo;Back to the future&amp;rdquo; found on the resources page, and for Squeak 5 the documentation on the Behavior class, for example Behavior#instSpec.</description>
     </item>
     
     <item>
       <title>Loading Process</title>
-      <link>http://etoys-notes.xyz/03_image-segment/loading-process/</link>
+      <link>http://HPI-SWA-Teaching.github.io/ETLoad/03_image-segment/loading-process/</link>
       <pubDate>Sat, 11 Jun 2016 11:23:21 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/03_image-segment/loading-process/</guid>
-      <description>&lt;p&gt;We load segments with the following algorithm:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;For the entire segment:
-
-&lt;ul&gt;
-&lt;li&gt;Load header&lt;/li&gt;
-&lt;li&gt;Create placeholder&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;For all placeholders:
-
-&lt;ul&gt;
-&lt;li&gt;Acquire class oop&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;While not all objects loaded:
-
-&lt;ul&gt;
-&lt;li&gt;For all placeholder objects:
-
-&lt;ul&gt;
-&lt;li&gt;If class is loaded, load object&lt;/li&gt;
-&lt;li&gt;Else do nothing, class will be loaded in a subsequent iteration&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Each object is loaded with the following steps:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Create instance (with &lt;code&gt;class basicNew&lt;/code&gt; or &lt;code&gt;class basicNew: size&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;Write fields via primitives&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;self becomeForward: createdObject&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The &lt;a href=&#34;http://etoys-notes.xyz/02_imgseg/object-formats/&#34;&gt;object formats&lt;/a&gt; page goes into more details about how to instantiate and fill objects of different formats.&lt;/p&gt;
-</description>
+      <guid>http://HPI-SWA-Teaching.github.io/ETLoad/03_image-segment/loading-process/</guid>
+      <description>We load segments with the following algorithm:
+ For the entire segment:  Load header Create placeholder  For all placeholders:  Acquire class oop  While not all objects loaded:  For all placeholder objects:  If class is loaded, load object Else do nothing, class will be loaded in a subsequent iteration    Each object is loaded with the following steps:
+ Create instance (with class basicNew or class basicNew: size) Write fields via primitives self becomeForward: createdObject  The object formats page goes into more details about how to instantiate and fill objects of different formats.</description>
     </item>
     
     <item>
       <title>Test Image Segment Creation</title>
-      <link>http://etoys-notes.xyz/03_image-segment/test-segment-creation/</link>
+      <link>http://HPI-SWA-Teaching.github.io/ETLoad/03_image-segment/test-segment-creation/</link>
       <pubDate>Sat, 11 Jun 2016 14:30:26 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/03_image-segment/test-segment-creation/</guid>
-      <description>&lt;p&gt;To better support automated testing and experimentation, it was necessary to create minimal image segments, containing only specific, known objects.&lt;/p&gt;
-
-&lt;p&gt;Since the creation of minimal test image segments needs to happen in a Squeak 3 VM, which has no support for &lt;code&gt;filetree&lt;/code&gt;, the following method needs to be added manually to some class in the image:&lt;/p&gt;
-
-&lt;div class=&#34;notices note&#34; &gt;&lt;p&gt;This method probably only works for simple objects - classes, methods and out-pointers may or may not be exported correctly.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #447fcf&#34;&gt;dumpSimpleImageSegmentTo:&lt;/span&gt; &lt;span style=&#34;color: #40ffff&#34;&gt;fileName&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;withRoots:&lt;/span&gt; &lt;span style=&#34;color: #40ffff&#34;&gt;rootArray&lt;/span&gt;
-
-&lt;span style=&#34;color: #d0d0d0&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color: #40ffff&#34;&gt; is fs sr symbolHolder &lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;|&lt;/span&gt;
-
-&lt;span style=&#34;color: #40ffff&#34;&gt;symbolHolder&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color: #447fcf; text-decoration: underline&#34;&gt;Symbol&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;allSymbols&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
-
-&lt;span style=&#34;color: #40ffff&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color: #447fcf; text-decoration: underline&#34;&gt;ImageSegment&lt;/span&gt; &lt;span style=&#34;color: #24909d&#34;&gt;new&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
-
-&lt;span style=&#34;color: #40ffff&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;copyFromRoots:&lt;/span&gt; &lt;span style=&#34;color: #40ffff&#34;&gt;rootArray&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;sizeHint:&lt;/span&gt; &lt;span style=&#34;color: #3677a9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;areUnique:&lt;/span&gt; &lt;span style=&#34;color: #24909d&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
-
-&lt;span style=&#34;color: #40ffff&#34;&gt;fs&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color: #447fcf; text-decoration: underline&#34;&gt;FileStream&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;fileNamed:&lt;/span&gt; &lt;span style=&#34;color: #40ffff&#34;&gt;fileName&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
-
-&lt;span style=&#34;color: #40ffff&#34;&gt;sr&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color: #447fcf; text-decoration: underline&#34;&gt;SmartRefStream&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;on:&lt;/span&gt; &lt;span style=&#34;color: #40ffff&#34;&gt;fs&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
-
-&lt;span style=&#34;color: #40ffff&#34;&gt;sr&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;nextPut:&lt;/span&gt; &lt;span style=&#34;color: #40ffff&#34;&gt;is&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
-
-&lt;span style=&#34;color: #40ffff&#34;&gt;sr&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;close&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
-
-&lt;span style=&#34;color: #40ffff&#34;&gt;fs&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;close&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
-
-&lt;span style=&#34;color: #40ffff&#34;&gt;symbolHolder&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Then use as follows:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #447fcf; text-decoration: underline&#34;&gt;Dummy&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;dumpSimpleImageSegmentTo:&lt;/span&gt; &lt;span style=&#34;color: #ed9d13&#34;&gt;&amp;#39;/tmp/iseg.dump&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #447fcf&#34;&gt;withRoots:&lt;/span&gt; { &lt;span style=&#34;color: #3677a9&#34;&gt;42&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color: #ed9d13&#34;&gt;&amp;#39;Hello World&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color: #447fcf; text-decoration: underline&#34;&gt;Object&lt;/span&gt; &lt;span style=&#34;color: #24909d&#34;&gt;new&lt;/span&gt; }&lt;span style=&#34;color: #d0d0d0&#34;&gt;.&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-</description>
+      <guid>http://HPI-SWA-Teaching.github.io/ETLoad/03_image-segment/test-segment-creation/</guid>
+      <description>To better support automated testing and experimentation, it was necessary to create minimal image segments, containing only specific, known objects.
+Since the creation of minimal test image segments needs to happen in a Squeak 3 VM, which has no support for filetree, the following method needs to be added manually to some class in the image:
+This method probably only works for simple objects - classes, methods and out-pointers may or may not be exported correctly.</description>
     </item>
     
   </channel>

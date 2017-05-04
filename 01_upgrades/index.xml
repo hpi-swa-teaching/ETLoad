@@ -2,71 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>01_upgrades on SWT EToys Notes</title>
-    <link>http://etoys-notes.xyz/01_upgrades/</link>
+    <link>http://HPI-SWA-Teaching.github.io/ETLoad/01_upgrades/</link>
     <description>Recent content in 01_upgrades on SWT EToys Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 18 May 2016 13:17:12 +0200</lastBuildDate>
-    <atom:link href="http://etoys-notes.xyz/01_upgrades/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://HPI-SWA-Teaching.github.io/ETLoad/01_upgrades/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Upgrades</title>
-      <link>http://etoys-notes.xyz/01_upgrades/</link>
+      <link>http://HPI-SWA-Teaching.github.io/ETLoad/01_upgrades/</link>
       <pubDate>Wed, 18 May 2016 13:17:12 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/01_upgrades/</guid>
-      <description>
-
-&lt;h1 id=&#34;upgrades&#34;&gt;Upgrades&lt;/h1&gt;
-
-&lt;p&gt;This section records &amp;amp; documents upgrades / conversions which have been registered with the &lt;code&gt;SmartRefStream&lt;/code&gt;.&lt;/p&gt;
-</description>
+      <guid>http://HPI-SWA-Teaching.github.io/ETLoad/01_upgrades/</guid>
+      <description>Upgrades This section records &amp;amp; documents upgrades / conversions which have been registered with the SmartRefStream.</description>
     </item>
     
     <item>
       <title>#Project Bug</title>
-      <link>http://etoys-notes.xyz/01_upgrades/project-bug/</link>
+      <link>http://HPI-SWA-Teaching.github.io/ETLoad/01_upgrades/project-bug/</link>
       <pubDate>Wed, 18 May 2016 13:21:43 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/01_upgrades/project-bug/</guid>
-      <description>&lt;p&gt;The provided Squeak 5.1 Image causes problems when loading projects due to the following circumstances:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Squeak 3 has a &lt;code&gt;#Project&lt;/code&gt; class.&lt;/li&gt;
-&lt;li&gt;Squeak 5 has a &lt;code&gt;#Project&lt;/code&gt; class, which has become a super class of different kinds of Projects (such as &lt;code&gt;#MVCProject&lt;/code&gt; and &lt;code&gt;#MorphicProject&lt;/code&gt;).&lt;/li&gt;
-&lt;li&gt;The Squeak 3 &lt;code&gt;#Project&lt;/code&gt; has been superseded by &lt;code&gt;#MorphicProject&lt;/code&gt; in Squeak 5.&lt;/li&gt;
-&lt;li&gt;As such a rename has been introduced in &lt;code&gt;SmartRefStream&amp;gt;&amp;gt;initKnownRenames&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;This rename however was not applied consistently, causing different code paths to work with different names, inevitably leading to an error condition (&amp;rdquo;&lt;code&gt;Error: class not in structures list&lt;/code&gt;&amp;rdquo;).&lt;/li&gt;
-&lt;li&gt;The current workaround is to (temporarily) remove the rename, as this rename will only become relevant at a later point in the loading process (which cannot yet be reached due to the incompatible &lt;code&gt;ImageSegment&lt;/code&gt; format).&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+      <guid>http://HPI-SWA-Teaching.github.io/ETLoad/01_upgrades/project-bug/</guid>
+      <description>The provided Squeak 5.1 Image causes problems when loading projects due to the following circumstances:
+ Squeak 3 has a #Project class. Squeak 5 has a #Project class, which has become a super class of different kinds of Projects (such as #MVCProject and #MorphicProject). The Squeak 3 #Project has been superseded by #MorphicProject in Squeak 5. As such a rename has been introduced in SmartRefStream&amp;gt;&amp;gt;initKnownRenames. This rename however was not applied consistently, causing different code paths to work with different names, inevitably leading to an error condition (&amp;rdquo;Error: class not in structures list&amp;rdquo;).</description>
     </item>
     
     <item>
       <title>Class Replacements</title>
-      <link>http://etoys-notes.xyz/01_upgrades/class-replacements/</link>
+      <link>http://HPI-SWA-Teaching.github.io/ETLoad/01_upgrades/class-replacements/</link>
       <pubDate>Wed, 18 May 2016 13:42:44 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/01_upgrades/class-replacements/</guid>
-      <description>&lt;p&gt;The following is a list of classes which no longer exist and have for now been replaced by other classes, usually a super class, if available:&lt;/p&gt;
-
-&lt;dl&gt;
-&lt;dt&gt;&lt;code&gt;MultiNewParagraph&lt;/code&gt;&lt;/dt&gt;
-&lt;dd&gt;⇒ &lt;code&gt;NewParagraph&lt;/code&gt;&lt;/dd&gt;
-&lt;dt&gt;&lt;code&gt;UserText&lt;/code&gt;&lt;/dt&gt;
-&lt;dd&gt;⇒ &lt;code&gt;TextMorph&lt;/code&gt;&lt;/dd&gt;
-&lt;/dl&gt;
-</description>
+      <guid>http://HPI-SWA-Teaching.github.io/ETLoad/01_upgrades/class-replacements/</guid>
+      <description>The following is a list of classes which no longer exist and have for now been replaced by other classes, usually a super class, if available:
+ MultiNewParagraph ⇒ NewParagraph UserText ⇒ TextMorph  </description>
     </item>
     
     <item>
       <title>Fonts</title>
-      <link>http://etoys-notes.xyz/01_upgrades/fonts/</link>
+      <link>http://HPI-SWA-Teaching.github.io/ETLoad/01_upgrades/fonts/</link>
       <pubDate>Wed, 18 May 2016 14:16:58 +0200</pubDate>
       
-      <guid>http://etoys-notes.xyz/01_upgrades/fonts/</guid>
-      <description>&lt;p&gt;While loading a project, an error occured in &lt;code&gt;TextStyle&amp;gt;&amp;gt;addNewFontSize:&lt;/code&gt; because a &lt;code&gt;fontArray&lt;/code&gt; contained a &lt;code&gt;TTCFontSet&lt;/code&gt; along with &lt;code&gt;TTCFont&lt;/code&gt;s. As such an extra check was introduced to ignore objects which are not instances of TTCFont.&lt;/p&gt;
-</description>
+      <guid>http://HPI-SWA-Teaching.github.io/ETLoad/01_upgrades/fonts/</guid>
+      <description>While loading a project, an error occured in TextStyle&amp;gt;&amp;gt;addNewFontSize: because a fontArray contained a TTCFontSet along with TTCFonts. As such an extra check was introduced to ignore objects which are not instances of TTCFont.</description>
     </item>
     
   </channel>
